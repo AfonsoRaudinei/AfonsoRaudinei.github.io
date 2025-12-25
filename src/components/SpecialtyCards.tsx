@@ -62,7 +62,7 @@ const specialties = [
 
 const SpecialtyCards = () => {
   return (
-    <section id="especialidades" className="py-20 px-4 bg-secondary/30">
+    <section id="especialidades" className="py-16 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 animate-fade-up">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">

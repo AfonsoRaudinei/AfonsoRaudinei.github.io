@@ -10,11 +10,11 @@ const tags = [
 
 const JornadaCard = () => {
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section className="py-16 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <Link
             to="/jornada-profissional"
-            className="group soft-card overflow-hidden hover-lift animate-fade-up bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30"
+            className="block w-full group soft-card overflow-hidden hover-lift animate-fade-up bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30"
             style={{ animationDelay: "100ms" }}
           >
             <div className="p-6">
