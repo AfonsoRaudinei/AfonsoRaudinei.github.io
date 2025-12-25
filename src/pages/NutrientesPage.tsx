@@ -139,12 +139,11 @@ const NutrientesPage = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {macronutrientes.map((nutriente, index) => (
-                <div
-                  key={nutriente.simbolo}
-                  className="group p-6 rounded-2xl bg-card border border-border/50 hover:border-emerald-200 dark:hover:border-emerald-800 hover:shadow-lg transition-all animate-fade-up"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
+              {macronutrientes.map((nutriente, index) => {
+                const isNitrogenio = nutriente.simbolo === "N";
+                const cardClassName = "group p-6 rounded-2xl bg-card border border-border/50 hover:border-emerald-200 dark:hover:border-emerald-800 hover:shadow-lg transition-all animate-fade-up";
+                
+                const cardContent = (
                   <div className="flex items-start gap-4">
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center shadow-md flex-shrink-0">
                       <span className="text-xl font-bold text-white">{nutriente.simbolo}</span>
@@ -165,8 +164,31 @@ const NutrientesPage = () => {
                       </p>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+
+                if (isNitrogenio) {
+                  return (
+                    <Link
+                      key={nutriente.simbolo}
+                      to="/nutrientes/nitrogenio"
+                      className={cardClassName}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      {cardContent}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div
+                    key={nutriente.simbolo}
+                    className={cardClassName}
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    {cardContent}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
