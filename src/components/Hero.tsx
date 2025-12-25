@@ -1,20 +1,13 @@
 import { Search, ArrowRight, Sparkles } from "lucide-react";
 import { useState } from "react";
-
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  
-  const whatsappLink = `https://wa.me/5562999999999?text=${encodeURIComponent(
-    searchQuery || "Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas."
-  )}`;
-
+  const whatsappLink = `https://wa.me/5562999999999?text=${encodeURIComponent(searchQuery || "Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.")}`;
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     window.open(whatsappLink, "_blank");
   };
-
-  return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 pt-24 pb-12 bg-hero-pattern overflow-hidden">
+  return <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 pt-24 pb-12 bg-hero-pattern overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -26,10 +19,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-soft border border-primary/20 mb-8 animate-fade-up">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-foreground">Goiás, Brasil • Soja & Milho</span>
-        </div>
+        
 
         {/* Main Title */}
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up delay-100">
@@ -51,17 +41,8 @@ const Hero = () => {
           <div className="search-box max-w-2xl mx-auto">
             <div className="relative flex items-center">
               <Search className="absolute left-5 w-5 h-5 text-muted-foreground" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Qual é sua dúvida sobre manejo de solo ou nutrição?"
-                className="w-full bg-transparent py-4 pl-14 pr-36 text-foreground placeholder:text-muted-foreground focus:outline-none rounded-2xl"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-green-light text-primary-foreground font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
-              >
+              <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Qual é sua dúvida sobre manejo de solo ou nutrição?" className="w-full bg-transparent py-4 pl-14 pr-36 text-foreground placeholder:text-muted-foreground focus:outline-none rounded-2xl" />
+              <button type="submit" className="absolute right-2 flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-green-light text-primary-foreground font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/25">
                 <span className="hidden sm:inline">Perguntar</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -71,15 +52,11 @@ const Hero = () => {
 
         {/* Quick tags */}
         <div className="flex flex-wrap justify-center gap-3 mt-8 animate-fade-up delay-400">
-          {["Análise de solo", "Adubação", "Deficiência nutricional", "Produtividade"].map((tag) => (
-            <span key={tag} className="px-4 py-2 rounded-full bg-card border border-border text-sm text-muted-foreground hover:border-primary/30 hover:text-foreground transition-colors cursor-pointer">
+          {["Análise de solo", "Adubação", "Deficiência nutricional", "Produtividade"].map(tag => <span key={tag} className="px-4 py-2 rounded-full bg-card border border-border text-sm text-muted-foreground hover:border-primary/30 hover:text-foreground transition-colors cursor-pointer">
               {tag}
-            </span>
-          ))}
+            </span>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
