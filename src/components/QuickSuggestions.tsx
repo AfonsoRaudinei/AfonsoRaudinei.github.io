@@ -42,7 +42,7 @@ const QuickSuggestions = () => {
           <p className="text-muted-foreground">Áreas de consultoria especializada</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {suggestions.map((item, index) => (
             <button
               key={item.title}
