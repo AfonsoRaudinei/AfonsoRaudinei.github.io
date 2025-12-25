@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsSection from "@/components/StatsSection";
 import QuickSuggestions from "@/components/QuickSuggestions";
 import SpecialtyCards from "@/components/SpecialtyCards";
+import JornadaProfissional from "@/components/JornadaProfissional";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
         <StatsSection />
         <QuickSuggestions />
         <SpecialtyCards />
+        <JornadaProfissional />
         <CTASection />
       </main>
       <Footer />
