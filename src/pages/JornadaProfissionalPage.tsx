@@ -2,6 +2,19 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Phone, Mail, Linkedin, MapPin, CheckCircle2, Briefcase, GraduationCap, Award, Target, Users, MessageSquare, Calendar, Lightbulb, TrendingUp, RefreshCw, BookOpen, Handshake } from "lucide-react";
 import perfilImg from "@/assets/perfil.png";
 
+// === IMAGENS PARA ADICIONAR NO GITHUB ===
+// Adicione estas imagens em src/assets/ no seu repositório GitHub:
+// 1. nutrien-logo.png - Logo da Nutrien
+// 2. sulgoiano-logo.png - Logo da Sulgoiano Agro
+// 3. campo-hero.jpg - Foto de lavoura/campo para o hero
+// 4. projeto-soloforte.jpg - Imagem do projeto SoloForte
+
+// Imports das imagens (descomente quando adicionar as imagens no GitHub):
+// import nutrienLogo from "@/assets/nutrien-logo.png";
+// import sulgoianoLogo from "@/assets/sulgoiano-logo.png";
+// import campoHeroImg from "@/assets/campo-hero.jpg";
+// import projetoSoloforteImg from "@/assets/projeto-soloforte.jpg";
+
 const diferenciais = [
   {
     icon: Target,
