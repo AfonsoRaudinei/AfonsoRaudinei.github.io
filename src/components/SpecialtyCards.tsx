@@ -75,12 +75,11 @@ const SpecialtyCards = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {specialties.map((specialty, index) => (
-            <div
-              key={specialty.title}
-              className={`group soft-card overflow-hidden hover-lift animate-fade-up ${specialty.bgImage}`}
-              style={{ animationDelay: `${(index + 1) * 100}ms` }}
-            >
+          {specialties.map((specialty, index) => {
+            const isNutrientes = specialty.title === "NUTRIENTES";
+            const cardClassName = `group soft-card overflow-hidden hover-lift animate-fade-up ${specialty.bgImage}`;
+            
+            const cardContent = (
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-4">
@@ -113,8 +112,31 @@ const SpecialtyCards = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+            
+            if (isNutrientes) {
+              return (
+                <Link
+                  key={specialty.title}
+                  to="/nutrientes"
+                  className={cardClassName}
+                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+            
+            return (
+              <div
+                key={specialty.title}
+                className={cardClassName}
+                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+              >
+                {cardContent}
+              </div>
+            );
+          })}
 
           {/* Jornada Profissional - Full Width */}
           <Link
