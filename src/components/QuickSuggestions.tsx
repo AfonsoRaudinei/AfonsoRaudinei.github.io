@@ -25,6 +25,23 @@ const suggestions = [{
   bgColor: "bg-violet-50"
 }];
 const QuickSuggestions = () => {
-  return;
+  return (
+    <section className="py-16 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {suggestions.map((item, index) => (
+            <div key={index} className={`${item.bgColor} rounded-xl p-4 hover:shadow-md transition-all cursor-pointer group`}>
+              <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} text-white mb-3`}>
+                <item.icon className="w-5 h-5" />
+              </div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">{item.title}</h3>
+              <p className="text-xs text-muted-foreground">{item.description}</p>
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground mt-2 group-hover:text-primary transition-colors" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 export default QuickSuggestions;
