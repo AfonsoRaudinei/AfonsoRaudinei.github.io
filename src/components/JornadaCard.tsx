@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, ArrowUpRight, Briefcase } from "lucide-react";
-import perfilImg from "@/assets/perfil.png";
 
 const tags = [
   "Currículo Completo",
@@ -13,20 +12,17 @@ const JornadaCard = () => {
   return (
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
-        <Link
-          to="/jornada-profissional"
-          className="group soft-card overflow-hidden hover-lift animate-fade-up bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 block"
-          style={{ animationDelay: "100ms" }}
-        >
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link
+            to="/jornada-profissional"
+            className="group soft-card overflow-hidden hover-lift animate-fade-up bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30"
+            style={{ animationDelay: "100ms" }}
+          >
             <div className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-lg ring-2 ring-purple-200 dark:ring-purple-700/50">
-                    <img
-                      src={perfilImg}
-                      alt="Raudinei Afonso"
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center shadow-lg">
+                    <Briefcase className="w-7 h-7 text-white" />
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-xl text-foreground">
@@ -54,7 +50,8 @@ const JornadaCard = () => {
                 ))}
               </div>
             </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </section>
   );
