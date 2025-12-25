@@ -34,7 +34,7 @@ const suggestions = [
 const QuickSuggestions = () => {
   return (
     <section className="py-16 px-4">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-10 animate-fade-up">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2">
             Como posso ajudar?
