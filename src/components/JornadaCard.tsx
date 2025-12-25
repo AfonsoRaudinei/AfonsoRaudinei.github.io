@@ -13,12 +13,11 @@ const JornadaCard = () => {
   return (
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-6">
-          <Link
-            to="/jornada-profissional"
-            className="group soft-card overflow-hidden hover-lift animate-fade-up bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30"
-            style={{ animationDelay: "100ms" }}
-          >
+        <Link
+          to="/jornada-profissional"
+          className="group soft-card overflow-hidden hover-lift animate-fade-up bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 block"
+          style={{ animationDelay: "100ms" }}
+        >
             <div className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
@@ -55,8 +54,7 @@ const JornadaCard = () => {
                 ))}
               </div>
             </div>
-          </Link>
-        </div>
+        </Link>
       </div>
     </section>
   );
