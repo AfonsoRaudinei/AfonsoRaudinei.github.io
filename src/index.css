@@ -44,18 +44,34 @@
     --blue-muted: 210 40% 85%;
     --navy: 222 47% 20%;
     
+    /* iOS Design System */
+    --ios-blue: 211 100% 50%;
+    --ios-blue-dark: 220 100% 42%;
+    --ios-green: 142 76% 36%;
+    --ios-red: 0 100% 59%;
+    --ios-gray-1: 240 6% 10%;
+    --ios-gray-2: 240 5% 34%;
+    --ios-gray-3: 240 4% 46%;
+    --ios-gray-4: 240 4% 65%;
+    --ios-gray-5: 240 5% 84%;
+    --ios-gray-6: 240 6% 90%;
+    --ios-separator: 240 6% 90%;
+    
     /* Gradients */
     --gradient-hero: linear-gradient(180deg, hsl(210 50% 97%) 0%, hsl(210 40% 98%) 50%, hsl(200 30% 96%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 99%));
     --gradient-green: linear-gradient(135deg, hsl(142 70% 40%), hsl(142 60% 35%));
     --gradient-blue-soft: linear-gradient(135deg, hsl(200 60% 95%), hsl(210 50% 92%));
+    --gradient-ios: linear-gradient(180deg, hsl(0 0% 96%) 0%, hsl(0 0% 91%) 100%);
 
-    /* Shadows */
+    /* Shadows - iOS Glassmorphism */
     --shadow-sm: 0 2px 8px hsl(220 20% 20% / 0.04);
     --shadow-md: 0 4px 20px hsl(220 20% 20% / 0.08);
     --shadow-lg: 0 8px 40px hsl(220 20% 20% / 0.12);
     --shadow-card: 0 4px 24px hsl(220 20% 20% / 0.06);
     --shadow-button: 0 4px 16px hsl(142 70% 40% / 0.25);
+    --shadow-ios: 0 1px 3px hsl(0 0% 0% / 0.08), 0 2px 8px hsl(0 0% 0% / 0.04);
+    --shadow-ios-elevated: 0 4px 16px hsl(0 0% 0% / 0.08), 0 8px 32px hsl(0 0% 0% / 0.04);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 222 47% 11%;

@@ -61,6 +61,21 @@ export default {
           muted: "hsl(var(--blue-muted))",
         },
         navy: "hsl(var(--navy))",
+        ios: {
+          blue: "hsl(var(--ios-blue))",
+          "blue-dark": "hsl(var(--ios-blue-dark))",
+          green: "hsl(var(--ios-green))",
+          red: "hsl(var(--ios-red))",
+          gray: {
+            1: "hsl(var(--ios-gray-1))",
+            2: "hsl(var(--ios-gray-2))",
+            3: "hsl(var(--ios-gray-3))",
+            4: "hsl(var(--ios-gray-4))",
+            5: "hsl(var(--ios-gray-5))",
+            6: "hsl(var(--ios-gray-6))",
+          },
+          separator: "hsl(var(--ios-separator))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -1,19 +1,24 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Phone, Mail, Linkedin, MapPin, CheckCircle2, Briefcase, GraduationCap, Award, Target, Users, MessageSquare, Calendar, Lightbulb, TrendingUp, RefreshCw, BookOpen, Handshake } from "lucide-react";
+import { 
+  ArrowLeft, 
+  Phone, 
+  Mail, 
+  Linkedin, 
+  MapPin, 
+  CheckCircle2, 
+  GraduationCap, 
+  Target, 
+  Users, 
+  MessageSquare, 
+  Calendar, 
+  Lightbulb, 
+  TrendingUp, 
+  RefreshCw, 
+  BookOpen, 
+  Handshake,
+  ChevronRight
+} from "lucide-react";
 import perfilImg from "@/assets/perfil.png";
-
-// === IMAGENS PARA ADICIONAR NO GITHUB ===
-// Adicione estas imagens em src/assets/ no seu repositório GitHub:
-// 1. nutrien-logo.png - Logo da Nutrien
-// 2. sulgoiano-logo.png - Logo da Sulgoiano Agro
-// 3. campo-hero.jpg - Foto de lavoura/campo para o hero
-// 4. projeto-soloforte.jpg - Imagem do projeto SoloForte
-
-// Imports das imagens (descomente quando adicionar as imagens no GitHub):
-// import nutrienLogo from "@/assets/nutrien-logo.png";
-// import sulgoianoLogo from "@/assets/sulgoiano-logo.png";
-// import campoHeroImg from "@/assets/campo-hero.jpg";
-// import projetoSoloforteImg from "@/assets/projeto-soloforte.jpg";
 
 const diferenciais = [
   {
@@ -39,46 +44,14 @@ const diferenciais = [
 ];
 
 const competencias = [
-  {
-    icon: MessageSquare,
-    title: "Comunicação Assertiva",
-    description: "Habilidade de traduzir conceitos técnicos complexos em linguagem acessível para produtores rurais, facilitando a tomada de decisão."
-  },
-  {
-    icon: Users,
-    title: "Relacionamento Interpessoal",
-    description: "Construção de vínculos sólidos e duradouros com clientes, baseados em confiança, respeito e entrega de resultados consistentes."
-  },
-  {
-    icon: Calendar,
-    title: "Organização e Planejamento",
-    description: "Capacidade de gerenciar múltiplas demandas simultaneamente, priorizando atividades e cumprindo prazos com eficiência."
-  },
-  {
-    icon: Lightbulb,
-    title: "Proatividade",
-    description: "Antecipação de necessidades dos clientes e identificação de oportunidades de negócio antes que sejam solicitadas."
-  },
-  {
-    icon: RefreshCw,
-    title: "Adaptabilidade",
-    description: "Flexibilidade para ajustar estratégias conforme mudanças de mercado, clima e necessidades específicas de cada produtor."
-  },
-  {
-    icon: BookOpen,
-    title: "Aprendizado Contínuo",
-    description: "Busca constante por atualização técnica e novas metodologias para agregar valor ao atendimento e às recomendações."
-  },
-  {
-    icon: Target,
-    title: "Orientação para Resultados",
-    description: "Foco em superar metas com planejamento estratégico e acompanhamento rigoroso de indicadores de desempenho."
-  },
-  {
-    icon: Handshake,
-    title: "Trabalho em Equipe",
-    description: "Colaboração efetiva com equipes comerciais e técnicas, compartilhando conhecimentos e apoiando o desenvolvimento coletivo."
-  }
+  { icon: MessageSquare, title: "Comunicação Assertiva" },
+  { icon: Users, title: "Relacionamento Interpessoal" },
+  { icon: Calendar, title: "Organização e Planejamento" },
+  { icon: Lightbulb, title: "Proatividade" },
+  { icon: RefreshCw, title: "Adaptabilidade" },
+  { icon: BookOpen, title: "Aprendizado Contínuo" },
+  { icon: Target, title: "Orientação para Resultados" },
+  { icon: Handshake, title: "Trabalho em Equipe" }
 ];
 
 const experiencias = [
@@ -128,128 +101,195 @@ const cursos = [
 
 const JornadaProfissionalPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-gradient-to-b from-zinc-800 to-zinc-900 text-white shadow-lg">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center gap-4">
-            <Link
-              to="/"
-              className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-            <div className="flex items-center gap-4 flex-1">
-              <div className="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-white/20">
-                <img src={perfilImg} alt="Raudinei Afonso" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <h1 className="text-lg font-semibold">Raudinei Afonso S. Pereira</h1>
-                <p className="text-sm text-zinc-400">Representante técnico de vendas 3</p>
-              </div>
+    <div 
+      className="min-h-screen"
+      style={{ 
+        background: 'linear-gradient(180deg, hsl(0 0% 96%) 0%, hsl(0 0% 91%) 100%)',
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+      }}
+    >
+      {/* iOS Style Header - Profile Card */}
+      <header className="pt-12 pb-6 px-4">
+        <div className="max-w-lg mx-auto">
+          {/* Back Button */}
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1 text-ios-blue mb-6 text-[15px] font-normal transition-opacity hover:opacity-70"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Voltar
+          </Link>
+
+          {/* Profile Card */}
+          <div 
+            className="rounded-2xl p-6 text-center"
+            style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+            }}
+          >
+            <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-ios-gray-6">
+              <img src={perfilImg} alt="Raudinei Afonso" className="w-full h-full object-cover" />
             </div>
+            <h1 className="text-[22px] font-semibold text-ios-gray-1 mb-1">
+              Raudinei Afonso S. Pereira
+            </h1>
+            <p className="text-[15px] text-ios-gray-3">
+              Representante Técnico de Vendas 3
+            </p>
+            <p className="text-[13px] text-ios-gray-4 mt-1">
+              Engenheiro Agrônomo • Nutrien
+            </p>
           </div>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8 space-y-6">
+      <main className="max-w-lg mx-auto px-4 pb-8 space-y-4">
         {/* Contato */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Contato</h2>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between py-2 border-b border-border">
-              <span className="flex items-center gap-2 text-foreground">
-                <Phone className="w-4 h-4 text-muted-foreground" /> Telefone
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Contato
+          </h2>
+          <div className="divide-y divide-ios-separator">
+            <a href="tel:+5563984376572" className="flex items-center justify-between px-5 py-3 hover:bg-ios-gray-6/50 transition-colors">
+              <span className="flex items-center gap-3 text-[15px] text-ios-gray-1">
+                <Phone className="w-5 h-5 text-ios-gray-4" /> Telefone
               </span>
-              <a href="tel:+5563984376572" className="text-primary">+55 (63) 98437-6572</a>
-            </div>
-            <div className="flex items-center justify-between py-2 border-b border-border">
-              <span className="flex items-center gap-2 text-foreground">
-                <Mail className="w-4 h-4 text-muted-foreground" /> E-mail
+              <span className="text-[15px] text-ios-green font-medium">+55 (63) 98437-6572</span>
+            </a>
+            <a href="mailto:raudineiasp@gmail.com" className="flex items-center justify-between px-5 py-3 hover:bg-ios-gray-6/50 transition-colors">
+              <span className="flex items-center gap-3 text-[15px] text-ios-gray-1">
+                <Mail className="w-5 h-5 text-ios-gray-4" /> E-mail
               </span>
-              <a href="mailto:raudineiasp@gmail.com" className="text-primary">raudineiasp@gmail.com</a>
-            </div>
-            <div className="flex items-center justify-between py-2 border-b border-border">
-              <span className="flex items-center gap-2 text-foreground">
-                <Linkedin className="w-4 h-4 text-muted-foreground" /> LinkedIn
+              <span className="text-[15px] text-ios-green font-medium">raudineiasp@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/raudinei" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-5 py-3 hover:bg-ios-gray-6/50 transition-colors">
+              <span className="flex items-center gap-3 text-[15px] text-ios-gray-1">
+                <Linkedin className="w-5 h-5 text-ios-gray-4" /> LinkedIn
               </span>
-              <a href="https://www.linkedin.com/in/raudinei" target="_blank" rel="noopener noreferrer" className="text-primary">linkedin.com/in/raudinei</a>
-            </div>
-            <div className="flex items-center justify-between py-2">
-              <span className="flex items-center gap-2 text-foreground">
-                <MapPin className="w-4 h-4 text-muted-foreground" /> Localização
+              <span className="text-[15px] text-ios-green font-medium">linkedin.com/in/raudinei</span>
+            </a>
+            <div className="flex items-center justify-between px-5 py-3">
+              <span className="flex items-center gap-3 text-[15px] text-ios-gray-1">
+                <MapPin className="w-5 h-5 text-ios-gray-4" /> Localização
               </span>
-              <span className="text-muted-foreground">Porto Nacional, TO</span>
+              <span className="text-[15px] text-ios-gray-3">Porto Nacional, TO</span>
             </div>
           </div>
         </section>
 
         {/* Sobre Mim */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Sobre Mim</h2>
-          <p className="text-foreground leading-relaxed mb-4">
-            Engenheiro Agrônomo com mais de 10 anos de experiência em insumos agrícolas, com foco em assistência técnica, posicionamento de produtos, relacionamento com produtores e planejamento de vendas. Perfil voltado à geração de demanda no campo, com atuação direta nas culturas de soja e milho.
-          </p>
-          <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
-            <p className="text-foreground">
-              <strong className="text-primary">Especialidades:</strong> Capacidade de interpretar análises de solo e recomendar corretivos como calcário e gesso, além de fertilizantes, incluindo macronutrientes (fósforo e potássio) e micronutrientes, tanto para aplicação no solo quanto via foliar.
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Sobre Mim
+          </h2>
+          <div className="px-5 pb-5">
+            <p className="text-[15px] text-ios-gray-1 leading-relaxed">
+              Engenheiro Agrônomo com mais de 10 anos de experiência em insumos agrícolas, com foco em assistência técnica, posicionamento de produtos, relacionamento com produtores e planejamento de vendas.
             </p>
+            <div className="mt-4 p-4 rounded-xl bg-ios-green/5 border-l-4 border-ios-green">
+              <p className="text-[14px] text-ios-gray-2">
+                <strong className="text-ios-green">Especialidades:</strong> Interpretação de análises de solo, recomendação de corretivos e fertilizantes para soja e milho.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Diferenciais */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Diferenciais</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Diferenciais
+          </h2>
+          <div className="divide-y divide-ios-separator">
             {diferenciais.map((item, index) => (
-              <div key={index} className="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-primary" />
+              <div key={index} className="px-5 py-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-ios-blue/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-ios-blue" />
                   </div>
-                  <h3 className="font-semibold text-foreground">{item.title}</h3>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[15px] font-medium text-ios-gray-1">{item.title}</h3>
+                    <p className="text-[13px] text-ios-gray-3 mt-0.5 leading-relaxed">{item.description}</p>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Competências */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Competências</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Competências
+          </h2>
+          <div className="px-5 pb-4 flex flex-wrap gap-2">
             {competencias.map((item, index) => (
-              <div key={index} className="bg-muted/30 rounded-lg p-4 hover:bg-muted/50 transition-colors">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-green-600 dark:text-green-400" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{item.title}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
+              <span 
+                key={index} 
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-ios-gray-6/80 text-[13px] text-ios-gray-2 font-medium"
+              >
+                <item.icon className="w-3.5 h-3.5 text-ios-blue" />
+                {item.title}
+              </span>
             ))}
           </div>
         </section>
 
         {/* Experiência Profissional */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Experiência Profissional</h2>
-          <div className="space-y-6">
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Experiência Profissional
+          </h2>
+          <div className="divide-y divide-ios-separator">
             {experiencias.map((exp, index) => (
-              <div key={index} className="border-b border-border last:border-0 pb-6 last:pb-0">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+              <div key={index} className="px-5 py-4">
+                <div className="flex items-start justify-between gap-2 mb-2">
                   <div>
-                    <h3 className="font-semibold text-foreground">{exp.cargo}</h3>
-                    <p className="text-primary font-medium">{exp.empresa}</p>
+                    <h3 className="text-[15px] font-semibold text-ios-gray-1">{exp.cargo}</h3>
+                    <p className="text-[14px] text-ios-green font-medium">{exp.empresa}</p>
                   </div>
-                  <span className="text-sm text-muted-foreground whitespace-nowrap">{exp.periodo}</span>
+                  <span className="text-[12px] text-ios-gray-4 whitespace-nowrap">{exp.periodo}</span>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {exp.atividades.map((atividade, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                      <span className="text-primary font-bold mt-0.5">•</span>
+                    <li key={i} className="flex items-start gap-2 text-[13px] text-ios-gray-2">
+                      <span className="text-ios-blue mt-1">•</span>
                       {atividade}
                     </li>
                   ))}
@@ -260,73 +300,109 @@ const JornadaProfissionalPage = () => {
         </section>
 
         {/* Formação Acadêmica */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Formação Acadêmica</h2>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-primary" />
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Formação Acadêmica
+          </h2>
+          <div className="px-5 py-4 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-ios-blue/10 flex items-center justify-center">
+              <GraduationCap className="w-6 h-6 text-ios-blue" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Engenheiro Agrônomo</h3>
-              <p className="text-muted-foreground">Unicerrado - Goiatuba • 2013</p>
+              <h3 className="text-[15px] font-semibold text-ios-gray-1">Engenheiro Agrônomo</h3>
+              <p className="text-[14px] text-ios-gray-3">Unicerrado - Goiatuba • 2013</p>
             </div>
           </div>
         </section>
 
         {/* Desenvolvimento Profissional */}
-        <section className="bg-card rounded-xl p-6 shadow-sm border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Desenvolvimento Profissional</h2>
-          <div className="space-y-3">
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Cursos e Certificações
+          </h2>
+          <div className="divide-y divide-ios-separator">
             {cursos.map((curso, index) => (
-              <div key={index} className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
-                <h3 className="font-semibold text-foreground">{curso.titulo}</h3>
-                <p className="text-sm text-muted-foreground">{curso.instituicao}</p>
+              <div key={index} className="px-5 py-3 flex items-center justify-between">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-[15px] font-medium text-ios-gray-1 truncate">{curso.titulo}</h3>
+                  <p className="text-[12px] text-ios-gray-4 truncate">{curso.instituicao}</p>
+                </div>
+                <ChevronRight className="w-4 h-4 text-ios-gray-5 flex-shrink-0" />
               </div>
             ))}
           </div>
         </section>
 
         {/* Projeto em Destaque */}
-        <section className="bg-gradient-to-br from-card to-muted/30 rounded-xl p-6 shadow-lg border border-border">
-          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">Projeto em Destaque</h2>
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg">
-              <span className="text-2xl">🌱</span>
-            </div>
-            <h3 className="text-lg font-bold text-foreground">
-              Desenvolvimento de Soluções em Agricultura Digital – Projeto SoloForte
-            </h3>
-          </div>
-          <p className="text-foreground mb-4 leading-relaxed">
-            Criação de um sistema integrado para gestão agrícola, combinando inteligência artificial, análise de solo, marketing georreferenciado e automação de dados. O projeto conecta tecnologia, agronomia e estratégia comercial para aumentar eficiência e geração de demanda.
-          </p>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-              <span className="text-foreground">Desenvolvi soluções de IA e automação para análise de dados agronômicos e recomendações técnicas</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-              <span className="text-foreground">Estruturei um mapa interativo de casos de sucesso, funcionando como vitrine digital regional</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-              <span className="text-foreground">Implementei estratégias de monetização, integrando geração de leads e visibilidade comercial</span>
-            </li>
-          </ul>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="max-w-4xl mx-auto px-4 py-8">
-        <Link
-          to="/"
-          className="flex items-center justify-center gap-2 py-4 px-6 bg-primary text-primary-foreground rounded-xl font-medium hover:opacity-90 transition-opacity"
+        <section 
+          className="rounded-xl overflow-hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
         >
-          <ArrowLeft className="w-5 h-5" />
-          Voltar para a página inicial
-        </Link>
-      </footer>
+          <h2 className="text-[13px] font-medium text-ios-gray-3 uppercase tracking-wider px-5 pt-4 pb-2">
+            Projeto em Destaque
+          </h2>
+          <div className="px-5 pb-5">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ios-green to-emerald-600 flex items-center justify-center shadow-lg">
+                <span className="text-xl">🌱</span>
+              </div>
+              <h3 className="text-[17px] font-semibold text-ios-gray-1">
+                SoloForte
+              </h3>
+            </div>
+            <p className="text-[14px] text-ios-gray-2 mb-4 leading-relaxed">
+              Sistema integrado para gestão agrícola com inteligência artificial, análise de solo e automação de dados.
+            </p>
+            <ul className="space-y-2.5">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-ios-green mt-0.5 flex-shrink-0" />
+                <span className="text-[14px] text-ios-gray-2">IA e automação para análise agronômica</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-ios-green mt-0.5 flex-shrink-0" />
+                <span className="text-[14px] text-ios-gray-2">Mapa interativo de casos de sucesso</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-ios-green mt-0.5 flex-shrink-0" />
+                <span className="text-[14px] text-ios-gray-2">Geração de leads e visibilidade comercial</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Footer Button */}
+        <div className="pt-4 pb-8">
+          <Link
+            to="/"
+            className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-[15px] font-semibold text-primary-foreground transition-all hover:opacity-90"
+            style={{
+              background: 'linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(220 100% 42%) 100%)',
+              boxShadow: '0 4px 12px rgba(0, 122, 255, 0.3)'
+            }}
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Voltar para página inicial
+          </Link>
+        </div>
+      </main>
     </div>
   );
 };
