@@ -50,9 +50,9 @@ const Header = () => {
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={link.label}
-                  className="flex items-center justify-center w-9 h-9 rounded-full bg-white/70 hover:bg-white border border-blue-200/50 hover:border-blue-300 text-blue-600 hover:text-blue-700 transition-all duration-200"
+                  className="flex items-center justify-center w-7 h-7 md:w-9 md:h-9 rounded-full bg-white/70 hover:bg-white border border-blue-200/50 hover:border-blue-300 text-blue-600 hover:text-blue-700 transition-all duration-200"
                 >
-                  <IconComponent className="w-4 h-4" />
+                  <IconComponent className="w-3.5 h-3.5 md:w-4 md:h-4" />
                 </a>
               );
             })}
