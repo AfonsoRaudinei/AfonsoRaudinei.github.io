@@ -40,7 +40,7 @@ const Header = () => {
         {/* Right - Social Icons + WhatsApp */}
         <div className="flex items-center gap-3">
           {/* Social Icons - Desktop only */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="flex items-center gap-1">
             {socialLinks.map((link) => {
               const IconComponent = link.icon;
               return (
