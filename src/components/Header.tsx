@@ -63,9 +63,9 @@ const Header = () => {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-500 hover:bg-green-600 text-white text-sm font-medium transition-all duration-200 shadow-sm"
+            className="flex items-center gap-1.5 md:gap-2 px-3 py-2 md:px-5 md:py-2.5 rounded-full bg-green-500 hover:bg-green-600 text-white text-xs md:text-sm font-medium transition-all duration-200 shadow-sm"
           >
-            <MessageCircle className="w-4 h-4" />
+            <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4" />
             <span>WhatsApp</span>
           </a>
         </div>
