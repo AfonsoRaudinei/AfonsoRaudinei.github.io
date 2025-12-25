@@ -1,4 +1,4 @@
-import { ChevronRight, Sprout, Wheat, Layers, Atom } from "lucide-react";
+import { ChevronRight, Sprout, Wheat, Layers, Atom, ArrowUpRight } from "lucide-react";
 
 const specialties = [
   {
@@ -12,7 +12,8 @@ const specialties = [
       "Nutrição reprodutiva",
       "Análise foliar estratégica",
     ],
-    color: "from-green-500 to-emerald-600",
+    gradient: "from-green-400 to-emerald-500",
+    bgImage: "bg-gradient-to-br from-green-50 to-emerald-50",
   },
   {
     icon: Wheat,
@@ -25,7 +26,8 @@ const specialties = [
       "Nutrição V4-V8",
       "Potencial produtivo",
     ],
-    color: "from-amber-500 to-yellow-600",
+    gradient: "from-amber-400 to-yellow-500",
+    bgImage: "bg-gradient-to-br from-amber-50 to-yellow-50",
   },
   {
     icon: Layers,
@@ -36,7 +38,8 @@ const specialties = [
       "Recomendação técnica",
       "Laudo personalizado",
     ],
-    color: "from-orange-500 to-red-600",
+    gradient: "from-orange-400 to-red-500",
+    bgImage: "bg-gradient-to-br from-orange-50 to-red-50",
   },
   {
     icon: Atom,
@@ -52,17 +55,18 @@ const specialties = [
       "Boro (B)",
       "Zinco (Zn)",
     ],
-    color: "from-blue-500 to-cyan-600",
+    gradient: "from-blue-400 to-cyan-500",
+    bgImage: "bg-gradient-to-br from-blue-50 to-cyan-50",
   },
 ];
 
 const SpecialtyCards = () => {
   return (
-    <section className="py-16 px-4">
+    <section id="especialidades" className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 animate-fade-up">
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Áreas de Especialidade
+            Áreas de <span className="gradient-text">Especialidade</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Conhecimento técnico aplicado às principais culturas do agronegócio brasileiro
@@ -73,17 +77,14 @@ const SpecialtyCards = () => {
           {specialties.map((specialty, index) => (
             <div
               key={specialty.title}
-              className="group glass-card overflow-hidden hover-lift animate-fade-up"
+              className={`group soft-card overflow-hidden hover-lift animate-fade-up ${specialty.bgImage}`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              {/* Header gradient bar */}
-              <div className={`h-1 bg-gradient-to-r ${specialty.color}`} />
-              
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${specialty.color} flex items-center justify-center`}>
-                      <specialty.icon className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-4">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${specialty.gradient} flex items-center justify-center shadow-lg`}>
+                      <specialty.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-xl text-foreground">
@@ -94,13 +95,16 @@ const SpecialtyCards = () => {
                       </p>
                     </div>
                   </div>
+                  <div className="w-8 h-8 rounded-full bg-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
+                    <ArrowUpRight className="w-4 h-4 text-foreground" />
+                  </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {specialty.topics.map((topic) => (
                     <span
                       key={topic}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary text-xs text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-card/80 text-xs text-muted-foreground hover:text-foreground hover:bg-card transition-colors cursor-pointer shadow-sm"
                     >
                       {topic}
                       <ChevronRight className="w-3 h-3 opacity-50" />
