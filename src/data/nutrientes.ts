@@ -25,6 +25,7 @@ export const macronutrientes: Nutriente[] = [
     categoria: "Primário",
     tipo: 'macro',
     slug: 'fosforo',
+    hasPage: true,
   },
   {
     simbolo: "K",
