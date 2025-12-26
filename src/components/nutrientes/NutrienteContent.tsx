@@ -4,6 +4,30 @@ import { Droplets } from "lucide-react";
 import NitrogenioContent from "./NitrogenioContent";
 import FosforoContent from "./FosforoContent";
 import ManganeContent from "./ManganeContent";
+import PotassioContent from "./PotassioContent";
+import CalcioContent from "./CalcioContent";
+import MagnesioContent from "./MagnesioContent";
+import EnxofreContent from "./EnxofreContent";
+import BoroContent from "./BoroContent";
+import CloroContent from "./CloroContent";
+import CobreContent from "./CobreContent";
+import FerroContent from "./FerroContent";
+import ZincoContent from "./ZincoContent";
+
+const nutrientComponents: Record<string, React.ComponentType> = {
+  nitrogenio: NitrogenioContent,
+  fosforo: FosforoContent,
+  potassio: PotassioContent,
+  calcio: CalcioContent,
+  magnesio: MagnesioContent,
+  enxofre: EnxofreContent,
+  boro: BoroContent,
+  cloro: CloroContent,
+  cobre: CobreContent,
+  ferro: FerroContent,
+  manganes: ManganeContent,
+  zinco: ZincoContent,
+};
 
 export function NutrienteContent() {
   const { slug } = useParams();
@@ -19,32 +43,18 @@ export function NutrienteContent() {
     return <Navigate to="/nutrientes/nitrogenio" replace />;
   }
 
-  // Render specific content for nutrients with dedicated pages
-  if (slug === 'nitrogenio') {
+  // Check if there's a dedicated component for this nutrient
+  const NutrientComponent = nutrientComponents[slug];
+  
+  if (NutrientComponent) {
     return (
-      <div key="nitrogenio" className="animate-fade-in">
-        <NitrogenioContent />
+      <div key={slug} className="animate-fade-in">
+        <NutrientComponent />
       </div>
     );
   }
 
-  if (slug === 'fosforo') {
-    return (
-      <div key="fosforo" className="animate-fade-in">
-        <FosforoContent />
-      </div>
-    );
-  }
-
-  if (slug === 'manganes') {
-    return (
-      <div key="manganes" className="animate-fade-in">
-        <ManganeContent />
-      </div>
-    );
-  }
-
-  // Generic content for other nutrients
+  // Generic content for nutrients without dedicated pages
   return (
     <div key={slug} className="p-6 max-w-4xl mx-auto animate-fade-in">
       {/* Hero Header */}
