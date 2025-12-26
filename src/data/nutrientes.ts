@@ -96,6 +96,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Fotossíntese e ativação de enzimas",
     tipo: 'micro',
     slug: 'manganes',
+    hasPage: true,
   },
   {
     simbolo: "Mo",
