@@ -119,6 +119,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Metabolismo do nitrogênio e urease",
     tipo: 'micro',
     slug: 'niquel',
+    hasPage: true,
   },
   {
     simbolo: "Zn",
