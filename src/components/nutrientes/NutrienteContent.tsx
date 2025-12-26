@@ -20,16 +20,24 @@ export function NutrienteContent() {
 
   // Render specific content for nutrients with dedicated pages
   if (slug === 'nitrogenio') {
-    return <NitrogenioContent />;
+    return (
+      <div key="nitrogenio" className="animate-fade-in">
+        <NitrogenioContent />
+      </div>
+    );
   }
 
   if (slug === 'fosforo') {
-    return <FosforoContent />;
+    return (
+      <div key="fosforo" className="animate-fade-in">
+        <FosforoContent />
+      </div>
+    );
   }
 
   // Generic content for other nutrients
   return (
-    <div className="p-6 max-w-4xl mx-auto animate-fade-up">
+    <div key={slug} className="p-6 max-w-4xl mx-auto animate-fade-in">
       {/* Hero Header */}
       <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-3xl p-8 mb-6 shadow-xl">
         <div className="flex items-center gap-5">
