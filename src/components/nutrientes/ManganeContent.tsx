@@ -1,314 +1,355 @@
-import { Atom, Leaf, Droplets, AlertTriangle, Beaker, Sun, Shield } from "lucide-react";
+import { Droplets, AlertTriangle, Leaf, FlaskConical, Sun, Shield, Zap, Target } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ImagePlaceholder, ImageGrid } from "./ImagePlaceholder";
 
-const ManganeContent = () => {
-  const funcoes = [
-    { text: "Influencia o pH do solo e disponibilidade de nutrientes", position: "top-left" },
-    { text: "Síntese de hormônios (auxinas e citocininas)", position: "top-right" },
-    { text: "Biossíntese de compostos fenólicos (taninos e ligninas)", position: "left" },
-    { text: "Cofator de enzimas (fotossíntese, respiração)", position: "right" },
-    { text: "Síntese de clorofila", position: "bottom-left" },
-    { text: "Fortalece paredes celulares", position: "bottom-right" },
-    { text: "Complexo Mn₄CaO₅ (fotólise da água)", position: "bottom-left-2" },
-    { text: "Componente da SOD (proteção contra radicais livres)", position: "bottom-right-2" },
-  ];
-
-  return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="relative bg-gradient-to-br from-pink-500 to-pink-700 text-white py-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="flex items-center justify-center gap-6 mb-8">
-            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <Atom className="w-10 h-10 text-pink-600" />
-            </div>
-            <div className="bg-white px-6 py-3 rounded-xl shadow-md">
-              <h3 className="text-pink-700 text-2xl font-bold">GEFEN</h3>
-              <p className="text-muted-foreground text-sm">Samira Polezi Silva</p>
-            </div>
+const ManganeContent = () => (
+  <div className="min-h-screen">
+    {/* Header Hero */}
+    <div className="relative bg-gradient-to-br from-purple-500 to-purple-700 text-white py-16 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
+      <div className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+      <div className="absolute bottom-10 left-10 w-24 h-24 bg-white/5 rounded-full blur-xl" />
+      
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="flex items-center justify-center gap-6 mb-8">
+          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl ring-4 ring-purple-300/30">
+            <span className="text-5xl font-bold text-purple-600">Mn</span>
           </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">Manganês (Mn)</h1>
-          <p className="text-lg md:text-xl text-center text-white/95 max-w-3xl mx-auto leading-relaxed">
-            O manganês é um micronutriente essencial que atua como cofator de diversas enzimas, 
-            participando ativamente da fotossíntese, síntese de clorofila e proteção contra estresse oxidativo.
-          </p>
         </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12 space-y-10">
+        <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">Manganês (Mn)</h1>
+        <p className="text-lg text-center text-white/95 max-w-3xl mx-auto leading-relaxed">
+          Micronutriente essencial para fotossíntese, ativação enzimática e defesa antioxidante. 
+          Componente do complexo de evolução do oxigênio no fotossistema II.
+        </p>
         
-        {/* Principais Funções com Diagrama */}
-        <section>
-          <h2 className="bg-gradient-to-r from-pink-500 to-pink-700 text-white py-5 px-6 rounded-xl text-2xl font-bold text-center mb-6">
-            Principais Funções
-          </h2>
-          
-          {/* Diagrama Visual */}
-          <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 mb-8">
-            <h4 className="text-center text-pink-600 text-xl font-bold mb-8">
-              Diagrama Visual: Funções do Manganês na Planta
-            </h4>
-            
-            <div className="relative min-h-[500px] flex items-center justify-center">
-              {/* Planta Central SVG */}
-              <div className="relative z-10">
-                <svg width="200" height="300" viewBox="0 0 200 300" className="drop-shadow-lg">
-                  {/* Folhas superiores */}
-                  <ellipse cx="100" cy="60" rx="50" ry="30" fill="#8BC34A" opacity="0.9"/>
-                  <ellipse cx="70" cy="70" rx="40" ry="25" fill="#7CB342" opacity="0.9"/>
-                  <ellipse cx="130" cy="70" rx="40" ry="25" fill="#689F38" opacity="0.9"/>
-                  
-                  {/* Caule */}
-                  <rect x="95" y="80" width="10" height="100" fill="#689F38" rx="5"/>
-                  
-                  {/* Raízes */}
-                  <path d="M 100 180 Q 70 220, 50 260" stroke="#8D6E63" strokeWidth="4" fill="none"/>
-                  <path d="M 100 180 Q 85 230, 75 270" stroke="#8D6E63" strokeWidth="3" fill="none"/>
-                  <path d="M 100 180 Q 100 230, 100 280" stroke="#8D6E63" strokeWidth="4" fill="none"/>
-                  <path d="M 100 180 Q 115 230, 125 270" stroke="#8D6E63" strokeWidth="3" fill="none"/>
-                  <path d="M 100 180 Q 130 220, 150 260" stroke="#8D6E63" strokeWidth="4" fill="none"/>
-                  
-                  {/* Solo */}
-                  <rect x="0" y="170" width="200" height="130" fill="#A1887F" opacity="0.3" rx="8"/>
-                </svg>
-              </div>
-              
-              {/* Bolhas de função ao redor */}
-              <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                {/* Topo esquerda */}
-                <div className="absolute top-4 left-4 md:left-8 max-w-[140px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Influencia o pH do solo e disponibilidade de nutrientes
-                  </p>
-                </div>
-                
-                {/* Topo direita */}
-                <div className="absolute top-4 right-4 md:right-8 max-w-[140px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Síntese de hormônios (auxinas e citocininas)
-                  </p>
-                </div>
-                
-                {/* Esquerda */}
-                <div className="absolute top-1/4 left-2 md:left-4 max-w-[130px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Biossíntese de compostos fenólicos (taninos e ligninas)
-                  </p>
-                </div>
-                
-                {/* Direita */}
-                <div className="absolute top-1/4 right-2 md:right-4 max-w-[130px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Cofator de enzimas (fotossíntese, respiração)
-                  </p>
-                </div>
-                
-                {/* Centro esquerda */}
-                <div className="absolute top-1/2 left-2 md:left-4 max-w-[120px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Síntese de clorofila
-                  </p>
-                </div>
-                
-                {/* Centro direita */}
-                <div className="absolute top-1/2 right-2 md:right-4 max-w-[120px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Fortalece paredes celulares
-                  </p>
-                </div>
-                
-                {/* Inferior esquerda */}
-                <div className="absolute bottom-16 left-4 md:left-8 max-w-[140px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Complexo Mn₄CaO₅ (fotólise da água)
-                  </p>
-                </div>
-                
-                {/* Inferior direita */}
-                <div className="absolute bottom-16 right-4 md:right-8 max-w-[140px] bg-white rounded-xl p-3 shadow-lg border-2 border-pink-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-                  <p className="text-xs text-pink-800 font-medium text-center">
-                    Componente da SOD (proteção contra radicais livres)
-                  </p>
-                </div>
-              </div>
-            </div>
+        {/* Quick Stats */}
+        <div className="grid grid-cols-3 gap-4 mt-10 max-w-2xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-white">30-100</p>
+            <p className="text-white/70 text-sm">mg/kg teor foliar</p>
           </div>
-
-          {/* Info Box - Complexo de Evolução */}
-          <div className="bg-gradient-to-br from-pink-50 to-pink-100 border-l-4 border-pink-500 p-6 rounded-lg">
-            <h4 className="text-pink-800 text-lg font-bold mb-3 flex items-center gap-2">
-              <Sun className="w-5 h-5" />
-              O Complexo de Evolução de Oxigênio
-            </h4>
-            <p className="text-pink-900 leading-relaxed">
-              É um agregado metálico composto por quatro átomos de manganês, um átomo de cálcio e cinco átomos 
-              de oxigênio (Mn₄CaO₅) e é considerado o único sistema natural capaz de catalisar a reação de 
-              oxidação da água, que é conhecida como <strong>fotólise da água</strong> ou ainda <strong>reação de Hill</strong>.
-            </p>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-white">1,5-5,0</p>
+            <p className="text-white/70 text-sm">mg/dm³ no solo</p>
           </div>
-        </section>
-
-        {/* No Solo */}
-        <section>
-          <h2 className="bg-gradient-to-r from-pink-500 to-pink-700 text-white py-5 px-6 rounded-xl text-2xl font-bold text-center mb-6">
-            No Solo
-          </h2>
-          
-          <div className="bg-gradient-to-br from-pink-50 to-pink-100 border-l-4 border-pink-500 p-6 rounded-lg mb-6">
-            <h4 className="text-pink-800 text-lg font-bold mb-3 flex items-center gap-2">
-              <Droplets className="w-5 h-5" />
-              Dinâmica e Disponibilidade
-            </h4>
-            <p className="text-pink-900 leading-relaxed mb-4">
-              O manganês no solo existe principalmente nas formas Mn²⁺, Mn³⁺ e Mn⁴⁺. 
-              A disponibilidade é fortemente influenciada pelo pH, condições de oxidação-redução e matéria orgânica.
-            </p>
-            <ul className="space-y-2">
-              <li className="text-pink-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-pink-500 before:text-xl">
-                <strong>pH baixo:</strong> maior disponibilidade (risco de toxidez em solos ácidos)
-              </li>
-              <li className="text-pink-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-pink-500 before:text-xl">
-                <strong>pH alto:</strong> menor disponibilidade (deficiência em solos calcários)
-              </li>
-              <li className="text-pink-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-pink-500 before:text-xl">
-                <strong>Solos alagados:</strong> aumento da disponibilidade por redução
-              </li>
-            </ul>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-white">Mn²⁺</p>
+            <p className="text-white/70 text-sm">forma absorvida</p>
           </div>
-
-          <div className="bg-gradient-to-br from-pink-50 to-pink-100 border-l-4 border-pink-500 p-6 rounded-lg">
-            <h4 className="text-pink-800 text-lg font-bold mb-3 flex items-center gap-2">
-              <Leaf className="w-5 h-5" />
-              Faixa de concentração nas plantas
-            </h4>
-            <ul className="space-y-2">
-              <li className="text-pink-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-pink-500 before:text-xl">
-                Teor adequado: <strong>20 a 500 mg/kg</strong> de matéria seca
-              </li>
-              <li className="text-pink-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-pink-500 before:text-xl">
-                Deficiência: abaixo de <strong>15-20 mg/kg</strong>
-              </li>
-              <li className="text-pink-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-pink-500 before:text-xl">
-                Toxidez: acima de <strong>500-1000 mg/kg</strong> (varia com a espécie)
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Fontes */}
-        <Card className="bg-gradient-to-br from-pink-500 to-pink-700 text-white border-0 shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl md:text-3xl text-center uppercase tracking-wide">
-              Principais Fontes
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { nome: "Sulfato de Manganês", info: "MnSO₄\n26-28% Mn" },
-                { nome: "Óxido de Manganês", info: "MnO\n41-68% Mn" },
-                { nome: "Quelatos de Mn", info: "Mn-EDTA\n5-12% Mn" },
-                { nome: "Cloreto de Manganês", info: "MnCl₂\n17% Mn" },
-              ].map((fonte, index) => (
-                <div 
-                  key={index}
-                  className="bg-white rounded-2xl p-4 border-3 border-pink-500 text-center hover:-translate-y-1 transition-transform shadow-md"
-                >
-                  <h3 className="text-pink-700 font-bold text-sm mb-2 min-h-[40px] flex items-center justify-center">
-                    {fonte.nome}
-                  </h3>
-                  <p className="text-foreground text-xs whitespace-pre-line leading-relaxed">{fonte.info}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Deficiência */}
-        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-500">
-          <CardHeader>
-            <CardTitle className="text-orange-800 text-center flex items-center justify-center gap-2">
-              <AlertTriangle className="w-6 h-6" />
-              Sintomas de Deficiência
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 mb-6">
-              {[
-                "Clorose internerval em folhas jovens (nervuras permanecem verdes)",
-                "Manchas necróticas marrons ou cinzas",
-                "Redução do crescimento",
-                "Menor resistência a doenças",
-                "Sintoma conhecido como 'marsh spot' em ervilhas",
-                "Folhas com aparência mosqueada ou reticulada",
-              ].map((item, index) => (
-                <li key={index} className="text-orange-900 pl-6 relative before:content-['✗'] before:absolute before:left-0 before:text-orange-600 before:font-bold">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-center text-lg font-bold text-orange-800">
-              ⚠ A deficiência reduz a fotossíntese e compromete o metabolismo geral!
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Toxidez */}
-        <Card className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-500">
-          <CardHeader>
-            <CardTitle className="text-red-800 text-center flex items-center justify-center gap-2">
-              <AlertTriangle className="w-6 h-6" />
-              Sintomas de Toxidez
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {[
-                "Manchas marrons nas folhas mais velhas",
-                "Clorose marginal e necrose",
-                "Redução do crescimento radicular",
-                "Inibição da absorção de Fe, Mg e Ca",
-                "Comum em solos ácidos (pH < 5,5) e mal drenados",
-              ].map((item, index) => (
-                <li key={index} className="text-red-900 pl-6 relative before:content-['⚠'] before:absolute before:left-0 before:text-red-600 before:font-bold">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Proteção Antioxidante */}
-        <Card className="bg-gradient-to-br from-sky-50 to-sky-100 border-2 border-sky-400">
-          <CardHeader>
-            <CardTitle className="text-sky-800 text-center text-2xl flex items-center justify-center gap-2">
-              <Shield className="w-6 h-6" />
-              Função Antioxidante
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sky-900 text-center leading-relaxed">
-              O manganês é componente essencial da enzima <strong>Superóxido Dismutase (Mn-SOD)</strong>, 
-              localizada nas mitocôndrias. Esta enzima catalisa a conversão de radicais superóxido (O₂⁻) 
-              em peróxido de hidrogênio (H₂O₂), protegendo as células contra o <strong>estresse oxidativo</strong> 
-              e danos causados por espécies reativas de oxigênio.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Footer */}
-        <div className="bg-gradient-to-br from-pink-700 to-pink-900 text-white p-8 rounded-2xl text-center">
-          <p className="mb-2">Material desenvolvido para fins educacionais</p>
-          <p className="font-bold text-lg">GEFEN - Samira Polezi Silva</p>
-          <p className="text-sm mt-3 text-white/80">© 2024 Nutrição de Plantas</p>
         </div>
       </div>
     </div>
-  );
-};
+
+    <div className="max-w-5xl mx-auto px-6 py-12 space-y-12">
+      
+      {/* Principais Fontes */}
+      <Card className="bg-gradient-to-br from-purple-500 to-purple-700 text-white border-0 shadow-xl overflow-hidden">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-2xl text-center uppercase tracking-wider">
+            <FlaskConical className="w-6 h-6 inline mr-2" />
+            Principais Fontes
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pt-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { nome: "Sulfato de Manganês", info: "MnSO₄·H₂O\n26-32% Mn", desc: "Mais comum" },
+              { nome: "Óxido de Manganês", info: "MnO\n41-68% Mn", desc: "Liberação lenta" },
+              { nome: "Mn-EDTA", info: "Quelato\n12-13% Mn", desc: "Alta eficiência" },
+              { nome: "FTE BR-12", info: "Fritas\n2-4% Mn", desc: "Micronutrientes" }
+            ].map((f, i) => (
+              <div key={i} className="bg-white rounded-2xl p-5 text-center shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="text-purple-700 font-bold text-sm mb-2">{f.nome}</h3>
+                <p className="text-foreground text-xs whitespace-pre-line font-medium">{f.info}</p>
+                <p className="text-muted-foreground text-[10px] mt-2 uppercase tracking-wide">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Imagens de Fontes */}
+      <section>
+        <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+          <FlaskConical className="w-5 h-5 text-purple-600" />
+          Fertilizantes com Manganês
+        </h3>
+        <ImageGrid
+          columns={4}
+          aspectRatio="square"
+          images={[
+            { title: "Sulfato de Manganês", description: "Cristais róseos" },
+            { title: "Óxido de Manganês", description: "Pó preto/marrom" },
+            { title: "Mn-EDTA Quelato", description: "Solução amarelada" },
+            { title: "FTE com Mn", description: "Fritas granuladas" },
+          ]}
+        />
+      </section>
+
+      {/* No Solo */}
+      <div className="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-950/30 dark:to-violet-950/30 border-l-4 border-purple-500 p-6 rounded-lg shadow-md">
+        <h4 className="text-purple-800 dark:text-purple-300 text-xl font-bold mb-4 flex items-center gap-2">
+          <Droplets className="w-6 h-6" />
+          Dinâmica no Solo
+        </h4>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <p className="text-purple-900 dark:text-purple-100 mb-4 leading-relaxed">
+              O manganês é absorvido como Mn²⁺. Sua disponibilidade é muito sensível ao pH 
+              e ao potencial redox do solo. Calagem excessiva é a principal causa de deficiência.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="text-purple-800 dark:text-purple-200 flex items-start gap-2">
+                <span className="text-purple-500 mt-1">•</span>
+                <span><strong>pH &gt; 6,5:</strong> Disponibilidade reduz drasticamente</span>
+              </li>
+              <li className="text-purple-800 dark:text-purple-200 flex items-start gap-2">
+                <span className="text-purple-500 mt-1">•</span>
+                <span><strong>Solos alagados:</strong> Alta disponibilidade (redução)</span>
+              </li>
+              <li className="text-purple-800 dark:text-purple-200 flex items-start gap-2">
+                <span className="text-purple-500 mt-1">•</span>
+                <span><strong>Deficiência comum:</strong> Em solos supercorrigidos</span>
+              </li>
+            </ul>
+          </div>
+          <ImagePlaceholder
+            title="Manganês no Solo"
+            description="Efeito do pH na disponibilidade"
+            aspectRatio="video"
+          />
+        </div>
+      </div>
+
+      {/* Principais Funções */}
+      <section className="space-y-6">
+        <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+          Principais Funções do Manganês na Planta
+        </h3>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-white to-purple-50 dark:from-card dark:to-purple-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-purple-700 dark:text-purple-400 flex items-center gap-2">
+                <Sun className="w-5 h-5" />
+                Fotólise da Água (OEC)
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Componente essencial do Complexo de Evolução do Oxigênio (OEC) no 
+                fotossistema II, catalisando a quebra da água e liberação de O₂.
+              </p>
+              <ImagePlaceholder
+                title="Complexo OEC (Mn₄CaO₅)"
+                description="Cluster manganês-cálcio"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-white to-purple-50 dark:from-card dark:to-purple-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-purple-700 dark:text-purple-400 flex items-center gap-2">
+                <Shield className="w-5 h-5" />
+                Defesa Antioxidante (Mn-SOD)
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Componente da superóxido dismutase mitocondrial (Mn-SOD), enzima 
+                que protege a mitocôndria contra radicais superóxido.
+              </p>
+              <ImagePlaceholder
+                title="Mn-SOD Mitocondrial"
+                description="Proteção antioxidante"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-white to-purple-50 dark:from-card dark:to-purple-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-purple-700 dark:text-purple-400 flex items-center gap-2">
+                <Zap className="w-5 h-5" />
+                Ativação Enzimática
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Ativa mais de 35 enzimas, incluindo descarboxilases e desidrogenases 
+                do ciclo de Krebs. Essencial para metabolismo de carboidratos.
+              </p>
+              <ImagePlaceholder
+                title="Enzimas Ativadas por Mn"
+                description="Descarboxilases e desidrogenases"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-white to-purple-50 dark:from-card dark:to-purple-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-purple-700 dark:text-purple-400 flex items-center gap-2">
+                <Target className="w-5 h-5" />
+                Síntese de Lignina
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Participa da biossíntese de lignina e compostos fenólicos, 
+                contribuindo para resistência mecânica e defesa contra patógenos.
+              </p>
+              <ImagePlaceholder
+                title="Via dos Fenilpropanoides"
+                description="Síntese de lignina"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Deficiência */}
+      <Card className="bg-gradient-to-br from-yellow-50 to-purple-50 dark:from-yellow-950/30 dark:to-purple-950/30 border-2 border-yellow-400">
+        <CardHeader>
+          <CardTitle className="text-yellow-800 dark:text-yellow-300 text-center text-xl flex items-center justify-center gap-2">
+            <AlertTriangle className="w-6 h-6" />
+            Sintomas de Deficiência
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-yellow-900 dark:text-yellow-100 mb-4 text-sm leading-relaxed">
+                A deficiência é comum em solos com pH elevado ou supercorrigidos. 
+                Sintomas aparecem primeiro nas folhas jovens (baixa mobilidade).
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { sintoma: "Clorose internerval", detalhe: "Verde entre nervuras, amarelo no limbo" },
+                  { sintoma: "Manchas necróticas", detalhe: "Pontos marrons no tecido clorótico" },
+                  { sintoma: "Soja: 'Amarelão'", detalhe: "Clorose característica em reboleiras" },
+                  { sintoma: "Aveia: 'Grey Speck'", detalhe: "Manchas cinza no limbo" },
+                  { sintoma: "Queda de produtividade", detalhe: "Fotossíntese comprometida" }
+                ].map((item, i) => (
+                  <li key={i} className="text-yellow-900 dark:text-yellow-100 pl-6 relative">
+                    <span className="absolute left-0 text-yellow-500 font-bold">✗</span>
+                    <span className="font-medium">{item.sintoma}</span>
+                    <p className="text-yellow-700 dark:text-yellow-300 text-sm ml-0">{item.detalhe}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <ImagePlaceholder
+                title="Deficiência em Soja"
+                description="Amarelão típico em reboleiras"
+                aspectRatio="video"
+              />
+              <ImagePlaceholder
+                title="Clorose Internerval"
+                description="Padrão reticulado característico"
+                aspectRatio="video"
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Toxidez */}
+      <Card className="bg-gradient-to-br from-red-50 to-purple-50 dark:from-red-950/30 dark:to-purple-950/30 border-2 border-red-400">
+        <CardHeader>
+          <CardTitle className="text-red-800 dark:text-red-300 text-center text-xl flex items-center justify-center gap-2">
+            <Leaf className="w-6 h-6" />
+            Toxidez de Manganês
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-red-900 dark:text-red-100 mb-4 text-sm leading-relaxed">
+                A toxidez ocorre em solos ácidos (pH &lt; 5,0) ou alagados. O excesso de Mn 
+                interfere na absorção e metabolismo de outros nutrientes.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { sintoma: "Manchas marrons", detalhe: "Acúmulo de MnO₂ nas folhas" },
+                  { sintoma: "Enrugamento foliar", detalhe: "Folhas deformadas" },
+                  { sintoma: "Clorose marginal", detalhe: "Bordas amareladas" },
+                  { sintoma: "Crinkle leaf (feijão)", detalhe: "Folhas encarquilhadas" }
+                ].map((item, i) => (
+                  <li key={i} className="text-red-900 dark:text-red-100 pl-6 relative">
+                    <span className="absolute left-0 text-red-500 font-bold">⚠</span>
+                    <span className="font-medium">{item.sintoma}</span>
+                    <p className="text-red-700 dark:text-red-300 text-sm ml-0">{item.detalhe}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <ImagePlaceholder
+                title="Toxidez em Feijão"
+                description="Crinkle leaf - folhas enrugadas"
+                aspectRatio="video"
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Interações */}
+      <section className="bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800 p-6 rounded-2xl">
+        <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+          Interações Nutricionais do Manganês
+        </h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-white dark:bg-card rounded-xl p-4 shadow-sm border border-purple-100 dark:border-purple-900">
+            <h4 className="font-bold text-purple-700 dark:text-purple-400 mb-2">Antagonismo Mn/Fe</h4>
+            <p className="text-muted-foreground text-sm">
+              Competição na absorção. Excesso de Mn pode induzir deficiência de Fe.
+            </p>
+          </div>
+          <div className="bg-white dark:bg-card rounded-xl p-4 shadow-sm border border-purple-100 dark:border-purple-900">
+            <h4 className="font-bold text-purple-700 dark:text-purple-400 mb-2">Efeito do pH</h4>
+            <p className="text-muted-foreground text-sm">
+              Disponibilidade cai 100x para cada unidade de pH acima de 6. Calagem excessiva é crítica.
+            </p>
+          </div>
+          <div className="bg-white dark:bg-card rounded-xl p-4 shadow-sm border border-purple-100 dark:border-purple-900">
+            <h4 className="font-bold text-purple-700 dark:text-purple-400 mb-2">Glifosato</h4>
+            <p className="text-muted-foreground text-sm">
+              Pode complexar Mn e induzir deficiência em soja RR. Monitorar e suplementar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria Visual */}
+      <section>
+        <h3 className="text-xl font-bold text-foreground mb-4 text-center">
+          Galeria: Manganês na Agricultura
+        </h3>
+        <ImageGrid
+          columns={3}
+          aspectRatio="video"
+          images={[
+            { title: "Aplicação Foliar de Mn", description: "Suplementação via folha" },
+            { title: "Amarelão em Soja", description: "Deficiência em reboleira" },
+            { title: "Análise Foliar", description: "Diagnóstico nutricional" },
+          ]}
+        />
+      </section>
+
+      {/* Footer */}
+      <div className="bg-gradient-to-br from-purple-700 to-purple-900 text-white p-8 rounded-2xl text-center shadow-xl">
+        <p className="font-bold text-xl mb-2">GEFEN - Nutrição de Plantas</p>
+        <p className="text-purple-200 text-sm">
+          Conteúdo educacional • Imagens ilustrativas pendentes
+        </p>
+      </div>
+    </div>
+  </div>
+);
 
 export default ManganeContent;
