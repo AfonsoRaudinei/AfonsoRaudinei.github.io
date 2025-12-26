@@ -3,6 +3,7 @@ import { getNutrienteBySlug } from "@/data/nutrientes";
 import { Droplets } from "lucide-react";
 import NitrogenioContent from "./NitrogenioContent";
 import FosforoContent from "./FosforoContent";
+import ManganeContent from "./ManganeContent";
 
 export function NutrienteContent() {
   const { slug } = useParams();
@@ -31,6 +32,14 @@ export function NutrienteContent() {
     return (
       <div key="fosforo" className="animate-fade-in">
         <FosforoContent />
+      </div>
+    );
+  }
+
+  if (slug === 'manganes') {
+    return (
+      <div key="manganes" className="animate-fade-in">
+        <ManganeContent />
       </div>
     );
   }
