@@ -2,6 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { getNutrienteBySlug } from "@/data/nutrientes";
 import { Droplets } from "lucide-react";
 import NitrogenioContent from "./NitrogenioContent";
+import FosforoContent from "./FosforoContent";
 
 export function NutrienteContent() {
   const { slug } = useParams();
@@ -20,6 +21,10 @@ export function NutrienteContent() {
   // Render specific content for nutrients with dedicated pages
   if (slug === 'nitrogenio') {
     return <NitrogenioContent />;
+  }
+
+  if (slug === 'fosforo') {
+    return <FosforoContent />;
   }
 
   // Generic content for other nutrients
