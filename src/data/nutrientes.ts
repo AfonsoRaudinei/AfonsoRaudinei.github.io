@@ -34,6 +34,7 @@ export const macronutrientes: Nutriente[] = [
     categoria: "Primário",
     tipo: 'macro',
     slug: 'potassio',
+    hasPage: true,
   },
   {
     simbolo: "Ca",
@@ -42,6 +43,7 @@ export const macronutrientes: Nutriente[] = [
     categoria: "Secundário",
     tipo: 'macro',
     slug: 'calcio',
+    hasPage: true,
   },
   {
     simbolo: "Mg",
@@ -50,6 +52,7 @@ export const macronutrientes: Nutriente[] = [
     categoria: "Secundário",
     tipo: 'macro',
     slug: 'magnesio',
+    hasPage: true,
   },
   {
     simbolo: "S",
@@ -58,6 +61,7 @@ export const macronutrientes: Nutriente[] = [
     categoria: "Secundário",
     tipo: 'macro',
     slug: 'enxofre',
+    hasPage: true,
   },
 ];
 
@@ -68,6 +72,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Floração, frutificação e transporte de açúcares",
     tipo: 'micro',
     slug: 'boro',
+    hasPage: true,
   },
   {
     simbolo: "Cl",
@@ -75,6 +80,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Fotossíntese e regulação osmótica",
     tipo: 'micro',
     slug: 'cloro',
+    hasPage: true,
   },
   {
     simbolo: "Cu",
@@ -82,6 +88,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Fotossíntese e metabolismo de lignina",
     tipo: 'micro',
     slug: 'cobre',
+    hasPage: true,
   },
   {
     simbolo: "Fe",
@@ -89,6 +96,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Síntese de clorofila e transporte de elétrons",
     tipo: 'micro',
     slug: 'ferro',
+    hasPage: true,
   },
   {
     simbolo: "Mn",
@@ -118,6 +126,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Síntese de auxinas e desenvolvimento foliar",
     tipo: 'micro',
     slug: 'zinco',
+    hasPage: true,
   },
   {
     simbolo: "Co",
