@@ -1,409 +1,366 @@
 import { Link } from "react-router-dom";
-import { Beaker, Leaf, RefreshCw, Dna, Zap, AlertTriangle, BarChart3, Lightbulb } from "lucide-react";
+import { Beaker, Leaf, RefreshCw, Dna, Zap, AlertTriangle, BarChart3, Lightbulb, FlaskConical, Sprout } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ImagePlaceholder, ImageGrid } from "./ImagePlaceholder";
 
 const fontesNitrogenio = [
-  { nome: "Gases", formula: "N₂, NO₂, N₂O", info: "Atmosfera" },
-  { nome: "Nitritos", formula: "NO₂⁻", info: "Solo" },
-  { nome: "MAP e DAP", formula: "NH₄H₂PO₄ / (NH₄)₂HPO₄", percentual: "10% / 17% de N" },
-  { nome: "Nitrato de Amônio", formula: "NH₄NO₃", percentual: "33% de N" },
-  { nome: "Ureia", formula: "CH₄N₂O", percentual: "47% de N" },
+  { nome: "Ureia", formula: "CH₄N₂O", percentual: "47% de N", desc: "Mais concentrada" },
+  { nome: "Nitrato de Amônio", formula: "NH₄NO₃", percentual: "33% de N", desc: "Duas formas de N" },
+  { nome: "MAP", formula: "NH₄H₂PO₄", percentual: "10% de N", desc: "+ 48% P₂O₅" },
+  { nome: "DAP", formula: "(NH₄)₂HPO₄", percentual: "17% de N", desc: "+ 45% P₂O₅" },
+  { nome: "Sulfato Amônio", formula: "(NH₄)₂SO₄", percentual: "21% de N", desc: "+ 24% S" },
 ];
 
 const cicloProcessos = [
   {
     titulo: "1. Fixação Biológica",
     descricao: "Bactérias Bradyrhizobium: Fixam N₂ atmosférico em associação simbiótica com raízes de plantas leguminosas, produzindo NH₃.",
+    icon: "🦠",
   },
   {
     titulo: "2. Nitrificação",
     descricao: "Bactérias Nitrosomonas e Nitrococcus: Convertem NH₃ → NO₂⁻ e depois NO₂⁻ → NO₃⁻ através da ação microbiana no solo.",
+    icon: "🔄",
   },
   {
     titulo: "3. Desnitrificação",
     descricao: "Bactérias Paracoccus denitrificans: Em condições anaeróbicas, convertem NO₃⁻ de volta para N₂, retornando o nitrogênio à atmosfera.",
+    icon: "💨",
   },
   {
     titulo: "4. Absorção pelas Plantas",
-    descricao: "As plantas absorvem o nitrogênio principalmente nas formas de nitrato (NO₃⁻) e amônio (NH₄⁺), sendo a primeira preferencial. Também podem absorver aminoácidos e ureia (formas orgânicas).",
-  },
-];
-
-const timelineMetabolismo = [
-  {
-    titulo: "Absorção e Transporte",
-    descricao: "Após a absorção, o nitrogênio é transportado via xilema nas mesmas formas em que foi absorvido (NO₃⁻ e NH₄⁺) ou em formas orgânicas provenientes da fase de assimilação, como alantoína (C₄H₆N₄O₃) e ácido alantoico (C₄H₆N₄O₄).",
-  },
-  {
-    titulo: "Redução do Nitrato",
-    descricao: "No citosol, o nitrato sofre redução assimilatória pela ação da enzima nitrato redutase, que gerará nitrito. O nitrito é transferido para dentro dos cloroplastos sendo reduzido a amônio.",
-    formula: "NO₃⁻ → NO₂⁻ → NH₄⁺",
-  },
-  {
-    titulo: "Assimilação do Amônio",
-    descricao: "O íon amônio reage com o alfacetoglutarato proveniente do ciclo de Krebs, produzindo os aminoácidos glutamato e glutamina. Este processo de assimilação de nitrato é energeticamente mais custoso para planta em relação à assimilação do amônio.",
-  },
-  {
-    titulo: "Síntese de Aminoácidos",
-    descricao: "Glutamato e glutamina são as primeiras moléculas orgânicas formadas nas folhas. Essas moléculas sofrem transformações formando os demais aminoácidos, que formarão as proteínas e demais compostos orgânicos nitrogenados.",
+    descricao: "As plantas absorvem o nitrogênio principalmente nas formas de nitrato (NO₃⁻) e amônio (NH₄⁺).",
+    icon: "🌱",
   },
 ];
 
 const funcoes = [
   {
-    titulo: "Estrutural - Clorofila",
-    emoji: "🌿",
-    itens: [
-      "Elemento estrutural da molécula de clorofila",
-      "Atua diretamente na fotossíntese",
-      "Responsável pela coloração verde das folhas",
-    ],
+    titulo: "Clorofila",
+    descricao: "Elemento estrutural da molécula de clorofila, atua diretamente na fotossíntese e é responsável pela coloração verde.",
+    icon: "🌿",
   },
   {
     titulo: "Ácidos Nucleicos",
-    emoji: "🧬",
-    itens: [
-      "Componente essencial do DNA e RNA",
-      "Função estrutural nas bases nitrogenadas",
-      "Fundamental para a divisão celular",
-    ],
+    descricao: "Componente essencial do DNA e RNA, fundamental para a divisão celular e expressão gênica.",
+    icon: "🧬",
   },
   {
     titulo: "Proteínas",
-    emoji: "🔨",
-    itens: [
-      "Principal componente dos aminoácidos",
-      "Em plantas deficientes, a concentração de proteínas é reduzida",
-      "Há diminuição do porte das plantas",
-    ],
+    descricao: "Principal componente dos aminoácidos. Em plantas deficientes, a concentração de proteínas é reduzida.",
+    icon: "🔨",
   },
   {
-    titulo: "Crescimento",
-    emoji: "🌱",
-    itens: [
-      "Nutriente exigido em maior quantidade",
-      "Constitui 2 a 5% da matéria seca",
-      "Fundamental para o desenvolvimento vegetal",
-    ],
-  },
-  {
-    titulo: "Primeiras Moléculas Orgânicas",
-    emoji: "💚",
-    itens: [
-      "Glutamato e glutamina são formados primeiro",
-      "Sofrem transformações gerando demais aminoácidos",
-      "Originarão proteínas e compostos orgânicos",
-    ],
-  },
-  {
-    titulo: "Energia",
-    emoji: "⚡",
-    itens: [
-      "Participa da produção de energia nas células",
-      "Através da composição das moléculas de ATP",
-      "Essencial para processos metabólicos",
-    ],
-  },
-  {
-    titulo: "Formas de Absorção",
-    emoji: "🔄",
-    itens: [
-      "NH₄⁺: Absorvido de forma passiva e uniporte",
-      "NO₃⁻: Absorvido de forma ativa e simporte",
-      "Com transporte simultâneo de H⁺",
-    ],
-  },
-  {
-    titulo: "Simbiose com Bactérias",
-    emoji: "🦠",
-    itens: [
-      "Bactérias Bradyrhizobium sp. fornecem a enzima nitrogenase",
-      "A planta hospedeira fornece leghemoglobina, homocitrato e fontes de carbono",
-      "A nitrogenase usa cofator de Fe e Mo",
-    ],
+    titulo: "Energia (ATP)",
+    descricao: "Participa da produção de energia através da composição das moléculas de ATP e ADP.",
+    icon: "⚡",
   },
 ];
 
 const sintomasDeficiencia = [
-  {
-    titulo: "Clorose em Folhas Velhas",
-    descricao: "Devido à alta mobilidade do N no floema (redistribuição), sintomas de deficiência aparecem primeiramente em folhas velhas com amarelecimento generalizado.",
-  },
-  {
-    titulo: "Redução de Crescimento",
-    descricao: "Plantas deficientes apresentam porte reduzido, desenvolvimento lento e menor produção de biomassa.",
-  },
-  {
-    titulo: "Redução de Proteínas",
-    descricao: "A concentração de proteínas é significativamente reduzida, afetando todos os processos metabólicos da planta.",
-  },
-  {
-    titulo: "Menor Eficiência Fotossintética",
-    descricao: "Com menos clorofila, a capacidade fotossintética é comprometida, resultando em menor produção de energia.",
-  },
-];
-
-const teoresAdequados = [
-  { cultura: "Soja", valor: "40-54", unidade: "g/kg de matéria seca", local: "Folha trifoliolada" },
-  { cultura: "Milho", valor: "27.5-32.5", unidade: "g/kg de matéria seca", local: "Folha oposta e abaixo da espiga" },
-  { cultura: "Trigo", valor: "20-34", unidade: "g/kg de matéria seca", local: "Folha bandeira" },
-];
-
-const manejoRecomendacoes = [
-  {
-    titulo: "Fixação Biológica de Nitrogênio (FBN)",
-    descricao: "Utilizar inoculantes de qualidade com bactérias Bradyrhizobium para leguminosas (soja, feijão). Pode suprir 100% da necessidade de N da cultura.",
-  },
-  {
-    titulo: "Adubação Nitrogenada em Cobertura",
-    descricao: "Aplicar em estádios adequados (V4-V6 para milho), parcelando quando necessário para reduzir perdas por lixiviação.",
-  },
-  {
-    titulo: "Fonte Adequada",
-    descricao: "Escolher a fonte conforme o sistema: Ureia (47% N) mais econômica mas suscetível a volatilização; MAP/DAP para aplicação junto ao plantio; Nitrato de amônio para menores perdas.",
-  },
-  {
-    titulo: "Manejo da Acidez",
-    descricao: "Manter pH adequado (5,5-6,5) para otimizar a nitrificação e disponibilidade de N. A acidez excessiva compromete a FBN.",
-  },
-  {
-    titulo: "Rotação de Culturas",
-    descricao: "Incluir leguminosas na rotação para adicionar N ao sistema via FBN e melhorar a fertilidade biológica do solo.",
-  },
-  {
-    titulo: "Reduzir Perdas",
-    descricao: "Incorporar ureia ou aplicar em condições adequadas de umidade; evitar aplicação em solos encharcados (desnitrificação).",
-  },
+  { sintoma: "Clorose em folhas velhas", detalhe: "Amarelecimento generalizado devido à alta mobilidade" },
+  { sintoma: "Redução de crescimento", detalhe: "Porte reduzido e menor produção de biomassa" },
+  { sintoma: "Menor perfilhamento", detalhe: "Em gramíneas, menos perfilhos por planta" },
+  { sintoma: "Senescência precoce", detalhe: "Folhas velhas secam e caem antecipadamente" },
 ];
 
 export default function NitrogenioContent() {
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="min-h-screen">
       {/* Hero Header */}
-      <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-3xl p-8 mb-6 shadow-xl animate-fade-up">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-5">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold text-white">N</span>
-            </div>
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-1">Nitrogênio (N)</h1>
-              <p className="text-zinc-400 text-sm">Raudinei Afonso - Nutrição de Plantas</p>
+      <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
+        <div className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-10 left-10 w-24 h-24 bg-white/5 rounded-full blur-xl" />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="flex items-center justify-center gap-6 mb-8">
+            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl ring-4 ring-blue-300/30">
+              <span className="text-5xl font-bold text-blue-600">N</span>
             </div>
           </div>
-          <Link
-            to="/"
-            className="px-6 py-3 bg-white/95 rounded-xl shadow-md hover:shadow-lg transition-all"
-          >
-            <span className="font-semibold text-zinc-800">SoloForte</span>
-          </Link>
+          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">Nitrogênio (N)</h1>
+          <p className="text-lg text-center text-white/95 max-w-3xl mx-auto leading-relaxed">
+            Macronutriente primário mais exigido pelas plantas. Componente essencial de aminoácidos, 
+            proteínas, ácidos nucleicos e clorofila. Constitui 2 a 5% da matéria seca vegetal.
+          </p>
+          
+          {/* Quick Stats */}
+          <div className="grid grid-cols-3 gap-4 mt-10 max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <p className="text-3xl font-bold text-white">78%</p>
+              <p className="text-white/70 text-sm">da atmosfera</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <p className="text-3xl font-bold text-white">2-5%</p>
+              <p className="text-white/70 text-sm">matéria seca</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <p className="text-3xl font-bold text-white">NO₃⁻</p>
+              <p className="text-white/70 text-sm">forma principal</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Visão Geral */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <Beaker className="w-4 h-4" />
-          Visão Geral
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="p-5 rounded-xl bg-card border border-border/50 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all">
-            <h3 className="font-semibold text-foreground mb-3">Sobre o Nitrogênio</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Cerca de 78% da atmosfera terrestre é composta por nitrogênio na forma de gás N₂. Elemento essencial para a formação dos ácidos nucleicos e proteínas nas plantas e demais organismos vivos.
-            </p>
-          </div>
-          <div className="p-5 rounded-xl bg-card border border-border/50 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all">
-            <h3 className="font-semibold text-foreground mb-3">Importância na Planta</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              O nitrogênio é um dos nutrientes exigidos em maior quantidade pelas plantas, constituindo de 2 a 5% de sua matéria seca. Componente fundamental de aminoácidos, proteínas e clorofila.
-            </p>
-          </div>
-          <div className="p-5 rounded-xl bg-card border border-border/50 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all sm:col-span-2 lg:col-span-1">
-            <h3 className="font-semibold text-foreground mb-3">Mobilidade</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              O nitrogênio tem alta mobilidade quanto à redistribuição no floema na forma de aminoácidos. Sintomas de deficiência ocorrem em folhas velhas devido a essa mobilidade.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Principais Fontes */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <Leaf className="w-4 h-4" />
-          Principais Fontes de Nitrogênio
-        </div>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-          As fontes de nitrogênio empregadas na agricultura brasileira são importadas da Rússia (23%), China (16%), Argélia (12%), Catar (8%), Nigéria (6%) e Emirados Árabes Unidos (5%). Todos estes países exportam ureia; a Rússia é líder em nitrato de amônio e China e Bélgica em sulfato de Amônio.
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {fontesNitrogenio.map((fonte) => (
-            <div
-              key={fonte.nome}
-              className="p-4 rounded-xl bg-card border border-border/50 text-center hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-            >
-              <h4 className="font-semibold text-foreground mb-2">{fonte.nome}</h4>
-              <p className="text-xs text-muted-foreground mb-1">{fonte.formula}</p>
-              {fonte.percentual && (
-                <p className="text-lg font-bold text-blue-600 dark:text-blue-400 mt-2">{fonte.percentual}</p>
-              )}
-              {fonte.info && (
-                <p className="text-xs text-muted-foreground mt-2">{fonte.info}</p>
-              )}
+      <div className="max-w-5xl mx-auto px-6 py-12 space-y-12">
+        
+        {/* Principais Fontes */}
+        <Card className="bg-gradient-to-br from-blue-500 to-blue-700 text-white border-0 shadow-xl overflow-hidden">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-2xl text-center uppercase tracking-wider">
+              <FlaskConical className="w-6 h-6 inline mr-2" />
+              Principais Fontes
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {fontesNitrogenio.map((fonte, i) => (
+                <div key={i} className="bg-white rounded-2xl p-5 text-center shadow-lg hover:shadow-xl transition-shadow">
+                  <h3 className="text-blue-700 font-bold text-sm mb-2">{fonte.nome}</h3>
+                  <p className="text-foreground text-xs mb-1">{fonte.formula}</p>
+                  <p className="text-blue-600 font-bold text-lg">{fonte.percentual}</p>
+                  <p className="text-muted-foreground text-[10px] mt-1 uppercase">{fonte.desc}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </CardContent>
+        </Card>
 
-      {/* Ciclo do Nitrogênio */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <RefreshCw className="w-4 h-4" />
-          Ciclo do Nitrogênio no Solo
-        </div>
-        <div className="bg-card rounded-xl p-6 border border-border/50 mb-5">
-          {cicloProcessos.map((processo) => (
-            <div
-              key={processo.titulo}
-              className="p-4 my-3 rounded-lg bg-background border-l-4 border-blue-500 shadow-sm"
-            >
-              <h4 className="font-semibold text-foreground mb-2">{processo.titulo}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{processo.descricao}</p>
-            </div>
-          ))}
-        </div>
-        <div className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-xl p-5">
-          <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-            <span>⚠️</span> Fontes no Solo
+        {/* Imagens de Fontes */}
+        <section>
+          <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+            <FlaskConical className="w-5 h-5 text-blue-600" />
+            Fertilizantes Nitrogenados
           </h3>
-          <ul className="space-y-2">
-            <li className="p-3 bg-card rounded-lg border-l-4 border-emerald-500 text-sm text-muted-foreground">
-              <strong className="text-foreground">Fertilizantes Nitrogenados Industriais:</strong> Principal fonte na agricultura moderna
-            </li>
-            <li className="p-3 bg-card rounded-lg border-l-4 border-emerald-500 text-sm text-muted-foreground">
-              <strong className="text-foreground">Fixação Biológica de N₂ (FBN):</strong> Através de bactérias do gênero Bradyrhizobium associadas simbioticamente às raízes de plantas leguminosas
-            </li>
-            <li className="p-3 bg-card rounded-lg border-l-4 border-emerald-500 text-sm text-muted-foreground">
-              <strong className="text-foreground">Mineralização:</strong> Transformações do N orgânico pela ação microbiana (nitrificação e desnitrificação)
-            </li>
-          </ul>
-        </div>
-      </section>
+          <ImageGrid
+            columns={4}
+            aspectRatio="square"
+            images={[
+              { title: "Ureia Granulada", description: "47% N - Mais utilizada" },
+              { title: "Nitrato de Amônio", description: "33% N - Pronta disponibilidade" },
+              { title: "Sulfato de Amônio", description: "21% N + 24% S" },
+              { title: "MAP/DAP", description: "Fontes NP combinadas" },
+            ]}
+          />
+        </section>
 
-      {/* Incorporação e Metabolismo */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <Dna className="w-4 h-4" />
-          Incorporação e Metabolismo
-        </div>
-        <div className="relative pl-10">
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-500" />
-          {timelineMetabolismo.map((item) => (
-            <div key={item.titulo} className="relative mb-8 pl-5">
-              <div className="absolute -left-[23px] top-1 w-3 h-3 bg-blue-500 rounded-full border-2 border-white shadow-sm" />
-              <h3 className="font-semibold text-foreground mb-2">{item.titulo}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-2">{item.descricao}</p>
-              {item.formula && (
-                <p className="text-sm italic text-blue-600 dark:text-blue-400 font-medium">{item.formula}</p>
-              )}
+        {/* Ciclo do Nitrogênio */}
+        <section className="space-y-6">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            <RefreshCw className="w-6 h-6 inline mr-2 text-blue-600" />
+            Ciclo do Nitrogênio no Solo
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              {cicloProcessos.map((processo, i) => (
+                <div key={i} className="bg-card rounded-xl p-5 border-l-4 border-blue-500 shadow-sm">
+                  <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                    <span className="text-2xl">{processo.icon}</span>
+                    {processo.titulo}
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{processo.descricao}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="space-y-4">
+              <ImagePlaceholder
+                title="Diagrama do Ciclo do Nitrogênio"
+                description="Transformações do N no sistema solo-planta-atmosfera"
+                aspectRatio="square"
+              />
+              <ImagePlaceholder
+                title="Nódulos de Bradyrhizobium"
+                description="Fixação biológica em raízes de soja"
+                aspectRatio="video"
+              />
+            </div>
+          </div>
+        </section>
 
-      {/* Principais Funções */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <Zap className="w-4 h-4" />
-          Principais Funções do Nitrogênio
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {funcoes.map((funcao) => (
-            <div
-              key={funcao.titulo}
-              className="p-5 rounded-xl bg-card border border-border/50 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-            >
-              <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <span>{funcao.emoji}</span> {funcao.titulo}
-              </h3>
-              <ul className="space-y-2">
-                {funcao.itens.map((item, idx) => (
-                  <li key={idx} className="text-sm text-muted-foreground pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-blue-500 before:font-bold">
-                    {item}
-                  </li>
-                ))}
+        {/* Fixação Biológica */}
+        <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-950/30 dark:to-green-950/30 p-6 rounded-2xl border-2 border-emerald-200 dark:border-emerald-800">
+          <h4 className="text-emerald-800 dark:text-emerald-300 text-xl font-bold mb-4 flex items-center gap-2">
+            <Sprout className="w-6 h-6" />
+            Fixação Biológica de Nitrogênio (FBN)
+          </h4>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-emerald-900 dark:text-emerald-100 mb-4 leading-relaxed">
+                A associação simbiótica entre bactérias do gênero <strong>Bradyrhizobium</strong> e raízes 
+                de leguminosas (soja, feijão) permite a fixação do N₂ atmosférico, podendo suprir 
+                100% da necessidade de N da cultura.
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li className="text-emerald-800 dark:text-emerald-200 flex items-start gap-2">
+                  <span className="text-emerald-500 mt-1">•</span>
+                  <span><strong>Enzima:</strong> Nitrogenase (cofatores Fe e Mo)</span>
+                </li>
+                <li className="text-emerald-800 dark:text-emerald-200 flex items-start gap-2">
+                  <span className="text-emerald-500 mt-1">•</span>
+                  <span><strong>Produto:</strong> NH₃ convertido em aminoácidos</span>
+                </li>
+                <li className="text-emerald-800 dark:text-emerald-200 flex items-start gap-2">
+                  <span className="text-emerald-500 mt-1">•</span>
+                  <span><strong>Transporte:</strong> Alantoína e ácido alantoico no xilema</span>
+                </li>
               </ul>
             </div>
-          ))}
+            <ImagePlaceholder
+              title="Simbiose Bradyrhizobium-Leguminosa"
+              description="Formação de nódulos radiculares"
+              aspectRatio="video"
+            />
+          </div>
         </div>
-      </section>
 
-      {/* Sintomas de Deficiência */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <AlertTriangle className="w-4 h-4" />
-          Sintomas de Deficiência
-        </div>
-        <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-xl p-5">
-          {sintomasDeficiencia.map((sintoma) => (
-            <div
-              key={sintoma.titulo}
-              className="p-4 my-3 bg-card rounded-lg border-l-4 border-red-500"
-            >
-              <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">{sintoma.titulo}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{sintoma.descricao}</p>
+        {/* Metabolismo */}
+        <section className="space-y-6">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            <Dna className="w-6 h-6 inline mr-2 text-blue-600" />
+            Incorporação e Metabolismo
+          </h3>
+          
+          <div className="bg-card rounded-2xl p-6 border border-border">
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/30 rounded-xl">
+                <p className="text-3xl mb-2">NO₃⁻</p>
+                <p className="text-sm text-muted-foreground">Nitrato</p>
+                <p className="text-xs text-blue-600 mt-1">Absorção ativa</p>
+              </div>
+              <div className="text-center p-4 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
+                <p className="text-3xl mb-2">→ NO₂⁻ →</p>
+                <p className="text-sm text-muted-foreground">Nitrito</p>
+                <p className="text-xs text-blue-600 mt-1">Nitrato redutase</p>
+              </div>
+              <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/30 rounded-xl">
+                <p className="text-3xl mb-2">NH₄⁺</p>
+                <p className="text-sm text-muted-foreground">Amônio</p>
+                <p className="text-xs text-blue-600 mt-1">→ Glutamato</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+            <p className="text-center text-muted-foreground text-sm">
+              O amônio reage com alfacetoglutarato formando <strong>glutamato e glutamina</strong>, 
+              precursores de todos os outros aminoácidos.
+            </p>
+          </div>
+        </section>
 
-      {/* Teores Adequados */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <BarChart3 className="w-4 h-4" />
-          Teores Adequados nas Culturas
-        </div>
-        <div className="grid sm:grid-cols-3 gap-4">
-          {teoresAdequados.map((teor) => (
-            <div
-              key={teor.cultura}
-              className="p-6 rounded-xl bg-card border-2 border-blue-200 dark:border-blue-800 text-center"
-            >
-              <h3 className="text-lg font-semibold text-foreground mb-2">{teor.cultura}</h3>
-              <p className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">{teor.valor}</p>
-              <p className="text-xs text-muted-foreground">{teor.unidade}</p>
-              <p className="text-xs text-muted-foreground mt-2">{teor.local}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Manejo e Recomendações */}
-      <section className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm border border-border/50 animate-fade-up">
-        <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wide font-medium mb-5 pb-3 border-b border-border">
-          <Lightbulb className="w-4 h-4" />
-          Manejo e Recomendações
-        </div>
-        <div className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-xl p-5">
-          <h3 className="font-semibold text-foreground mb-4">Boas Práticas de Manejo do Nitrogênio</h3>
-          <ul className="space-y-3">
-            {manejoRecomendacoes.map((rec) => (
-              <li
-                key={rec.titulo}
-                className="p-4 bg-card rounded-lg border-l-4 border-emerald-500 text-sm text-muted-foreground leading-relaxed"
-              >
-                <strong className="text-foreground">{rec.titulo}:</strong> {rec.descricao}
-              </li>
+        {/* Principais Funções */}
+        <section className="space-y-6">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            Principais Funções do Nitrogênio
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {funcoes.map((funcao, i) => (
+              <Card key={i} className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-white to-blue-50 dark:from-card dark:to-blue-950/20">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-blue-700 dark:text-blue-400 flex items-center gap-2">
+                    <span className="text-2xl">{funcao.icon}</span>
+                    {funcao.titulo}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm mb-4">{funcao.descricao}</p>
+                  <ImagePlaceholder
+                    title={`${funcao.titulo} - Ilustração`}
+                    description={`Função do N: ${funcao.titulo}`}
+                    aspectRatio="video"
+                  />
+                </CardContent>
+              </Card>
             ))}
-          </ul>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Footer */}
-      <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl p-6 text-center animate-fade-up">
-        <p className="text-zinc-400 text-sm mb-2">Nutrição de Plantas - Soja e Milho</p>
-        <h3 className="text-white font-semibold mb-2">Raudinei Afonso</h3>
-        <p className="text-zinc-500 text-xs">Baseado em informações técnicas e científicas de nutrição vegetal</p>
+        {/* Deficiência */}
+        <Card className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 border-2 border-orange-400">
+          <CardHeader>
+            <CardTitle className="text-orange-800 dark:text-orange-300 text-center text-xl flex items-center justify-center gap-2">
+              <AlertTriangle className="w-6 h-6" />
+              Sintomas de Deficiência
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-orange-900 dark:text-orange-100 mb-4 text-sm">
+                  Devido à <strong>alta mobilidade</strong> no floema, os sintomas aparecem 
+                  primeiro nas <strong>folhas velhas</strong> (redistribuição).
+                </p>
+                <ul className="space-y-3">
+                  {sintomasDeficiencia.map((item, i) => (
+                    <li key={i} className="text-orange-900 dark:text-orange-100 pl-6 relative">
+                      <span className="absolute left-0 text-orange-500 font-bold">✗</span>
+                      <span className="font-medium">{item.sintoma}</span>
+                      <p className="text-orange-700 dark:text-orange-300 text-sm">{item.detalhe}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <ImagePlaceholder
+                  title="Clorose em Folhas Velhas"
+                  description="Amarelecimento generalizado típico"
+                  aspectRatio="video"
+                />
+                <ImagePlaceholder
+                  title="Comparação: Deficiente vs Adequado"
+                  description="Diferença visual no desenvolvimento"
+                  aspectRatio="video"
+                />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Teores Adequados */}
+        <section className="bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800 p-6 rounded-2xl">
+          <h3 className="text-xl font-bold text-foreground mb-6 text-center flex items-center justify-center gap-2">
+            <BarChart3 className="w-5 h-5 text-blue-600" />
+            Teores Adequados nas Culturas
+          </h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { cultura: "Soja", valor: "40-54", unidade: "g/kg", local: "Folha trifoliolada" },
+              { cultura: "Milho", valor: "27-33", unidade: "g/kg", local: "Folha oposta à espiga" },
+              { cultura: "Trigo", valor: "20-34", unidade: "g/kg", local: "Folha bandeira" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white dark:bg-card rounded-xl p-4 text-center shadow-sm border border-blue-100 dark:border-blue-900">
+                <h4 className="font-bold text-blue-700 dark:text-blue-400 mb-2">{item.cultura}</h4>
+                <p className="text-2xl font-bold text-foreground">{item.valor}</p>
+                <p className="text-muted-foreground text-xs">{item.unidade} MS</p>
+                <p className="text-muted-foreground text-xs mt-1">{item.local}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Galeria Visual */}
+        <section>
+          <h3 className="text-xl font-bold text-foreground mb-4 text-center">
+            Galeria: Nitrogênio na Agricultura
+          </h3>
+          <ImageGrid
+            columns={3}
+            aspectRatio="video"
+            images={[
+              { title: "Aplicação de Ureia em Cobertura", description: "Adubação nitrogenada em milho" },
+              { title: "Deficiência de N em Soja", description: "Clorose em folhas basais" },
+              { title: "Inoculação de Sementes", description: "Bradyrhizobium para FBN" },
+            ]}
+          />
+        </section>
+
+        {/* Footer */}
+        <div className="bg-gradient-to-br from-blue-700 to-blue-900 text-white p-8 rounded-2xl text-center shadow-xl">
+          <p className="font-bold text-xl mb-2">GEFEN - Nutrição de Plantas</p>
+          <p className="text-blue-200 text-sm">
+            Conteúdo educacional • Imagens ilustrativas pendentes
+          </p>
+        </div>
       </div>
     </div>
   );
