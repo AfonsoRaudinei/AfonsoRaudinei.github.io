@@ -1,190 +1,314 @@
-import { Atom, Leaf, Droplets, AlertTriangle, Sun, Beaker } from "lucide-react";
+import { Droplets, AlertTriangle, Sun, Leaf, Zap, FlaskConical, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ImagePlaceholder, ImageGrid } from "./ImagePlaceholder";
 
-const MagnesioContent = () => {
-  return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="relative bg-gradient-to-br from-lime-500 to-lime-700 text-white py-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="flex items-center justify-center gap-6 mb-8">
-            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold text-lime-600">Mg</span>
-            </div>
-            <div className="bg-white px-6 py-3 rounded-xl shadow-md">
-              <h3 className="text-lime-700 text-2xl font-bold">GEFEN</h3>
-              <p className="text-muted-foreground text-sm">Nutrição de Plantas</p>
-            </div>
+const MagnesioContent = () => (
+  <div className="min-h-screen">
+    {/* Header Hero */}
+    <div className="relative bg-gradient-to-br from-lime-500 to-lime-700 text-white py-16 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
+      <div className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+      <div className="absolute bottom-10 left-10 w-24 h-24 bg-white/5 rounded-full blur-xl" />
+      
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="flex items-center justify-center gap-6 mb-8">
+          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl ring-4 ring-lime-300/30">
+            <span className="text-5xl font-bold text-lime-600">Mg</span>
           </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">Magnésio (Mg)</h1>
-          <p className="text-lg md:text-xl text-center text-white/95 max-w-3xl mx-auto leading-relaxed">
-            O magnésio é o átomo central da molécula de clorofila, sendo fundamental para a fotossíntese. 
-            Atua como cofator de inúmeras enzimas e participa do transporte de fotoassimilados.
-          </p>
+        </div>
+        <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">Magnésio (Mg)</h1>
+        <p className="text-lg text-center text-white/95 max-w-3xl mx-auto leading-relaxed">
+          Átomo central da molécula de clorofila, fundamental para a fotossíntese. 
+          Atua como cofator de mais de 300 enzimas e participa ativamente do transporte de fotoassimilados.
+        </p>
+        
+        {/* Quick Stats */}
+        <div className="grid grid-cols-3 gap-4 mt-10 max-w-2xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-white">78</p>
+            <p className="text-white/70 text-sm">kg/ha extraídos</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-white">13-18%</p>
+            <p className="text-white/70 text-sm">exportação</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <p className="text-3xl font-bold text-white">Mg²⁺</p>
+            <p className="text-white/70 text-sm">forma absorvida</p>
+          </div>
         </div>
       </div>
+    </div>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12 space-y-10">
-        
-        {/* Principais Fontes */}
-        <Card className="bg-gradient-to-br from-lime-500 to-lime-700 text-white border-0 shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl md:text-3xl text-center uppercase tracking-wide">
-              Principais Fontes
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { nome: "Calcário Dolomítico", info: "CaCO₃·MgCO₃\n10-14% Mg" },
-                { nome: "Sulfato de Magnésio", info: "MgSO₄\n9-10% Mg\n12-13% S" },
-                { nome: "Óxido de Magnésio", info: "MgO\n55-60% Mg" },
-                { nome: "Kieserita", info: "MgSO₄·H₂O\n16-18% Mg\n20% S" },
-              ].map((fonte, index) => (
-                <div 
-                  key={index}
-                  className="bg-white rounded-2xl p-4 border-3 border-lime-500 text-center hover:-translate-y-1 transition-transform shadow-md"
-                >
-                  <h3 className="text-lime-700 font-bold text-sm mb-2 min-h-[40px] flex items-center justify-center">
-                    {fonte.nome}
-                  </h3>
-                  <p className="text-foreground text-xs whitespace-pre-line leading-relaxed">{fonte.info}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+    <div className="max-w-5xl mx-auto px-6 py-12 space-y-12">
+      
+      {/* Principais Fontes */}
+      <Card className="bg-gradient-to-br from-lime-500 to-lime-700 text-white border-0 shadow-xl overflow-hidden">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-2xl text-center uppercase tracking-wider">
+            <FlaskConical className="w-6 h-6 inline mr-2" />
+            Principais Fontes
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pt-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { nome: "Calcário Dolomítico", info: "CaCO₃·MgCO₃\n10-14% Mg", desc: "+Cálcio" },
+              { nome: "Sulfato de Magnésio", info: "MgSO₄\n9-10% Mg", desc: "+Enxofre" },
+              { nome: "Óxido de Magnésio", info: "MgO\n55-60% Mg", desc: "Alta concentração" },
+              { nome: "Kieserita", info: "MgSO₄·H₂O\n16-18% Mg", desc: "Solúvel" }
+            ].map((f, i) => (
+              <div key={i} className="bg-white rounded-2xl p-5 text-center shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="text-lime-700 font-bold text-sm mb-2">{f.nome}</h3>
+                <p className="text-foreground text-xs whitespace-pre-line font-medium">{f.info}</p>
+                <p className="text-muted-foreground text-[10px] mt-2 uppercase tracking-wide">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
-        {/* No Solo */}
-        <section>
-          <h2 className="bg-gradient-to-r from-lime-500 to-lime-700 text-white py-5 px-6 rounded-xl text-2xl font-bold text-center mb-6">
-            No Solo
-          </h2>
-          
-          <div className="bg-gradient-to-br from-lime-50 to-lime-100 border-l-4 border-lime-500 p-6 rounded-lg mb-6">
-            <h4 className="text-lime-800 text-lg font-bold mb-3 flex items-center gap-2">
-              <Droplets className="w-5 h-5" />
-              Dinâmica e Disponibilidade
-            </h4>
-            <p className="text-lime-900 leading-relaxed mb-4">
+      {/* Imagens de Fontes */}
+      <section>
+        <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+          <FlaskConical className="w-5 h-5 text-lime-600" />
+          Fertilizantes com Magnésio
+        </h3>
+        <ImageGrid
+          columns={4}
+          aspectRatio="square"
+          images={[
+            { title: "Calcário Dolomítico", description: "Grânulos acinzentados" },
+            { title: "Sulfato de Magnésio", description: "Cristais brancos (Epsom)" },
+            { title: "Óxido de Magnésio", description: "Pó branco fino" },
+            { title: "Kieserita", description: "Grânulos rosados" },
+          ]}
+        />
+      </section>
+
+      {/* No Solo */}
+      <div className="bg-gradient-to-br from-lime-50 to-green-50 dark:from-lime-950/30 dark:to-green-950/30 border-l-4 border-lime-500 p-6 rounded-lg shadow-md">
+        <h4 className="text-lime-800 dark:text-lime-300 text-xl font-bold mb-4 flex items-center gap-2">
+          <Droplets className="w-6 h-6" />
+          Dinâmica no Solo
+        </h4>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <p className="text-lime-900 dark:text-lime-100 mb-4 leading-relaxed">
               O magnésio é absorvido como Mg²⁺ e sua disponibilidade é influenciada pelo pH, 
               teores de K e Ca, e CTC do solo. Solos com alta saturação por bases geralmente 
               apresentam bons teores de Mg.
             </p>
-            <ul className="space-y-2">
-              <li className="text-lime-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-lime-500 before:text-xl">
-                <strong>Extração em soja:</strong> até 78 kg/ha de Mg em alta produtividade
+            <ul className="space-y-2 text-sm">
+              <li className="text-lime-800 dark:text-lime-200 flex items-start gap-2">
+                <span className="text-lime-500 mt-1">•</span>
+                <span><strong>Extração em soja:</strong> Até 78 kg/ha em alta produtividade</span>
               </li>
-              <li className="text-lime-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-lime-500 before:text-xl">
-                <strong>Exportação:</strong> 13-18% do Mg extraído vai para os grãos
+              <li className="text-lime-800 dark:text-lime-200 flex items-start gap-2">
+                <span className="text-lime-500 mt-1">•</span>
+                <span><strong>Exportação:</strong> 13-18% do Mg vai para os grãos</span>
               </li>
-              <li className="text-lime-900 pl-6 relative before:content-['▪'] before:absolute before:left-0 before:text-lime-500 before:text-xl">
-                <strong>Mobilidade:</strong> móvel no floema, redistribuído de folhas velhas para novas
+              <li className="text-lime-800 dark:text-lime-200 flex items-start gap-2">
+                <span className="text-lime-500 mt-1">•</span>
+                <span><strong>Mobilidade:</strong> Móvel no floema, redistribui na planta</span>
               </li>
             </ul>
           </div>
-        </section>
+          <ImagePlaceholder
+            title="Análise de Solo"
+            description="Avaliação de teores de Mg trocável"
+            aspectRatio="video"
+          />
+        </div>
+      </div>
 
-        {/* Principais Funções */}
-        <section>
-          <h2 className="bg-gradient-to-r from-lime-500 to-lime-700 text-white py-5 px-6 rounded-xl text-2xl font-bold text-center mb-6">
-            Principais Funções
-          </h2>
-
-          {/* Clorofila - Destaque */}
-          <Card className="bg-gradient-to-br from-lime-50 to-lime-100 border-2 border-lime-500 mb-6">
-            <CardHeader>
-              <CardTitle className="text-lime-800 text-center flex items-center justify-center gap-2">
-                <Sun className="w-6 h-6" />
-                Componente Central da Clorofila
+      {/* Principais Funções */}
+      <section className="space-y-6">
+        <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+          Principais Funções do Magnésio na Planta
+        </h3>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="border-lime-200 dark:border-lime-800 bg-gradient-to-br from-white to-lime-50 dark:from-card dark:to-lime-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lime-700 dark:text-lime-400 flex items-center gap-2">
+                <Sun className="w-5 h-5" />
+                Centro da Clorofila
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex justify-center mb-4">
-                <div className="bg-lime-200 p-6 rounded-full">
-                  <div className="text-6xl">🌿</div>
-                </div>
-              </div>
-              <p className="text-lime-900 text-center leading-relaxed">
-                O magnésio é o átomo central da molécula de clorofila, sendo diretamente responsável 
-                pela captação de luz na fotossíntese. Cerca de <strong>15-20% do Mg total da planta</strong> está 
-                presente na clorofila, conferindo a cor verde característica às folhas.
+              <p className="text-muted-foreground text-sm mb-4">
+                O magnésio é o átomo central da molécula de clorofila, sendo indispensável 
+                para a captação de luz e conversão em energia química durante a fotossíntese.
               </p>
+              <ImagePlaceholder
+                title="Molécula de Clorofila"
+                description="Mg²⁺ no centro do anel porfirínico"
+                aspectRatio="video"
+              />
             </CardContent>
           </Card>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-gradient-to-br from-lime-50 to-lime-100 border-2 border-lime-500">
-              <CardHeader>
-                <CardTitle className="text-lime-800 text-center flex items-center justify-center gap-2">
-                  <Beaker className="w-5 h-5" />
-                  Ativação Enzimática
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lime-900">
-                  Cofator essencial de enzimas envolvidas na síntese de proteínas, 
-                  ácidos nucleicos, ATP e fixação de CO₂ (RuBisCO).
-                </p>
-              </CardContent>
-            </Card>
 
-            <Card className="bg-gradient-to-br from-lime-50 to-lime-100 border-2 border-lime-500">
-              <CardHeader>
-                <CardTitle className="text-lime-800 text-center">Transporte de Açúcares</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lime-900">
-                  Participa ativamente do carregamento de sacarose no floema e 
-                  do transporte de fotoassimilados da fonte para o dreno.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+          <Card className="border-lime-200 dark:border-lime-800 bg-gradient-to-br from-white to-lime-50 dark:from-card dark:to-lime-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lime-700 dark:text-lime-400 flex items-center gap-2">
+                <Zap className="w-5 h-5" />
+                Ativação Enzimática
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Cofator de mais de 300 enzimas, especialmente aquelas envolvidas na 
+                transferência de grupos fosfato (fosforilações) e metabolismo energético.
+              </p>
+              <ImagePlaceholder
+                title="Complexo Mg-ATP"
+                description="Ativação de quinases"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
 
-        {/* Deficiência */}
-        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-500">
-          <CardHeader>
-            <CardTitle className="text-orange-800 text-center flex items-center justify-center gap-2">
-              <AlertTriangle className="w-6 h-6" />
-              Sintomas de Deficiência
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 mb-6">
-              {[
-                "Clorose internerval em folhas velhas (nervuras permanecem verdes)",
-                "Coloração amarelada, bronzeada ou avermelhada entre nervuras",
-                "Necrose das bordas das folhas em estágios avançados",
-                "Redução do crescimento e perfilhamento",
-                "Menor enchimento de grãos e qualidade de frutos",
-                "Acúmulo de amido nas folhas (bloqueio do transporte)",
-              ].map((item, index) => (
-                <li key={index} className="text-orange-900 pl-6 relative before:content-['✗'] before:absolute before:left-0 before:text-orange-600 before:font-bold">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-center text-lg font-bold text-orange-800">
-              ⚠ Sintomas em folhas velhas devido à alta mobilidade do Mg!
-            </p>
-          </CardContent>
-        </Card>
+          <Card className="border-lime-200 dark:border-lime-800 bg-gradient-to-br from-white to-lime-50 dark:from-card dark:to-lime-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lime-700 dark:text-lime-400 flex items-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                Transporte de Açúcares
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Essencial para o carregamento e transporte de sacarose pelo floema, 
+                distribuindo fotoassimilados das folhas para os órgãos de reserva.
+              </p>
+              <ImagePlaceholder
+                title="Floema e Transporte"
+                description="Distribuição de sacarose"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
 
-        {/* Footer */}
-        <div className="bg-gradient-to-br from-lime-700 to-lime-900 text-white p-8 rounded-2xl text-center">
-          <p className="mb-2">Material desenvolvido para fins educacionais</p>
-          <p className="font-bold text-lg">GEFEN - Nutrição de Plantas</p>
-          <p className="text-sm mt-3 text-white/80">© 2024 Nutrição de Plantas</p>
+          <Card className="border-lime-200 dark:border-lime-800 bg-gradient-to-br from-white to-lime-50 dark:from-card dark:to-lime-950/20">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lime-700 dark:text-lime-400 flex items-center gap-2">
+                <Leaf className="w-5 h-5" />
+                Síntese Proteica
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm mb-4">
+                Necessário para a agregação das subunidades ribossomais, 
+                sendo essencial para a síntese de proteínas nas células vegetais.
+              </p>
+              <ImagePlaceholder
+                title="Ribossomos"
+                description="Agregação 50S + 30S"
+                aspectRatio="video"
+              />
+            </CardContent>
+          </Card>
         </div>
+      </section>
+
+      {/* Deficiência */}
+      <Card className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 border-2 border-orange-400">
+        <CardHeader>
+          <CardTitle className="text-orange-800 dark:text-orange-300 text-center text-xl flex items-center justify-center gap-2">
+            <AlertTriangle className="w-6 h-6" />
+            Sintomas de Deficiência
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-orange-900 dark:text-orange-100 mb-4 text-sm leading-relaxed">
+                Por ser móvel no floema, os sintomas aparecem primeiro nas folhas velhas, 
+                que cedem Mg para as folhas jovens em crescimento.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { sintoma: "Clorose internerval em folhas velhas", detalhe: "Nervuras permanecem verdes" },
+                  { sintoma: "Manchas necróticas avançadas", detalhe: "Tecido morre entre as nervuras" },
+                  { sintoma: "Avermelhamento em algumas espécies", detalhe: "Acúmulo de antocianinas" },
+                  { sintoma: "Queda prematura de folhas", detalhe: "Em casos severos" }
+                ].map((item, i) => (
+                  <li key={i} className="text-orange-900 dark:text-orange-100 pl-6 relative">
+                    <span className="absolute left-0 text-orange-500 font-bold">✗</span>
+                    <span className="font-medium">{item.sintoma}</span>
+                    <p className="text-orange-700 dark:text-orange-300 text-sm ml-0">{item.detalhe}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <ImagePlaceholder
+                title="Clorose Internerval"
+                description="Folhas velhas amareladas"
+                aspectRatio="video"
+              />
+              <ImagePlaceholder
+                title="Deficiência Avançada"
+                description="Necrose entre nervuras"
+                aspectRatio="video"
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Interações e Antagonismos */}
+      <section className="bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800 p-6 rounded-2xl">
+        <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+          Interações Nutricionais do Magnésio
+        </h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-white dark:bg-card rounded-xl p-4 shadow-sm border border-lime-100 dark:border-lime-900">
+            <h4 className="font-bold text-lime-700 dark:text-lime-400 mb-2">Antagonismo K/Mg</h4>
+            <p className="text-muted-foreground text-sm">
+              Excesso de potássio é a principal causa de deficiência induzida de magnésio.
+            </p>
+          </div>
+          <div className="bg-white dark:bg-card rounded-xl p-4 shadow-sm border border-lime-100 dark:border-lime-900">
+            <h4 className="font-bold text-lime-700 dark:text-lime-400 mb-2">Antagonismo Ca/Mg</h4>
+            <p className="text-muted-foreground text-sm">
+              Excesso de cálcio pode inibir absorção de Mg. Manter relação Ca:Mg adequada (3:1 a 5:1).
+            </p>
+          </div>
+          <div className="bg-white dark:bg-card rounded-xl p-4 shadow-sm border border-lime-100 dark:border-lime-900">
+            <h4 className="font-bold text-lime-700 dark:text-lime-400 mb-2">Sinergismo Mg/P</h4>
+            <p className="text-muted-foreground text-sm">
+              Magnésio facilita o transporte de fósforo dentro da planta, otimizando seu uso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria Visual */}
+      <section>
+        <h3 className="text-xl font-bold text-foreground mb-4 text-center">
+          Galeria: Magnésio na Agricultura
+        </h3>
+        <ImageGrid
+          columns={3}
+          aspectRatio="video"
+          images={[
+            { title: "Aplicação de Dolomítico", description: "Correção com Mg" },
+            { title: "Deficiência em Soja", description: "Clorose típica" },
+            { title: "Foliar de MgSO₄", description: "Correção rápida" },
+          ]}
+        />
+      </section>
+
+      {/* Footer */}
+      <div className="bg-gradient-to-br from-lime-700 to-lime-900 text-white p-8 rounded-2xl text-center shadow-xl">
+        <p className="font-bold text-xl mb-2">GEFEN - Nutrição de Plantas</p>
+        <p className="text-lime-200 text-sm">
+          Conteúdo educacional • Imagens ilustrativas pendentes
+        </p>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default MagnesioContent;
