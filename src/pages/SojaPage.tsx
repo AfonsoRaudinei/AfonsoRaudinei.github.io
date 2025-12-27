@@ -1,23 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Sprout, Calendar, Droplets, Bug, FlaskConical } from "lucide-react";
+import { ArrowLeft, Sprout, Calendar, Droplets, Bug } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import EstadioCarousel from "@/components/soja/EstadioCarousel";
-import EstadioInfoPanel from "@/components/soja/EstadioInfoPanel";
-import HormoniosCarousel from "@/components/soja/HormoniosCarousel";
-import { estadiosSoja, phaseColors } from "@/data/estadiosSoja";
+import SojaNavigation from "@/components/soja/SojaNavigation";
+import CalendarioTab from "@/components/soja/CalendarioTab";
+import HormoniosTab from "@/components/soja/HormoniosTab";
 
 const SojaPage = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState("calendario");
+  const [selectedEstadioIndex, setSelectedEstadioIndex] = useState(0);
   const [selectedHormonioIndex, setSelectedHormonioIndex] = useState(0);
-  const selectedEstadio = estadiosSoja[selectedIndex];
-
-  const phases = Object.entries(phaseColors).map(([key, value]) => ({
-    key,
-    ...value
-  }));
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,77 +75,23 @@ const SojaPage = () => {
           </div>
         </section>
 
-        {/* Phase Legend */}
-        <section className="py-6 px-4 bg-secondary/30 border-y border-border/50">
-          <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-wrap justify-center gap-3 md:gap-6">
-              {phases.map((phase) => (
-                <div
-                  key={phase.key}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full ${phase.bg} ${phase.text} text-sm font-medium`}
-                >
-                  <span className={`w-3 h-3 rounded-full bg-gradient-to-r ${phase.gradient}`} />
-                  {phase.label}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Tab Navigation */}
+        <SojaNavigation activeTab={activeTab} onTabChange={setActiveTab} />
 
-        {/* Calendar Section */}
-        <section className="py-12 md:py-16 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-8">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Estádios Fenológicos
-              </h2>
-              <p className="text-muted-foreground">
-                Clique em um estádio para ver informações detalhadas sobre doenças, pragas e nutrição
-              </p>
-            </div>
+        {/* Tab Content */}
+        {activeTab === "calendario" && (
+          <CalendarioTab
+            selectedIndex={selectedEstadioIndex}
+            onSelect={setSelectedEstadioIndex}
+          />
+        )}
 
-            {/* Carousel */}
-            <EstadioCarousel
-              selectedIndex={selectedIndex}
-              onSelect={setSelectedIndex}
-            />
-
-            {/* Info Panel */}
-            <div className="mt-8 md:mt-12">
-              <EstadioInfoPanel estadio={selectedEstadio} />
-            </div>
-          </div>
-        </section>
-
-        {/* Hormônios Vegetais Section */}
-        <section className="py-12 md:py-16 px-4 bg-gradient-to-br from-purple-50/50 to-blue-50/50 dark:from-purple-950/20 dark:to-blue-950/20">
-          <div className="container mx-auto max-w-6xl">
-            {/* Resumo Executivo */}
-            <div className="bg-card/95 backdrop-blur rounded-3xl p-6 md:p-8 shadow-xl border border-border/50 mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <FlaskConical className="w-8 h-8 text-primary" />
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-                  Hormônios Vegetais e Micronutrientes
-                </h2>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-justify">
-                A performance produtiva da soja (<em>Glycine max</em>) resulta da interação sincronizada entre{" "}
-                <strong className="text-foreground">regulação hormonal</strong> e{" "}
-                <strong className="text-foreground">disponibilidade de micronutrientes</strong> ao longo dos estádios fenológicos. 
-                Este relatório consolida evidências científicas sobre a atuação coordenada de{" "}
-                <strong className="text-foreground">cinco classes hormonais</strong> (auxinas, citocininas, giberelinas, etileno e ácido abscísico) 
-                e <strong className="text-foreground">oito micronutrientes essenciais</strong> (Fe, Zn, Mn, Cu, B, Mo, Co, Ni) durante as fases 
-                vegetativas (VE a VN) e reprodutivas (R1 a R8).
-              </p>
-            </div>
-
-            {/* Carousel de Hormônios */}
-            <HormoniosCarousel
-              selectedIndex={selectedHormonioIndex}
-              onSelect={setSelectedHormonioIndex}
-            />
-          </div>
-        </section>
+        {activeTab === "hormonios" && (
+          <HormoniosTab
+            selectedIndex={selectedHormonioIndex}
+            onSelect={setSelectedHormonioIndex}
+          />
+        )}
       </main>
 
       <Footer />
