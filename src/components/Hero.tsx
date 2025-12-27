@@ -35,6 +35,13 @@ const Hero = () => {
               <p className="text-sm text-muted-foreground">
                 Engenheiro Agrônomo · Fertilidade do Solo & Nutrição de Plantas
               </p>
+              <Link 
+                to="/jornada-profissional" 
+                className="inline-flex items-center gap-1 text-sm font-bold text-foreground hover:text-primary transition-colors mt-1"
+              >
+                Jornada Profissional
+                <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
             
             {/* Social Icons */}
