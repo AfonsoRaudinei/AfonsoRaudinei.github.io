@@ -77,6 +77,7 @@ const SpecialtyCards = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {specialties.map((specialty, index) => {
             const isNutrientes = specialty.title === "NUTRIENTES";
+            const isSoja = specialty.title === "SOJA";
             const cardClassName = `group soft-card overflow-hidden hover-lift animate-fade-up ${specialty.bgImage}`;
             
             const cardContent = (
@@ -119,6 +120,19 @@ const SpecialtyCards = () => {
                 <Link
                   key={specialty.title}
                   to="/nutrientes"
+                  className={cardClassName}
+                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+
+            if (isSoja) {
+              return (
+                <Link
+                  key={specialty.title}
+                  to="/soja"
                   className={cardClassName}
                   style={{ animationDelay: `${(index + 1) * 100}ms` }}
                 >
