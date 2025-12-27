@@ -1,4 +1,5 @@
-import { MessageCircle, Linkedin, Mail, Instagram } from "lucide-react";
+import { MessageCircle, Linkedin, Mail, Instagram, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const whatsappLink = "https://wa.me/5562999999999?text=Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.";
@@ -35,6 +36,13 @@ const Header = () => {
           <p className="text-xs text-blue-700/80">
             Engenheiro Agrônomo · Fertilidade do Solo & Nutrição de Plantas
           </p>
+          <Link 
+            to="/jornada-profissional" 
+            className="inline-flex items-center gap-1 text-xs font-bold text-blue-900 hover:text-blue-700 transition-colors"
+          >
+            Jornada Profissional
+            <ArrowRight className="w-3 h-3" />
+          </Link>
         </div>
 
         {/* Right - Social Icons + WhatsApp */}

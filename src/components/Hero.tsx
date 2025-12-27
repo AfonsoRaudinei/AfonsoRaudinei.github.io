@@ -1,6 +1,5 @@
-import { Search, ArrowRight, Linkedin, Mail, Instagram, MessageCircle } from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,64 +21,6 @@ const Hero = () => {
       <div className="absolute bottom-32 left-[25%] w-10 h-10 bg-primary/10 rounded-lg rotate-45 animate-float delay-300" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Professional Header - Clean & Simple */}
-        <div className="mb-8 animate-fade-up">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 px-6 py-4 bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50">
-            <div className="text-left">
-              <Link 
-                to="/jornada-profissional" 
-                className="text-xl sm:text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
-              >
-                Raudinei Afonso
-              </Link>
-              <p className="text-sm text-muted-foreground">
-                Engenheiro Agrônomo · Fertilidade do Solo & Nutrição de Plantas
-              </p>
-              <Link 
-                to="/jornada-profissional" 
-                className="inline-flex items-center gap-1 text-sm font-bold text-foreground hover:text-primary transition-colors mt-1"
-              >
-                Jornada Profissional
-                <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-            
-            {/* Social Icons */}
-            <div className="flex items-center gap-2">
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a 
-                href="mailto:contato@email.com"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://wa.me/5562999999999" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white hover:bg-green-600 transition-colors"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Main Title */}
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up delay-100">
           <span className="gradient-text-blue">Fertilidade do Solo</span>
