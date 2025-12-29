@@ -20,11 +20,11 @@ const Hero = () => {
               <div className="absolute -inset-8 bg-gradient-to-br from-emerald-400/40 via-green-500/30 to-teal-400/40 rounded-full blur-2xl animate-pulse" />
               
               {/* Offset decorative shapes - creates depth */}
-              <div className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] bg-gradient-to-br from-green-400/60 to-emerald-500/40 rounded-full transform rotate-6" />
-              <div className="absolute -top-4 -left-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] bg-gradient-to-tr from-emerald-500/50 to-teal-400/30 rounded-full transform -rotate-3" />
+              <div className="absolute -top-8 -left-8 w-[calc(100%+4rem)] h-[calc(100%+4rem)] bg-gradient-to-br from-green-300/40 to-emerald-400/20 rounded-full transform rotate-6" />
+              <div className="absolute -top-5 -left-5 w-[calc(100%+2.5rem)] h-[calc(100%+2.5rem)] bg-gradient-to-tr from-emerald-400/35 to-teal-300/20 rounded-full transform -rotate-3" />
               
-              {/* Gradient border ring */}
-              <div className="relative p-1 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full shadow-2xl shadow-green-500/30">
+              {/* Gradient border ring - thicker and more vibrant */}
+              <div className="relative p-1.5 bg-gradient-to-br from-green-400 via-emerald-500 via-50% to-teal-400 rounded-full shadow-2xl shadow-emerald-500/40">
                 {/* Inner subtle ring for depth */}
                 <div className="p-0.5 bg-gradient-to-tr from-white/20 to-transparent rounded-full">
                   {/* Photo container - circular */}
