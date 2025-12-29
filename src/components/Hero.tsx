@@ -17,35 +17,40 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
             <div className="relative">
               {/* Animated gradient blob behind */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/40 via-green-500/30 to-teal-400/40 rounded-[2rem] blur-2xl animate-pulse" />
+              <div className="absolute -inset-8 bg-gradient-to-br from-emerald-400/40 via-green-500/30 to-teal-400/40 rounded-full blur-2xl animate-pulse" />
               
-              {/* Offset decorative shape - creates depth */}
-              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl transform rotate-3 opacity-80" />
-              <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-2xl transform -rotate-2 opacity-60" />
+              {/* Offset decorative shapes - creates depth */}
+              <div className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] bg-gradient-to-br from-green-400/60 to-emerald-500/40 rounded-full transform rotate-6" />
+              <div className="absolute -top-4 -left-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] bg-gradient-to-tr from-emerald-500/50 to-teal-400/30 rounded-full transform -rotate-3" />
               
-              {/* Main photo container */}
-              <div className="relative w-64 sm:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-2xl shadow-green-500/30 transform hover:scale-[1.02] transition-transform duration-500">
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 via-transparent to-transparent z-10" />
-                <img 
-                  src={raudineiFoto} 
-                  alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
-                  className="w-full h-auto object-cover"
-                />
+              {/* Gradient border ring */}
+              <div className="relative p-1 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full shadow-2xl shadow-green-500/30">
+                {/* Inner subtle ring for depth */}
+                <div className="p-0.5 bg-gradient-to-tr from-white/20 to-transparent rounded-full">
+                  {/* Photo container - circular */}
+                  <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden">
+                    <img 
+                      src={raudineiFoto} 
+                      alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
+                      className="w-full h-full object-cover object-top scale-110"
+                    />
+                  </div>
+                </div>
               </div>
               
               {/* Decorative dots pattern */}
-              <div className="absolute -right-6 top-1/4 flex flex-col gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse delay-100" />
-                <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse delay-200" />
+              <div className="absolute -right-8 top-1/4 flex flex-col gap-2 z-20">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shadow-lg shadow-green-400/50" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse delay-100 shadow-lg shadow-emerald-500/50" />
+                <div className="w-2.5 h-2.5 rounded-full bg-teal-400 animate-pulse delay-200 shadow-lg shadow-teal-400/50" />
               </div>
               
-              {/* Decorative line accent */}
-              <div className="absolute -left-8 bottom-1/3 w-12 h-1 bg-gradient-to-r from-green-400 to-transparent rounded-full" />
+              {/* Decorative line accents */}
+              <div className="absolute -left-10 bottom-1/3 w-14 h-1 bg-gradient-to-r from-green-400 to-transparent rounded-full z-20" />
+              <div className="absolute -left-6 bottom-1/3 mt-3 w-8 h-0.5 bg-gradient-to-r from-emerald-500/60 to-transparent rounded-full z-20" style={{ marginTop: '12px' }} />
               
               {/* Floating badge */}
-              <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
+              <div className="absolute -bottom-2 right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
                 <Award className="w-4 h-4" />
                 <span>15+ Anos</span>
               </div>
