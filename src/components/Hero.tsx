@@ -83,16 +83,7 @@ const Hero = () => {
             </div>
 
             {/* Mini credentials */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-4 text-sm text-muted-foreground animate-fade-up delay-400">
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-primary" />
-                <span>500+ Produtores</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>Brasil Central</span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
