@@ -1,4 +1,4 @@
-import { MessageCircle, Award, Users, MapPin } from "lucide-react";
+import { MessageCircle, Award, Users, MapPin, Leaf } from "lucide-react";
 import { Button } from "./ui/button";
 import raudineiFoto from "@/assets/raudinei-foto.png";
 
@@ -16,22 +16,50 @@ const Hero = () => {
           {/* Photo Section */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
             <div className="relative">
-              {/* Decorative ring */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl" />
+              {/* Outer glow */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-green-400/30 via-emerald-500/20 to-green-600/30 rounded-full blur-3xl animate-pulse" />
               
-              {/* Photo container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-background shadow-2xl">
-                <img 
-                  src={raudineiFoto} 
-                  alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
-                  className="w-full h-full object-cover object-center"
-                />
+              {/* Decorative leaves - top right */}
+              <div className="absolute -top-6 -right-4 z-20">
+                <Leaf className="w-12 h-12 text-green-500 rotate-45 drop-shadow-lg" strokeWidth={1.5} />
+                <Leaf className="w-8 h-8 text-emerald-400 rotate-[70deg] -mt-4 ml-6 drop-shadow-lg" strokeWidth={1.5} />
+              </div>
+              
+              {/* Decorative leaves - bottom left */}
+              <div className="absolute -bottom-4 -left-6 z-20">
+                <Leaf className="w-10 h-10 text-green-600 -rotate-45 drop-shadow-lg" strokeWidth={1.5} />
+                <Leaf className="w-7 h-7 text-emerald-500 -rotate-[20deg] -mt-2 ml-8 drop-shadow-lg" strokeWidth={1.5} />
+              </div>
+              
+              {/* Decorative leaves - top left small */}
+              <div className="absolute top-8 -left-8 z-20">
+                <Leaf className="w-6 h-6 text-green-400 -rotate-[120deg] drop-shadow-lg" strokeWidth={1.5} />
+              </div>
+              
+              {/* Green gradient ring border */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full p-1.5 bg-gradient-to-br from-green-400 via-emerald-500 to-green-600 shadow-2xl shadow-green-500/30">
+                {/* Inner gradient ring */}
+                <div className="w-full h-full rounded-full p-1 bg-gradient-to-tr from-green-300 via-emerald-400 to-green-500">
+                  {/* Photo container */}
+                  <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                    <img 
+                      src={raudineiFoto} 
+                      alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
+                      className="w-full h-full object-cover object-top scale-110"
+                    />
+                  </div>
+                </div>
               </div>
               
               {/* Floating badge */}
-              <div className="absolute -bottom-2 -right-2 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium">
+              <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
                 <Award className="w-4 h-4" />
                 <span>15+ Anos</span>
+              </div>
+              
+              {/* Small floating leaf accent */}
+              <div className="absolute top-1/2 -right-10 z-20 hidden lg:block">
+                <Leaf className="w-5 h-5 text-green-500 rotate-90 animate-float drop-shadow-lg" strokeWidth={1.5} />
               </div>
             </div>
           </div>
