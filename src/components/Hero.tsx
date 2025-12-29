@@ -1,7 +1,6 @@
 import { MessageCircle, Award, Users, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import raudineiFoto from "@/assets/raudinei-foto.png";
-import leafDecoration from "@/assets/leaf-decoration.png";
 
 const Hero = () => {
   const whatsappLink = `https://wa.me/5562999999999?text=${encodeURIComponent("Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.")}`;
@@ -18,64 +17,22 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
             <div className="relative">
               {/* Soft green glow behind photo */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-green-400/20 via-emerald-500/15 to-green-600/20 rounded-full blur-3xl" />
+              <div className="absolute -inset-8 bg-gradient-to-br from-green-400/20 via-emerald-500/15 to-green-600/20 rounded-3xl blur-3xl" />
               
-              {/* Real decorative leaf - top right (large) */}
-              <img 
-                src={leafDecoration} 
-                alt="" 
-                className="absolute -top-8 -right-6 w-20 h-20 z-20 animate-sway drop-shadow-xl rotate-[30deg] origin-bottom-left"
-              />
-              
-              {/* Real decorative leaf - top right (small) */}
-              <img 
-                src={leafDecoration} 
-                alt="" 
-                className="absolute top-4 -right-12 w-12 h-12 z-20 animate-sway-reverse drop-shadow-lg rotate-[60deg] origin-bottom-left opacity-80"
-              />
-              
-              {/* Real decorative leaf - bottom left (medium) */}
-              <img 
-                src={leafDecoration} 
-                alt="" 
-                className="absolute -bottom-6 -left-8 w-16 h-16 z-20 animate-sway-reverse drop-shadow-xl -rotate-[140deg] scale-x-[-1] origin-top-right"
-              />
-              
-              {/* Real decorative leaf - bottom left (small) */}
-              <img 
-                src={leafDecoration} 
-                alt="" 
-                className="absolute bottom-8 -left-10 w-10 h-10 z-20 animate-sway drop-shadow-lg -rotate-[100deg] scale-x-[-1] origin-top-right opacity-75"
-              />
-              
-              {/* Real decorative leaf - top left (accent) */}
-              <img 
-                src={leafDecoration} 
-                alt="" 
-                className="absolute top-2 -left-6 w-10 h-10 z-20 animate-sway drop-shadow-lg -rotate-[60deg] origin-bottom-right opacity-70"
-              />
-              
-              {/* Photo container - NO BORDER, clean with shadow */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl shadow-green-500/20">
+              {/* Photo container - rounded corners, no circle */}
+              <div className="relative w-64 sm:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20">
                 <img 
                   src={raudineiFoto} 
                   alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
-                  className="w-full h-full object-cover object-top scale-110"
+                  className="w-full h-auto object-cover"
                 />
               </div>
               
               {/* Floating badge */}
-              <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
+              <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
                 <Award className="w-4 h-4" />
                 <span>15+ Anos</span>
               </div>
-              
-              {/* Small floating leaf accent - right side */}
-              <img 
-                src={leafDecoration} 
-                alt="" 
-                className="absolute top-1/2 -right-14 w-8 h-8 z-20 hidden lg:block animate-float drop-shadow-lg rotate-[80deg] opacity-60"
-              />
             </div>
           </div>
 
