@@ -1,12 +1,9 @@
 import { MessageCircle, Award, Users, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import raudineiFoto from "@/assets/raudinei-foto.png";
-
 const Hero = () => {
   const whatsappLink = `https://wa.me/5563984376572?text=${encodeURIComponent("Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.")}`;
-
-  return (
-    <section className="relative min-h-[85vh] flex items-center px-4 pt-24 pb-16 overflow-hidden">
+  return <section className="relative min-h-[85vh] flex items-center px-4 pt-24 pb-16 overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-primary/5" />
       
@@ -29,11 +26,7 @@ const Hero = () => {
                 <div className="p-0.5 bg-gradient-to-tr from-white/20 to-transparent rounded-full">
                   {/* Photo container - circular */}
                   <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden">
-                    <img 
-                      src={raudineiFoto} 
-                      alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
-                      className="w-full h-full object-cover object-top scale-110"
-                    />
+                    <img src={raudineiFoto} alt="Raudinei Afonso - Especialista em Fertilidade do Solo" className="w-full h-full object-cover object-top scale-110" />
                   </div>
                 </div>
               </div>
@@ -47,7 +40,9 @@ const Hero = () => {
               
               {/* Decorative line accents */}
               <div className="absolute -left-10 bottom-1/3 w-14 h-1 bg-gradient-to-r from-green-400 to-transparent rounded-full z-20" />
-              <div className="absolute -left-6 bottom-1/3 mt-3 w-8 h-0.5 bg-gradient-to-r from-emerald-500/60 to-transparent rounded-full z-20" style={{ marginTop: '12px' }} />
+              <div className="absolute -left-6 bottom-1/3 mt-3 w-8 h-0.5 bg-gradient-to-r from-emerald-500/60 to-transparent rounded-full z-20" style={{
+              marginTop: '12px'
+            }} />
               
               {/* Floating badge */}
               <div className="absolute -bottom-2 right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
@@ -60,10 +55,7 @@ const Hero = () => {
           {/* Content Section */}
           <div className="text-center lg:text-left order-2 lg:order-2 space-y-6">
             {/* Name tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/50 rounded-full text-sm text-muted-foreground animate-fade-up">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Raudinei Afonso
-            </div>
+            
 
             {/* Main Title */}
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-up delay-100">
@@ -82,11 +74,7 @@ const Hero = () => {
 
             {/* CTA Button */}
             <div className="animate-fade-up delay-300">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-[#25D366] hover:bg-[#20BD5A] text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
+              <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#20BD5A] text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Fale Comigo no WhatsApp
@@ -108,8 +96,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
