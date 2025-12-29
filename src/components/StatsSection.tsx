@@ -17,10 +17,6 @@ const stats = [{
   label: "Região de Atuação"
 }];
 const StatsSection = () => {
-  return <section className="py-16 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-4xl">
-        
-      </div>
-    </section>;
+  return;
 };
 export default StatsSection;
