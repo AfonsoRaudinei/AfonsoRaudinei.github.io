@@ -16,17 +16,33 @@ const Hero = () => {
           {/* Photo Section */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
             <div className="relative">
-              {/* Soft green glow behind photo */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-green-400/20 via-emerald-500/15 to-green-600/20 rounded-3xl blur-3xl" />
+              {/* Animated gradient blob behind */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/40 via-green-500/30 to-teal-400/40 rounded-[2rem] blur-2xl animate-pulse" />
               
-              {/* Photo container - rounded corners, no circle */}
-              <div className="relative w-64 sm:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20">
+              {/* Offset decorative shape - creates depth */}
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl transform rotate-3 opacity-80" />
+              <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-2xl transform -rotate-2 opacity-60" />
+              
+              {/* Main photo container */}
+              <div className="relative w-64 sm:w-80 lg:w-96 rounded-2xl overflow-hidden shadow-2xl shadow-green-500/30 transform hover:scale-[1.02] transition-transform duration-500">
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 via-transparent to-transparent z-10" />
                 <img 
                   src={raudineiFoto} 
                   alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
                   className="w-full h-auto object-cover"
                 />
               </div>
+              
+              {/* Decorative dots pattern */}
+              <div className="absolute -right-6 top-1/4 flex flex-col gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse delay-100" />
+                <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse delay-200" />
+              </div>
+              
+              {/* Decorative line accent */}
+              <div className="absolute -left-8 bottom-1/3 w-12 h-1 bg-gradient-to-r from-green-400 to-transparent rounded-full" />
               
               {/* Floating badge */}
               <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30">
