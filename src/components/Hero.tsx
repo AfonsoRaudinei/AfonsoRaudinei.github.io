@@ -1,6 +1,7 @@
-import { MessageCircle, Award, Users, MapPin, Leaf } from "lucide-react";
+import { MessageCircle, Award, Users, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import raudineiFoto from "@/assets/raudinei-foto.png";
+import leafDecoration from "@/assets/leaf-decoration.png";
 
 const Hero = () => {
   const whatsappLink = `https://wa.me/5562999999999?text=${encodeURIComponent("Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.")}`;
@@ -16,39 +17,51 @@ const Hero = () => {
           {/* Photo Section */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
             <div className="relative">
-              {/* Outer glow */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-green-400/30 via-emerald-500/20 to-green-600/30 rounded-full blur-3xl animate-pulse" />
+              {/* Soft green glow behind photo */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-green-400/20 via-emerald-500/15 to-green-600/20 rounded-full blur-3xl" />
               
-              {/* Decorative leaves - top right */}
-              <div className="absolute -top-6 -right-4 z-20">
-                <Leaf className="w-12 h-12 text-green-500 rotate-45 drop-shadow-lg" strokeWidth={1.5} />
-                <Leaf className="w-8 h-8 text-emerald-400 rotate-[70deg] -mt-4 ml-6 drop-shadow-lg" strokeWidth={1.5} />
-              </div>
+              {/* Real decorative leaf - top right (large) */}
+              <img 
+                src={leafDecoration} 
+                alt="" 
+                className="absolute -top-8 -right-6 w-20 h-20 z-20 animate-sway drop-shadow-xl rotate-[30deg] origin-bottom-left"
+              />
               
-              {/* Decorative leaves - bottom left */}
-              <div className="absolute -bottom-4 -left-6 z-20">
-                <Leaf className="w-10 h-10 text-green-600 -rotate-45 drop-shadow-lg" strokeWidth={1.5} />
-                <Leaf className="w-7 h-7 text-emerald-500 -rotate-[20deg] -mt-2 ml-8 drop-shadow-lg" strokeWidth={1.5} />
-              </div>
+              {/* Real decorative leaf - top right (small) */}
+              <img 
+                src={leafDecoration} 
+                alt="" 
+                className="absolute top-4 -right-12 w-12 h-12 z-20 animate-sway-reverse drop-shadow-lg rotate-[60deg] origin-bottom-left opacity-80"
+              />
               
-              {/* Decorative leaves - top left small */}
-              <div className="absolute top-8 -left-8 z-20">
-                <Leaf className="w-6 h-6 text-green-400 -rotate-[120deg] drop-shadow-lg" strokeWidth={1.5} />
-              </div>
+              {/* Real decorative leaf - bottom left (medium) */}
+              <img 
+                src={leafDecoration} 
+                alt="" 
+                className="absolute -bottom-6 -left-8 w-16 h-16 z-20 animate-sway-reverse drop-shadow-xl -rotate-[140deg] scale-x-[-1] origin-top-right"
+              />
               
-              {/* Green gradient ring border */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full p-1.5 bg-gradient-to-br from-green-400 via-emerald-500 to-green-600 shadow-2xl shadow-green-500/30">
-                {/* Inner gradient ring */}
-                <div className="w-full h-full rounded-full p-1 bg-gradient-to-tr from-green-300 via-emerald-400 to-green-500">
-                  {/* Photo container */}
-                  <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                    <img 
-                      src={raudineiFoto} 
-                      alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
-                      className="w-full h-full object-cover object-top scale-110"
-                    />
-                  </div>
-                </div>
+              {/* Real decorative leaf - bottom left (small) */}
+              <img 
+                src={leafDecoration} 
+                alt="" 
+                className="absolute bottom-8 -left-10 w-10 h-10 z-20 animate-sway drop-shadow-lg -rotate-[100deg] scale-x-[-1] origin-top-right opacity-75"
+              />
+              
+              {/* Real decorative leaf - top left (accent) */}
+              <img 
+                src={leafDecoration} 
+                alt="" 
+                className="absolute top-2 -left-6 w-10 h-10 z-20 animate-sway drop-shadow-lg -rotate-[60deg] origin-bottom-right opacity-70"
+              />
+              
+              {/* Photo container - NO BORDER, clean with shadow */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl shadow-green-500/20">
+                <img 
+                  src={raudineiFoto} 
+                  alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
+                  className="w-full h-full object-cover object-top scale-110"
+                />
               </div>
               
               {/* Floating badge */}
@@ -57,10 +70,12 @@ const Hero = () => {
                 <span>15+ Anos</span>
               </div>
               
-              {/* Small floating leaf accent */}
-              <div className="absolute top-1/2 -right-10 z-20 hidden lg:block">
-                <Leaf className="w-5 h-5 text-green-500 rotate-90 animate-float drop-shadow-lg" strokeWidth={1.5} />
-              </div>
+              {/* Small floating leaf accent - right side */}
+              <img 
+                src={leafDecoration} 
+                alt="" 
+                className="absolute top-1/2 -right-14 w-8 h-8 z-20 hidden lg:block animate-float drop-shadow-lg rotate-[80deg] opacity-60"
+              />
             </div>
           </div>
 

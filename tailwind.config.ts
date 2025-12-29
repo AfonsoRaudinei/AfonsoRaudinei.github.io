@@ -103,10 +103,25 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "sway": {
+          "0%, 100%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(4deg)" },
+        },
+        "sway-reverse": {
+          "0%, 100%": { transform: "rotate(4deg)" },
+          "50%": { transform: "rotate(-4deg)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px) rotate(90deg)" },
+          "50%": { transform: "translateY(-8px) rotate(90deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "sway": "sway 4s ease-in-out infinite",
+        "sway-reverse": "sway-reverse 3.5s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
