@@ -2,7 +2,7 @@ import { MessageCircle, Linkedin, Mail, Instagram, ArrowRight } from "lucide-rea
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const whatsappLink = "https://wa.me/5562999999999?text=Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.";
+  const whatsappLink = `https://wa.me/5563984376572?text=${encodeURIComponent("Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.")}`;
 
   const socialLinks = [
     {
@@ -10,45 +10,51 @@ const Header = () => {
       href: "https://linkedin.com/in/raudinei-afonso",
       icon: Linkedin,
       label: "LinkedIn",
+      hoverColor: "hover:bg-blue-500 hover:text-white hover:border-blue-500",
     },
     {
       id: "email",
       href: "mailto:contato@raudineiafonso.com.br",
       icon: Mail,
       label: "E-mail",
+      hoverColor: "hover:bg-red-500 hover:text-white hover:border-red-500",
     },
     {
       id: "instagram",
       href: "https://instagram.com/raudineiafonso",
       icon: Instagram,
       label: "Instagram",
+      hoverColor: "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white hover:border-pink-500",
     },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-blue-50/95 to-blue-100/90 backdrop-blur-xl border-b border-blue-200/50">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
+      <div className="container mx-auto px-6 lg:px-12 h-20 lg:h-24 flex items-center justify-between">
         {/* Left - Identity */}
         <div className="flex flex-col gap-0.5">
-          <span className="font-semibold text-lg text-blue-900 tracking-tight">
+          <span className="font-display font-bold text-xl lg:text-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 bg-clip-text text-transparent tracking-tight hover:opacity-80 transition-opacity cursor-pointer">
             Raudinei Afonso
           </span>
-          <p className="text-xs text-blue-700/80">
+          <p className="text-xs lg:text-sm text-muted-foreground">
             Engenheiro Agrônomo · Fertilidade do Solo & Nutrição de Plantas
           </p>
           <Link 
             to="/jornada-profissional" 
-            className="inline-flex items-center gap-1 text-xs font-bold text-blue-900 hover:text-blue-700 transition-colors"
+            className="group inline-flex items-center gap-1 text-xs lg:text-sm font-bold text-foreground hover:text-primary transition-colors"
           >
-            Jornada Profissional
-            <ArrowRight className="w-3 h-3" />
+            <span className="relative">
+              Jornada Profissional
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </span>
+            <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
 
         {/* Right - Social Icons + WhatsApp */}
-        <div className="flex items-center gap-3">
-          {/* Social Icons - Desktop only */}
-          <nav className="flex items-center gap-1">
+        <div className="flex items-center gap-3 lg:gap-4">
+          {/* Social Icons */}
+          <nav className="flex items-center gap-2">
             {socialLinks.map((link) => {
               const IconComponent = link.icon;
               return (
@@ -58,23 +64,35 @@ const Header = () => {
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={link.label}
-                  className="flex items-center justify-center w-7 h-7 md:w-9 md:h-9 rounded-full bg-white/70 hover:bg-white border border-blue-200/50 hover:border-blue-300 text-blue-600 hover:text-blue-700 transition-all duration-200"
+                  className={`
+                    flex items-center justify-center 
+                    w-9 h-9 lg:w-10 lg:h-10 
+                    rounded-full 
+                    bg-white/70 border border-gray-200/80
+                    text-gray-600
+                    transition-all duration-300
+                    hover:scale-110 hover:-rotate-6
+                    shadow-sm hover:shadow-md
+                    ${link.hoverColor}
+                  `}
                 >
-                  <IconComponent className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  <IconComponent className="w-4 h-4 lg:w-5 lg:h-5" />
                 </a>
               );
             })}
           </nav>
 
-          {/* WhatsApp Button */}
+          {/* WhatsApp Button - with pulse effect */}
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-500 hover:bg-green-600 text-white transition-all duration-200 shadow-sm"
+            className="relative flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-green-500 hover:bg-green-600 text-white transition-all duration-300 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 hover:scale-110 active:scale-95"
           >
-            <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
+            {/* Pulse animation */}
+            <span className="absolute inset-0 rounded-full animate-ping bg-green-400/40" style={{ animationDuration: '2s' }} />
+            <MessageCircle className="w-5 h-5 lg:w-6 lg:h-6 relative z-10" />
           </a>
         </div>
       </div>
