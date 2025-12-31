@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import SojaIcon from "./icons/SojaIcon";
-import MilhoIcon from "./icons/MilhoIcon";
-import SoloforteIcon from "./icons/SoloforteIcon";
-import NutrientesIcon from "./icons/NutrientesIcon";
+import { ArrowRight, Leaf, Wheat, Layers, Atom } from "lucide-react";
 
 const specialties = [
   {
-    IconComponent: SojaIcon,
+    // Ícone de fallback caso imagem não carregue
+    FallbackIcon: Leaf,
+    // URL da imagem no GitHub - substitua pelo seu repositório
+    imageUrl: "https://afonsoraudinei.github.io/assets/icons/soja-icon.png",
     title: "SOJA",
     subtitle: "Manejo nutricional para máxima produtividade",
     topics: [
@@ -28,7 +27,8 @@ const specialties = [
     color: "#10b981",
   },
   {
-    IconComponent: MilhoIcon,
+    FallbackIcon: Wheat,
+    imageUrl: "https://afonsoraudinei.github.io/assets/icons/milho-icon.png",
     title: "MILHO",
     subtitle: "Nutrição de precisão para alta performance",
     topics: [
@@ -49,7 +49,8 @@ const specialties = [
     color: "#f59e0b",
   },
   {
-    IconComponent: SoloforteIcon,
+    FallbackIcon: Layers,
+    imageUrl: "https://afonsoraudinei.github.io/assets/icons/soloforte-icon.png",
     title: "SOLOFORTE",
     subtitle: "Ferramentas de análise e consultoria técnica",
     topics: [
@@ -68,7 +69,8 @@ const specialties = [
     color: "#f97316",
   },
   {
-    IconComponent: NutrientesIcon,
+    FallbackIcon: Atom,
+    imageUrl: "https://afonsoraudinei.github.io/assets/icons/nutrientes-icon.png",
     title: "NUTRIENTES",
     subtitle: "Guia completo de macro e micronutrientes",
     topics: [
@@ -156,10 +158,10 @@ const SpecialtyCards = () => {
                   {/* Header Row */}
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-5 lg:gap-6">
-                      {/* Large Premium Icon */}
+                      {/* Large Premium Icon - Imagem do GitHub */}
                       <div 
                         className={`
-                          w-20 h-20 lg:w-24 lg:h-24 
+                          w-24 h-24 lg:w-28 lg:h-28 
                           rounded-2xl 
                           bg-gradient-to-br ${specialty.iconGradient}
                           border-2 ${specialty.iconBorder}
@@ -168,13 +170,34 @@ const SpecialtyCards = () => {
                           backdrop-blur-sm
                           group-hover:scale-110
                           transition-all duration-300
-                          p-4 lg:p-5
+                          p-4
+                          overflow-hidden
                         `}
                       >
-                        <specialty.IconComponent 
-                          className="w-full h-full" 
-                          color={specialty.color}
+                        <img 
+                          src={specialty.imageUrl}
+                          alt={`Ícone ${specialty.title}`}
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            // Fallback: esconde a imagem e mostra ícone Lucide
+                            const target = e.currentTarget;
+                            target.style.display = 'none';
+                            const fallbackContainer = target.nextElementSibling as HTMLElement;
+                            if (fallbackContainer) {
+                              fallbackContainer.style.display = 'flex';
+                            }
+                          }}
                         />
+                        {/* Fallback Icon (hidden by default) */}
+                        <div 
+                          className="hidden items-center justify-center w-full h-full"
+                          style={{ display: 'none' }}
+                        >
+                          <specialty.FallbackIcon 
+                            className="w-12 h-12 lg:w-14 lg:h-14" 
+                            style={{ color: specialty.color }}
+                          />
+                        </div>
                       </div>
                       
                       {/* Title & Subtitle */}
