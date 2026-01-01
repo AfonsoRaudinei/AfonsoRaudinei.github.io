@@ -112,6 +112,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Fixação de nitrogênio e redução de nitrato",
     tipo: 'micro',
     slug: 'molibdenio',
+    hasPage: true,
   },
   {
     simbolo: "Ni",
