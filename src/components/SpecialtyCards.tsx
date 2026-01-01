@@ -3,9 +3,7 @@ import { ArrowRight, Leaf, Wheat, Layers, Atom } from "lucide-react";
 
 const specialties = [
   {
-    // Ícone de fallback caso imagem não carregue
     FallbackIcon: Leaf,
-    // URL da imagem no GitHub - substitua pelo seu repositório
     imageUrl: "https://afonsoraudinei.github.io/assets/icons/soja-icon.png",
     title: "SOJA",
     subtitle: "Manejo nutricional para máxima produtividade",
@@ -16,15 +14,13 @@ const specialties = [
       "Nutrição reprodutiva",
       "Análise foliar estratégica",
     ],
-    gradient: "from-emerald-500 to-green-600",
-    bgGradient: "from-white/80 to-emerald-500/5",
-    iconGradient: "from-emerald-500/20 to-emerald-500/5",
-    iconBorder: "border-emerald-500/30",
-    iconShadow: "shadow-emerald-500/20",
-    tagBg: "bg-white/80 text-emerald-700 border-emerald-200/50",
-    hoverShadow: "hover:shadow-emerald-500/20",
+    accentColor: "emerald",
+    borderColor: "border-l-emerald-500",
+    iconBg: "bg-emerald-50",
+    iconColor: "#10b981",
+    tagText: "text-emerald-700",
+    hoverBorder: "hover:border-emerald-300",
     link: "/soja",
-    color: "#10b981",
   },
   {
     FallbackIcon: Wheat,
@@ -38,15 +34,13 @@ const specialties = [
       "Nutrição V4-V8",
       "Potencial produtivo",
     ],
-    gradient: "from-amber-400 to-yellow-500",
-    bgGradient: "from-white/80 to-amber-400/5",
-    iconGradient: "from-amber-400/20 to-amber-400/5",
-    iconBorder: "border-amber-400/30",
-    iconShadow: "shadow-amber-400/20",
-    tagBg: "bg-white/80 text-amber-700 border-amber-200/50",
-    hoverShadow: "hover:shadow-amber-400/20",
+    accentColor: "amber",
+    borderColor: "border-l-amber-500",
+    iconBg: "bg-amber-50",
+    iconColor: "#f59e0b",
+    tagText: "text-amber-700",
+    hoverBorder: "hover:border-amber-300",
     link: null,
-    color: "#f59e0b",
   },
   {
     FallbackIcon: Layers,
@@ -58,15 +52,13 @@ const specialties = [
       "Recomendação técnica",
       "Laudo personalizado",
     ],
-    gradient: "from-orange-500 to-red-500",
-    bgGradient: "from-white/80 to-orange-500/5",
-    iconGradient: "from-orange-500/20 to-orange-500/5",
-    iconBorder: "border-orange-500/30",
-    iconShadow: "shadow-orange-500/20",
-    tagBg: "bg-white/80 text-orange-700 border-orange-200/50",
-    hoverShadow: "hover:shadow-orange-500/20",
+    accentColor: "orange",
+    borderColor: "border-l-orange-500",
+    iconBg: "bg-orange-50",
+    iconColor: "#f97316",
+    tagText: "text-orange-700",
+    hoverBorder: "hover:border-orange-300",
     link: null,
-    color: "#f97316",
   },
   {
     FallbackIcon: Atom,
@@ -83,15 +75,13 @@ const specialties = [
       "Boro (B)",
       "Zinco (Zn)",
     ],
-    gradient: "from-cyan-500 to-blue-600",
-    bgGradient: "from-white/80 to-cyan-500/5",
-    iconGradient: "from-cyan-500/20 to-cyan-500/5",
-    iconBorder: "border-cyan-500/30",
-    iconShadow: "shadow-cyan-500/20",
-    tagBg: "bg-white/80 text-cyan-700 border-cyan-200/50",
-    hoverShadow: "hover:shadow-cyan-500/20",
+    accentColor: "cyan",
+    borderColor: "border-l-cyan-500",
+    iconBg: "bg-cyan-50",
+    iconColor: "#06b6d4",
+    tagText: "text-cyan-700",
+    hoverBorder: "hover:border-cyan-300",
     link: "/nutrientes",
-    color: "#06b6d4",
   },
 ];
 
@@ -128,49 +118,36 @@ const SpecialtyCards = () => {
                 {...(cardProps as any)}
                 className={`
                   group relative overflow-hidden
-                  rounded-3xl border border-border/50
-                  bg-gradient-to-br ${specialty.bgGradient}
-                  backdrop-blur-sm
-                  p-8 lg:p-10
+                  rounded-2xl 
+                  bg-white
+                  border border-gray-200 ${specialty.hoverBorder}
+                  border-l-4 ${specialty.borderColor}
+                  shadow-sm hover:shadow-lg
+                  p-6 lg:p-8
                   cursor-pointer
                   transition-all duration-300 ease-out
-                  hover:-translate-y-2
-                  hover:shadow-2xl ${specialty.hoverShadow}
-                  hover:border-border
-                  active:scale-[0.98]
+                  hover:-translate-y-1
+                  active:scale-[0.99]
                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
                   animate-fade-up
                 `}
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
-                {/* Subtle background glow on hover */}
-                <div 
-                  className={`
-                    absolute inset-0 opacity-0 group-hover:opacity-100
-                    bg-gradient-to-br ${specialty.bgGradient}
-                    transition-opacity duration-500
-                    pointer-events-none
-                  `}
-                />
-
                 {/* Content */}
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 space-y-5">
                   {/* Header Row */}
                   <div className="flex items-start justify-between">
-                    <div className="flex items-start gap-5 lg:gap-6">
-                      {/* Large Premium Icon - Imagem do GitHub */}
+                    <div className="flex items-start gap-4 lg:gap-5">
+                      {/* Icon Container - Clean and Professional */}
                       <div 
                         className={`
-                          w-24 h-24 lg:w-28 lg:h-28 
-                          rounded-2xl 
-                          bg-gradient-to-br ${specialty.iconGradient}
-                          border-2 ${specialty.iconBorder}
+                          w-16 h-16 lg:w-20 lg:h-20 
+                          rounded-xl 
+                          ${specialty.iconBg}
                           flex items-center justify-center
-                          shadow-lg ${specialty.iconShadow}
-                          backdrop-blur-sm
-                          group-hover:scale-110
-                          transition-all duration-300
-                          p-4
+                          group-hover:scale-105
+                          transition-transform duration-300
+                          p-3
                           overflow-hidden
                         `}
                       >
@@ -179,7 +156,6 @@ const SpecialtyCards = () => {
                           alt={`Ícone ${specialty.title}`}
                           className="w-full h-full object-contain"
                           onError={(e) => {
-                            // Fallback: esconde a imagem e mostra ícone Lucide
                             const target = e.currentTarget;
                             target.style.display = 'none';
                             const fallbackContainer = target.nextElementSibling as HTMLElement;
@@ -188,24 +164,24 @@ const SpecialtyCards = () => {
                             }
                           }}
                         />
-                        {/* Fallback Icon (hidden by default) */}
+                        {/* Fallback Icon */}
                         <div 
                           className="hidden items-center justify-center w-full h-full"
                           style={{ display: 'none' }}
                         >
                           <specialty.FallbackIcon 
-                            className="w-12 h-12 lg:w-14 lg:h-14" 
-                            style={{ color: specialty.color }}
+                            className="w-8 h-8 lg:w-10 lg:h-10" 
+                            style={{ color: specialty.iconColor }}
                           />
                         </div>
                       </div>
                       
                       {/* Title & Subtitle */}
                       <div className="pt-1">
-                        <h3 className="font-display font-bold text-2xl lg:text-3xl text-foreground tracking-tight">
+                        <h3 className="font-display font-bold text-xl lg:text-2xl text-gray-900 tracking-tight">
                           {specialty.title}
                         </h3>
-                        <p className="text-base lg:text-lg text-muted-foreground/70 mt-1 leading-relaxed">
+                        <p className="text-sm lg:text-base text-gray-500 mt-0.5 leading-relaxed">
                           {specialty.subtitle}
                         </p>
                       </div>
@@ -214,17 +190,16 @@ const SpecialtyCards = () => {
                     {/* Arrow Indicator */}
                     <div 
                       className={`
-                        w-10 h-10 lg:w-12 lg:h-12 rounded-full
-                        bg-card/80 backdrop-blur border border-border/50
+                        w-9 h-9 lg:w-10 lg:h-10 rounded-full
+                        bg-gray-100 
                         flex items-center justify-center
                         opacity-0 group-hover:opacity-100
                         translate-x-2 group-hover:translate-x-0
                         transition-all duration-300
-                        shadow-sm
                         hidden sm:flex
                       `}
                     >
-                      <ArrowRight className="w-5 h-5 lg:w-6 lg:h-6 text-foreground" />
+                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600" />
                     </div>
                   </div>
 
@@ -235,13 +210,11 @@ const SpecialtyCards = () => {
                         key={topic}
                         className={`
                           inline-flex items-center
-                          px-3 py-1.5 rounded-full
-                          text-sm font-medium
-                          ${specialty.tagBg}
-                          backdrop-blur-sm
-                          border
-                          transition-all duration-200
-                          group-hover:shadow-sm
+                          px-2.5 py-1 rounded-md
+                          text-xs lg:text-sm font-medium
+                          bg-gray-100 ${specialty.tagText}
+                          transition-colors duration-200
+                          group-hover:bg-gray-50
                         `}
                       >
                         {topic}
@@ -251,8 +224,8 @@ const SpecialtyCards = () => {
                 </div>
 
                 {/* Bottom Arrow for mobile */}
-                <div className="absolute bottom-6 right-6 sm:hidden">
-                  <ArrowRight className="w-5 h-5 text-muted-foreground/50 group-hover:text-foreground transition-colors" />
+                <div className="absolute bottom-5 right-5 sm:hidden">
+                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
                 </div>
               </CardWrapper>
             );
