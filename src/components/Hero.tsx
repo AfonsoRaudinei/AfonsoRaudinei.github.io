@@ -16,24 +16,22 @@ const Hero = () => {
           {/* Photo Section */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
             <div className="relative group">
-              {/* Animated gradient blob behind - with slow rotation */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-emerald-400/40 via-green-500/30 to-teal-400/40 rounded-full blur-2xl animate-pulse" />
+              {/* Cloudy/Foggy white background layers */}
+              <div className="absolute -inset-20 bg-slate-100/40 rounded-full blur-3xl" />
+              <div className="absolute -inset-16 bg-white/50 rounded-full blur-3xl" />
+              <div className="absolute -inset-12 bg-gray-100/30 rounded-full blur-2xl" />
               
-              {/* Rotating gradient ring effect */}
+              {/* Subtle rotating gradient ring */}
               <div 
-                className="absolute -inset-10 rounded-full opacity-50"
+                className="absolute -inset-6 rounded-full opacity-30"
                 style={{
-                  background: 'conic-gradient(from 0deg, transparent, rgba(16, 185, 129, 0.3), transparent, rgba(20, 184, 166, 0.3), transparent)',
-                  animation: 'spin 30s linear infinite'
+                  background: 'conic-gradient(from 0deg, transparent, rgba(16, 185, 129, 0.15), transparent, rgba(20, 184, 166, 0.15), transparent)',
+                  animation: 'spin 40s linear infinite'
                 }}
               />
               
-              {/* Offset decorative shapes - creates depth */}
-              <div className="absolute -top-8 -left-8 w-[calc(100%+4rem)] h-[calc(100%+4rem)] bg-gradient-to-br from-green-300/40 to-emerald-400/20 rounded-full transform rotate-6" />
-              <div className="absolute -top-5 -left-5 w-[calc(100%+2.5rem)] h-[calc(100%+2.5rem)] bg-gradient-to-tr from-emerald-400/35 to-teal-300/20 rounded-full transform -rotate-3" />
-              
-              {/* Gradient border ring - extra thick for emphasis */}
-              <div className="relative p-[18px] bg-gradient-to-br from-green-400 via-emerald-500 via-50% to-teal-400 rounded-full shadow-2xl shadow-emerald-500/40 group-hover:shadow-emerald-500/60 transition-shadow duration-500">
+              {/* Gradient border ring */}
+              <div className="relative p-[12px] bg-gradient-to-br from-green-400 via-emerald-500 via-50% to-teal-400 rounded-full shadow-xl shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-shadow duration-500">
                 {/* Inner subtle ring for depth */}
                 <div className="p-0.5 bg-gradient-to-tr from-white/20 to-transparent rounded-full">
                   {/* Photo container - circular - LARGER with zoom */}
@@ -47,22 +45,8 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Decorative dots pattern */}
-              <div className="absolute -right-8 top-1/4 flex flex-col gap-2 z-20">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shadow-lg shadow-green-400/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse delay-100 shadow-lg shadow-emerald-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-teal-400 animate-pulse delay-200 shadow-lg shadow-teal-400/50" />
-              </div>
-              
-              {/* Decorative line accents */}
-              <div className="absolute -left-10 bottom-1/3 w-14 h-1 bg-gradient-to-r from-green-400 to-transparent rounded-full z-20" />
-              <div 
-                className="absolute -left-6 bottom-1/3 w-8 h-0.5 bg-gradient-to-r from-emerald-500/60 to-transparent rounded-full z-20" 
-                style={{ marginTop: '12px' }} 
-              />
-              
-              {/* Floating badge */}
-              <div className="absolute -bottom-2 right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium z-30 hover:scale-105 transition-transform duration-300">
+              {/* Floating badge - more subtle */}
+              <div className="absolute -bottom-2 right-4 bg-white/90 backdrop-blur-sm text-emerald-700 border border-emerald-200 px-4 py-2 rounded-full shadow-md flex items-center gap-2 text-sm font-medium z-30 hover:scale-105 transition-transform duration-300">
                 <Award className="w-4 h-4" />
                 <span>15+ Anos</span>
               </div>
