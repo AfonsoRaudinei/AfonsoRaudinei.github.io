@@ -144,6 +144,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Resistência mecânica e tolerância a estresses",
     tipo: 'micro',
     slug: 'silicio',
+    hasPage: true,
   },
 ];
 
