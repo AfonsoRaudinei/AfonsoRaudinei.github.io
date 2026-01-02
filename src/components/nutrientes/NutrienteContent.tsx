@@ -15,6 +15,7 @@ import FerroContent from "./FerroContent";
 import ZincoContent from "./ZincoContent";
 import NiquelContent from "./NiquelContent";
 import MolibdenioContent from "./MolibdenioContent";
+import CobaltoContent from "./CobaltoContent";
 
 const nutrientComponents: Record<string, React.ComponentType> = {
   nitrogenio: NitrogenioContent,
@@ -31,6 +32,7 @@ const nutrientComponents: Record<string, React.ComponentType> = {
   zinco: ZincoContent,
   niquel: NiquelContent,
   molibdenio: MolibdenioContent,
+  cobalto: CobaltoContent,
 };
 
 export function NutrienteContent() {
