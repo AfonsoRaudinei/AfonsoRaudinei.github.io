@@ -14,12 +14,6 @@ const specialties = [
       "Nutrição reprodutiva",
       "Análise foliar estratégica",
     ],
-    accentColor: "emerald",
-    borderColor: "border-l-emerald-500",
-    iconBg: "bg-emerald-50",
-    iconColor: "#10b981",
-    tagText: "text-emerald-700",
-    hoverBorder: "hover:border-emerald-300",
     link: "/soja",
   },
   {
@@ -34,12 +28,6 @@ const specialties = [
       "Nutrição V4-V8",
       "Potencial produtivo",
     ],
-    accentColor: "amber",
-    borderColor: "border-l-amber-500",
-    iconBg: "bg-amber-50",
-    iconColor: "#f59e0b",
-    tagText: "text-amber-700",
-    hoverBorder: "hover:border-amber-300",
     link: null,
   },
   {
@@ -52,12 +40,6 @@ const specialties = [
       "Recomendação técnica",
       "Laudo personalizado",
     ],
-    accentColor: "orange",
-    borderColor: "border-l-orange-500",
-    iconBg: "bg-orange-50",
-    iconColor: "#f97316",
-    tagText: "text-orange-700",
-    hoverBorder: "hover:border-orange-300",
     link: null,
   },
   {
@@ -75,26 +57,20 @@ const specialties = [
       "Boro (B)",
       "Zinco (Zn)",
     ],
-    accentColor: "cyan",
-    borderColor: "border-l-cyan-500",
-    iconBg: "bg-cyan-50",
-    iconColor: "#06b6d4",
-    tagText: "text-cyan-700",
-    hoverBorder: "hover:border-cyan-300",
     link: "/nutrientes",
   },
 ];
 
 const SpecialtyCards = () => {
   return (
-    <section id="especialidades" className="py-20 px-6 lg:px-12 bg-gradient-to-b from-secondary/20 to-background">
+    <section id="especialidades" className="py-20 px-6 lg:px-12 bg-white">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-14 animate-fade-up">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Áreas de <span className="gradient-text">Especialidade</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4">
+            Áreas de <span className="text-[#4ADE80]">Especialidade</span>
           </h2>
-          <p className="text-muted-foreground/80 max-w-2xl mx-auto text-lg">
+          <p className="text-[#6B7280] max-w-2xl mx-auto text-lg">
             Conhecimento técnico aplicado às principais culturas do agronegócio brasileiro
           </p>
         </div>
@@ -118,17 +94,17 @@ const SpecialtyCards = () => {
                 {...(cardProps as any)}
                 className={`
                   group relative overflow-hidden
-                  rounded-2xl 
+                  rounded-xl
                   bg-white
-                  border border-gray-200 ${specialty.hoverBorder}
-                  border-l-4 ${specialty.borderColor}
-                  shadow-sm hover:shadow-lg
+                  border border-[#E5E7EB]
+                  shadow-[0_2px_8px_rgba(0,0,0,0.08)]
+                  hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)]
                   p-6 lg:p-8
                   cursor-pointer
                   transition-all duration-300 ease-out
-                  hover:-translate-y-1
-                  active:scale-[0.99]
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+                  hover:-translate-y-0.5
+                  active:scale-[0.995]
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ADE80] focus-visible:ring-offset-2
                   animate-fade-up
                 `}
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
@@ -138,12 +114,12 @@ const SpecialtyCards = () => {
                   {/* Header Row */}
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-4 lg:gap-5">
-                      {/* Icon Container - Clean and Professional */}
+                      {/* Icon Container - Avenue Style */}
                       <div 
                         className={`
-                          w-16 h-16 lg:w-20 lg:h-20 
+                          w-14 h-14 lg:w-16 lg:h-16 
                           rounded-xl 
-                          ${specialty.iconBg}
+                          bg-[#1E3A2F]
                           flex items-center justify-center
                           group-hover:scale-105
                           transition-transform duration-300
@@ -154,7 +130,7 @@ const SpecialtyCards = () => {
                         <img 
                           src={specialty.imageUrl}
                           alt={`Ícone ${specialty.title}`}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain brightness-0 invert"
                           onError={(e) => {
                             const target = e.currentTarget;
                             target.style.display = 'none';
@@ -169,19 +145,16 @@ const SpecialtyCards = () => {
                           className="hidden items-center justify-center w-full h-full"
                           style={{ display: 'none' }}
                         >
-                          <specialty.FallbackIcon 
-                            className="w-8 h-8 lg:w-10 lg:h-10" 
-                            style={{ color: specialty.iconColor }}
-                          />
+                          <specialty.FallbackIcon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
                         </div>
                       </div>
                       
                       {/* Title & Subtitle */}
                       <div className="pt-1">
-                        <h3 className="font-display font-bold text-xl lg:text-2xl text-gray-900 tracking-tight">
+                        <h3 className="font-display font-bold text-lg lg:text-xl text-[#1A1A1A] tracking-tight">
                           {specialty.title}
                         </h3>
-                        <p className="text-sm lg:text-base text-gray-500 mt-0.5 leading-relaxed">
+                        <p className="text-sm text-[#6B7280] mt-0.5 leading-relaxed">
                           {specialty.subtitle}
                         </p>
                       </div>
@@ -190,8 +163,8 @@ const SpecialtyCards = () => {
                     {/* Arrow Indicator */}
                     <div 
                       className={`
-                        w-9 h-9 lg:w-10 lg:h-10 rounded-full
-                        bg-gray-100 
+                        w-9 h-9 rounded-full
+                        bg-[#F3F4F6] 
                         flex items-center justify-center
                         opacity-0 group-hover:opacity-100
                         translate-x-2 group-hover:translate-x-0
@@ -199,33 +172,55 @@ const SpecialtyCards = () => {
                         hidden sm:flex
                       `}
                     >
-                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600" />
+                      <ArrowRight className="w-4 h-4 text-[#1A1A1A]" />
                     </div>
                   </div>
 
-                  {/* Tags */}
+                  {/* Tags - Avenue Style Pills */}
                   <div className="flex flex-wrap gap-2">
-                    {specialty.topics.map((topic) => (
+                    {specialty.topics.slice(0, 4).map((topic) => (
                       <span
                         key={topic}
                         className={`
                           inline-flex items-center
-                          px-2.5 py-1 rounded-md
-                          text-xs lg:text-sm font-medium
-                          bg-gray-100 ${specialty.tagText}
+                          px-3 py-1.5 rounded-full
+                          text-xs font-medium
+                          bg-[#F3F4F6] text-[#1A1A1A]
                           transition-colors duration-200
-                          group-hover:bg-gray-50
+                          group-hover:bg-[#D1FAE5] group-hover:text-[#1E3A2F]
                         `}
                       >
                         {topic}
                       </span>
                     ))}
+                    {specialty.topics.length > 4 && (
+                      <span
+                        className={`
+                          inline-flex items-center
+                          px-3 py-1.5 rounded-full
+                          text-xs font-medium
+                          bg-[#D1FAE5] text-[#1E3A2F]
+                        `}
+                      >
+                        +{specialty.topics.length - 4}
+                      </span>
+                    )}
                   </div>
+
+                  {/* CTA Button - Avenue Green */}
+                  {specialty.link && (
+                    <div className="pt-2">
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#4ADE80] group-hover:text-[#22C55E] transition-colors">
+                        Explorar conteúdo
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom Arrow for mobile */}
                 <div className="absolute bottom-5 right-5 sm:hidden">
-                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                  <ArrowRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#4ADE80] transition-colors" />
                 </div>
               </CardWrapper>
             );
