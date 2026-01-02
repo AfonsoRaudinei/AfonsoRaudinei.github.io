@@ -136,6 +136,7 @@ export const micronutrientes: Nutriente[] = [
     funcao: "Fixação biológica de nitrogênio em leguminosas",
     tipo: 'micro',
     slug: 'cobalto',
+    hasPage: true,
   },
   {
     simbolo: "Si",
