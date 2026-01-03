@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import JornadaProfissionalPage from "./pages/JornadaProfissionalPage";
 import NutrientesPage from "./pages/NutrientesPage";
 import SojaPage from "./pages/SojaPage";
+import SolofortePage from "./pages/SolofortePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/nutrientes" element={<NutrientesPage />} />
           <Route path="/nutrientes/:slug" element={<NutrientesPage />} />
           <Route path="/soja" element={<SojaPage />} />
+          <Route path="/soloforte" element={<SolofortePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
