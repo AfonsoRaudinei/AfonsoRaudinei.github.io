@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Beaker, Leaf, RefreshCw, Dna, Zap, AlertTriangle, BarChart3, Lightbulb, FlaskConical, Sprout } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImagePlaceholder, ImageGrid } from "./ImagePlaceholder";
+import AbsorcaoSojaAccordion from "./AbsorcaoSojaAccordion";
 
 const fontesNitrogenio = [
   { nome: "Ureia", formula: "CH₄N₂O", percentual: "47% de N", desc: "Mais concentrada" },
@@ -315,6 +316,11 @@ export default function NitrogenioContent() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Absorção em Soja - Accordion */}
+        <section>
+          <AbsorcaoSojaAccordion corPrimaria="blue" />
+        </section>
 
         {/* Teores Adequados */}
         <section className="bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800 p-6 rounded-2xl">
