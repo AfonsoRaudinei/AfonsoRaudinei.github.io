@@ -40,7 +40,7 @@ const specialties = [
       "Recomendação técnica",
       "Laudo personalizado",
     ],
-    link: null,
+    link: "/soloforte",
   },
   {
     FallbackIcon: Atom,
