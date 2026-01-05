@@ -3,71 +3,81 @@ import { Beaker, Leaf, RefreshCw, Dna, Zap, AlertTriangle, BarChart3, Lightbulb,
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImagePlaceholder, ImageGrid } from "./ImagePlaceholder";
 import AbsorcaoSojaAccordion from "./AbsorcaoSojaAccordion";
-
-const fontesNitrogenio = [
-  { nome: "Ureia", formula: "CH₄N₂O", percentual: "47% de N", desc: "Mais concentrada" },
-  { nome: "Nitrato de Amônio", formula: "NH₄NO₃", percentual: "33% de N", desc: "Duas formas de N" },
-  { nome: "MAP", formula: "NH₄H₂PO₄", percentual: "10% de N", desc: "+ 48% P₂O₅" },
-  { nome: "DAP", formula: "(NH₄)₂HPO₄", percentual: "17% de N", desc: "+ 45% P₂O₅" },
-  { nome: "Sulfato Amônio", formula: "(NH₄)₂SO₄", percentual: "21% de N", desc: "+ 24% S" },
-];
-
-const cicloProcessos = [
-  {
-    titulo: "1. Fixação Biológica",
-    descricao: "Bactérias Bradyrhizobium: Fixam N₂ atmosférico em associação simbiótica com raízes de plantas leguminosas, produzindo NH₃.",
-    icon: "🦠",
-  },
-  {
-    titulo: "2. Nitrificação",
-    descricao: "Bactérias Nitrosomonas e Nitrococcus: Convertem NH₃ → NO₂⁻ e depois NO₂⁻ → NO₃⁻ através da ação microbiana no solo.",
-    icon: "🔄",
-  },
-  {
-    titulo: "3. Desnitrificação",
-    descricao: "Bactérias Paracoccus denitrificans: Em condições anaeróbicas, convertem NO₃⁻ de volta para N₂, retornando o nitrogênio à atmosfera.",
-    icon: "💨",
-  },
-  {
-    titulo: "4. Absorção pelas Plantas",
-    descricao: "As plantas absorvem o nitrogênio principalmente nas formas de nitrato (NO₃⁻) e amônio (NH₄⁺).",
-    icon: "🌱",
-  },
-];
-
-const funcoes = [
-  {
-    titulo: "Clorofila",
-    descricao: "Elemento estrutural da molécula de clorofila, atua diretamente na fotossíntese e é responsável pela coloração verde.",
-    icon: "🌿",
-  },
-  {
-    titulo: "Ácidos Nucleicos",
-    descricao: "Componente essencial do DNA e RNA, fundamental para a divisão celular e expressão gênica.",
-    icon: "🧬",
-  },
-  {
-    titulo: "Proteínas",
-    descricao: "Principal componente dos aminoácidos. Em plantas deficientes, a concentração de proteínas é reduzida.",
-    icon: "🔨",
-  },
-  {
-    titulo: "Energia (ATP)",
-    descricao: "Participa da produção de energia através da composição das moléculas de ATP e ADP.",
-    icon: "⚡",
-  },
-];
-
-const sintomasDeficiencia = [
-  { sintoma: "Clorose em folhas velhas", detalhe: "Amarelecimento generalizado devido à alta mobilidade" },
-  { sintoma: "Redução de crescimento", detalhe: "Porte reduzido e menor produção de biomassa" },
-  { sintoma: "Menor perfilhamento", detalhe: "Em gramíneas, menos perfilhos por planta" },
-  { sintoma: "Senescência precoce", detalhe: "Folhas velhas secam e caem antecipadamente" },
-];
-
+const fontesNitrogenio = [{
+  nome: "Ureia",
+  formula: "CH₄N₂O",
+  percentual: "47% de N",
+  desc: "Mais concentrada"
+}, {
+  nome: "Nitrato de Amônio",
+  formula: "NH₄NO₃",
+  percentual: "33% de N",
+  desc: "Duas formas de N"
+}, {
+  nome: "MAP",
+  formula: "NH₄H₂PO₄",
+  percentual: "10% de N",
+  desc: "+ 48% P₂O₅"
+}, {
+  nome: "DAP",
+  formula: "(NH₄)₂HPO₄",
+  percentual: "17% de N",
+  desc: "+ 45% P₂O₅"
+}, {
+  nome: "Sulfato Amônio",
+  formula: "(NH₄)₂SO₄",
+  percentual: "21% de N",
+  desc: "+ 24% S"
+}];
+const cicloProcessos = [{
+  titulo: "1. Fixação Biológica",
+  descricao: "Bactérias Bradyrhizobium: Fixam N₂ atmosférico em associação simbiótica com raízes de plantas leguminosas, produzindo NH₃.",
+  icon: "🦠"
+}, {
+  titulo: "2. Nitrificação",
+  descricao: "Bactérias Nitrosomonas e Nitrococcus: Convertem NH₃ → NO₂⁻ e depois NO₂⁻ → NO₃⁻ através da ação microbiana no solo.",
+  icon: "🔄"
+}, {
+  titulo: "3. Desnitrificação",
+  descricao: "Bactérias Paracoccus denitrificans: Em condições anaeróbicas, convertem NO₃⁻ de volta para N₂, retornando o nitrogênio à atmosfera.",
+  icon: "💨"
+}, {
+  titulo: "4. Absorção pelas Plantas",
+  descricao: "As plantas absorvem o nitrogênio principalmente nas formas de nitrato (NO₃⁻) e amônio (NH₄⁺).",
+  icon: "🌱"
+}];
+const funcoes = [{
+  titulo: "Clorofila",
+  descricao: "Elemento estrutural da molécula de clorofila, atua diretamente na fotossíntese e é responsável pela coloração verde.",
+  icon: "🌿"
+}, {
+  titulo: "Ácidos Nucleicos",
+  descricao: "Componente essencial do DNA e RNA, fundamental para a divisão celular e expressão gênica.",
+  icon: "🧬"
+}, {
+  titulo: "Proteínas",
+  descricao: "Principal componente dos aminoácidos. Em plantas deficientes, a concentração de proteínas é reduzida.",
+  icon: "🔨"
+}, {
+  titulo: "Energia (ATP)",
+  descricao: "Participa da produção de energia através da composição das moléculas de ATP e ADP.",
+  icon: "⚡"
+}];
+const sintomasDeficiencia = [{
+  sintoma: "Clorose em folhas velhas",
+  detalhe: "Amarelecimento generalizado devido à alta mobilidade"
+}, {
+  sintoma: "Redução de crescimento",
+  detalhe: "Porte reduzido e menor produção de biomassa"
+}, {
+  sintoma: "Menor perfilhamento",
+  detalhe: "Em gramíneas, menos perfilhos por planta"
+}, {
+  sintoma: "Senescência precoce",
+  detalhe: "Folhas velhas secam e caem antecipadamente"
+}];
 export default function NitrogenioContent() {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Header */}
       <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
@@ -116,14 +126,12 @@ export default function NitrogenioContent() {
           </CardHeader>
           <CardContent className="pt-4">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {fontesNitrogenio.map((fonte, i) => (
-                <div key={i} className="bg-white rounded-2xl p-5 text-center shadow-lg hover:shadow-xl transition-shadow">
+              {fontesNitrogenio.map((fonte, i) => <div key={i} className="bg-white rounded-2xl p-5 text-center shadow-lg hover:shadow-xl transition-shadow">
                   <h3 className="text-blue-700 font-bold text-sm mb-2">{fonte.nome}</h3>
                   <p className="text-foreground text-xs mb-1">{fonte.formula}</p>
                   <p className="text-blue-600 font-bold text-lg">{fonte.percentual}</p>
                   <p className="text-muted-foreground text-[10px] mt-1 uppercase">{fonte.desc}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </CardContent>
         </Card>
@@ -134,16 +142,19 @@ export default function NitrogenioContent() {
             <FlaskConical className="w-5 h-5 text-blue-600" />
             Fertilizantes Nitrogenados
           </h3>
-          <ImageGrid
-            columns={4}
-            aspectRatio="square"
-            images={[
-              { title: "Ureia Granulada", description: "47% N - Mais utilizada" },
-              { title: "Nitrato de Amônio", description: "33% N - Pronta disponibilidade" },
-              { title: "Sulfato de Amônio", description: "21% N + 24% S" },
-              { title: "MAP/DAP", description: "Fontes NP combinadas" },
-            ]}
-          />
+          <ImageGrid columns={4} aspectRatio="square" images={[{
+          title: "Ureia Granulada",
+          description: "47% N - Mais utilizada"
+        }, {
+          title: "Nitrato de Amônio",
+          description: "33% N - Pronta disponibilidade"
+        }, {
+          title: "Sulfato de Amônio",
+          description: "21% N + 24% S"
+        }, {
+          title: "MAP/DAP",
+          description: "Fontes NP combinadas"
+        }]} />
         </section>
 
         {/* Ciclo do Nitrogênio */}
@@ -155,27 +166,17 @@ export default function NitrogenioContent() {
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              {cicloProcessos.map((processo, i) => (
-                <div key={i} className="bg-card rounded-xl p-5 border-l-4 border-blue-500 shadow-sm">
+              {cicloProcessos.map((processo, i) => <div key={i} className="bg-card rounded-xl p-5 border-l-4 border-blue-500 shadow-sm">
                   <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
                     <span className="text-2xl">{processo.icon}</span>
                     {processo.titulo}
                   </h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">{processo.descricao}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
             <div className="space-y-4">
-              <ImagePlaceholder
-                title="Diagrama do Ciclo do Nitrogênio"
-                description="Transformações do N no sistema solo-planta-atmosfera"
-                aspectRatio="square"
-              />
-              <ImagePlaceholder
-                title="Nódulos de Bradyrhizobium"
-                description="Fixação biológica em raízes de soja"
-                aspectRatio="video"
-              />
+              <ImagePlaceholder title="Diagrama do Ciclo do Nitrogênio" description="Transformações do N no sistema solo-planta-atmosfera" aspectRatio="square" />
+              <ImagePlaceholder title="Nódulos de Bradyrhizobium" description="Fixação biológica em raízes de soja" aspectRatio="video" />
             </div>
           </div>
         </section>
@@ -208,11 +209,7 @@ export default function NitrogenioContent() {
                 </li>
               </ul>
             </div>
-            <ImagePlaceholder
-              title="Simbiose Bradyrhizobium-Leguminosa"
-              description="Formação de nódulos radiculares"
-              aspectRatio="video"
-            />
+            <ImagePlaceholder title="Simbiose Bradyrhizobium-Leguminosa" description="Formação de nódulos radiculares" aspectRatio="video" />
           </div>
         </div>
 
@@ -255,8 +252,7 @@ export default function NitrogenioContent() {
           </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
-            {funcoes.map((funcao, i) => (
-              <Card key={i} className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-white to-blue-50 dark:from-card dark:to-blue-950/20">
+            {funcoes.map((funcao, i) => <Card key={i} className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-white to-blue-50 dark:from-card dark:to-blue-950/20">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-blue-700 dark:text-blue-400 flex items-center gap-2">
                     <span className="text-2xl">{funcao.icon}</span>
@@ -265,14 +261,9 @@ export default function NitrogenioContent() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm mb-4">{funcao.descricao}</p>
-                  <ImagePlaceholder
-                    title={`${funcao.titulo} - Ilustração`}
-                    description={`Função do N: ${funcao.titulo}`}
-                    aspectRatio="video"
-                  />
+                  <ImagePlaceholder title={`${funcao.titulo} - Ilustração`} description={`Função do N: ${funcao.titulo}`} aspectRatio="video" />
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </section>
 
@@ -292,26 +283,16 @@ export default function NitrogenioContent() {
                   primeiro nas <strong>folhas velhas</strong> (redistribuição).
                 </p>
                 <ul className="space-y-3">
-                  {sintomasDeficiencia.map((item, i) => (
-                    <li key={i} className="text-orange-900 dark:text-orange-100 pl-6 relative">
+                  {sintomasDeficiencia.map((item, i) => <li key={i} className="text-orange-900 dark:text-orange-100 pl-6 relative">
                       <span className="absolute left-0 text-orange-500 font-bold">✗</span>
                       <span className="font-medium">{item.sintoma}</span>
                       <p className="text-orange-700 dark:text-orange-300 text-sm">{item.detalhe}</p>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
               <div className="space-y-4">
-                <ImagePlaceholder
-                  title="Clorose em Folhas Velhas"
-                  description="Amarelecimento generalizado típico"
-                  aspectRatio="video"
-                />
-                <ImagePlaceholder
-                  title="Comparação: Deficiente vs Adequado"
-                  description="Diferença visual no desenvolvimento"
-                  aspectRatio="video"
-                />
+                <ImagePlaceholder title="Clorose em Folhas Velhas" description="Amarelecimento generalizado típico" aspectRatio="video" />
+                <ImagePlaceholder title="Comparação: Deficiente vs Adequado" description="Diferença visual no desenvolvimento" aspectRatio="video" />
               </div>
             </div>
           </CardContent>
@@ -329,18 +310,27 @@ export default function NitrogenioContent() {
             Teores Adequados nas Culturas
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
-            {[
-              { cultura: "Soja", valor: "40-54", unidade: "g/kg", local: "Folha trifoliolada" },
-              { cultura: "Milho", valor: "27-33", unidade: "g/kg", local: "Folha oposta à espiga" },
-              { cultura: "Trigo", valor: "20-34", unidade: "g/kg", local: "Folha bandeira" },
-            ].map((item, i) => (
-              <div key={i} className="bg-white dark:bg-card rounded-xl p-4 text-center shadow-sm border border-blue-100 dark:border-blue-900">
+            {[{
+            cultura: "Soja",
+            valor: "40-54",
+            unidade: "g/kg",
+            local: "Folha trifoliolada"
+          }, {
+            cultura: "Milho",
+            valor: "27-33",
+            unidade: "g/kg",
+            local: "Folha oposta à espiga"
+          }, {
+            cultura: "Trigo",
+            valor: "20-34",
+            unidade: "g/kg",
+            local: "Folha bandeira"
+          }].map((item, i) => <div key={i} className="bg-white dark:bg-card rounded-xl p-4 text-center shadow-sm border border-blue-100 dark:border-blue-900">
                 <h4 className="font-bold text-blue-700 dark:text-blue-400 mb-2">{item.cultura}</h4>
                 <p className="text-2xl font-bold text-foreground">{item.valor}</p>
                 <p className="text-muted-foreground text-xs">{item.unidade} MS</p>
                 <p className="text-muted-foreground text-xs mt-1">{item.local}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </section>
 
@@ -349,25 +339,25 @@ export default function NitrogenioContent() {
           <h3 className="text-xl font-bold text-foreground mb-4 text-center">
             Galeria: Nitrogênio na Agricultura
           </h3>
-          <ImageGrid
-            columns={3}
-            aspectRatio="video"
-            images={[
-              { title: "Aplicação de Ureia em Cobertura", description: "Adubação nitrogenada em milho" },
-              { title: "Deficiência de N em Soja", description: "Clorose em folhas basais" },
-              { title: "Inoculação de Sementes", description: "Bradyrhizobium para FBN" },
-            ]}
-          />
+          <ImageGrid columns={3} aspectRatio="video" images={[{
+          title: "Aplicação de Ureia em Cobertura",
+          description: "Adubação nitrogenada em milho"
+        }, {
+          title: "Deficiência de N em Soja",
+          description: "Clorose em folhas basais"
+        }, {
+          title: "Inoculação de Sementes",
+          description: "Bradyrhizobium para FBN"
+        }]} />
         </section>
 
         {/* Footer */}
         <div className="bg-gradient-to-br from-blue-700 to-blue-900 text-white p-8 rounded-2xl text-center shadow-xl">
-          <p className="font-bold text-xl mb-2">GEFEN - Nutrição de Plantas</p>
+          
           <p className="text-blue-200 text-sm">
             Conteúdo educacional • Imagens ilustrativas pendentes
           </p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 }
