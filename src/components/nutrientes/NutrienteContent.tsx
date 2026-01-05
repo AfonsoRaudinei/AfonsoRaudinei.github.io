@@ -64,7 +64,7 @@ export function NutrienteContent() {
 
   // Generic content for nutrients without dedicated pages
   return (
-    <div key={slug} className="p-6 max-w-4xl mx-auto animate-fade-in">
+    <div key={slug} className="p-6 lg:p-8 max-w-6xl mx-auto animate-fade-in">
       {/* Hero Header */}
       <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-3xl p-8 mb-6 shadow-xl">
         <div className="flex items-center gap-5">

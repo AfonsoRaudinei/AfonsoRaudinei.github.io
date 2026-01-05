@@ -19,7 +19,7 @@ const SojaPage = () => {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 overflow-hidden">
+        <section className="relative py-12 md:py-20 px-4 md:px-8 lg:px-16 xl:px-20 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-20 left-10 text-9xl">🌱</div>
@@ -27,7 +27,7 @@ const SojaPage = () => {
             <div className="absolute top-1/2 left-1/2 text-7xl">🌼</div>
           </div>
 
-          <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="w-full max-w-[1600px] mx-auto relative z-10">
             <Link to="/">
               <Button variant="ghost" size="sm" className="mb-6 hover:bg-green-100 dark:hover:bg-green-900/30">
                 <ArrowLeft className="w-4 h-4 mr-2" />

@@ -63,20 +63,20 @@ const specialties = [
 
 const SpecialtyCards = () => {
   return (
-    <section id="especialidades" className="py-20 px-6 lg:px-12 bg-white">
-      <div className="container mx-auto max-w-7xl">
+    <section id="especialidades" className="py-16 lg:py-24 px-4 md:px-8 lg:px-16 xl:px-20 bg-white">
+      <div className="w-full max-w-[1600px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-14 animate-fade-up">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4">
+        <div className="text-center mb-12 lg:mb-16 animate-fade-up">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#1A1A1A] mb-4">
             Áreas de <span className="text-[#4ADE80]">Especialidade</span>
           </h2>
-          <p className="text-[#6B7280] max-w-2xl mx-auto text-lg">
+          <p className="text-[#6B7280] max-w-3xl mx-auto text-lg lg:text-xl">
             Conhecimento técnico aplicado às principais culturas do agronegócio brasileiro
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {specialties.map((specialty, index) => {
             const CardWrapper = specialty.link ? Link : "div";
             const cardProps = specialty.link
@@ -94,12 +94,12 @@ const SpecialtyCards = () => {
                 {...(cardProps as any)}
                 className={`
                   group relative overflow-hidden
-                  rounded-xl
+                  rounded-xl lg:rounded-2xl
                   bg-white
                   border border-[#E5E7EB]
                   shadow-[0_2px_8px_rgba(0,0,0,0.08)]
-                  hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)]
-                  p-6 lg:p-8
+                  hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]
+                  p-6 lg:p-8 xl:p-10
                   cursor-pointer
                   transition-all duration-300 ease-out
                   hover:-translate-y-0.5

@@ -13,13 +13,13 @@ const CTASection = () => {
     "https://wa.me/5563984376572?text=Olá! Gostaria de uma consultoria sobre manejo de solo ou nutrição de plantas.";
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto max-w-4xl text-center">
+    <section className="py-16 lg:py-24 px-4 md:px-8 lg:px-16 xl:px-20 bg-gradient-to-b from-background to-secondary/20">
+      <div className="w-full max-w-[1600px] mx-auto text-center">
         <div className="animate-fade-up">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 lg:mb-6">
             Tire Suas Dúvidas <span className="gradient-text">Agora</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8 lg:mb-10 text-lg lg:text-xl">
             Consultoria técnica especializada para otimizar sua produção agrícola
           </p>
 

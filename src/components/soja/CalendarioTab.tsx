@@ -19,8 +19,8 @@ const CalendarioTab = memo(({ selectedIndex, onSelect }: CalendarioTabProps) => 
   return (
     <div className="animate-fade-in">
       {/* Phase Legend */}
-      <section className="py-6 px-4 bg-secondary/30 border-y border-border/50">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-6 px-4 md:px-8 lg:px-16 xl:px-20 bg-secondary/30 border-y border-border/50">
+        <div className="w-full max-w-[1600px] mx-auto">
           <div className="flex flex-wrap justify-center gap-3 md:gap-6">
             {phases.map((phase) => (
               <div
@@ -36,8 +36,8 @@ const CalendarioTab = memo(({ selectedIndex, onSelect }: CalendarioTabProps) => 
       </section>
 
       {/* Calendar Section */}
-      <section className="py-12 md:py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-12 md:py-16 px-4 md:px-8 lg:px-16 xl:px-20">
+        <div className="w-full max-w-[1600px] mx-auto">
           <div className="text-center mb-8">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
               Estádios Fenológicos
