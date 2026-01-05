@@ -6,12 +6,12 @@ const Hero = () => {
   const whatsappLink = `https://wa.me/5563984376572?text=${encodeURIComponent("Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.")}`;
 
   return (
-    <section className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-28 pb-16 overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center px-4 md:px-8 lg:px-16 xl:px-20 pt-28 pb-16 overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-primary/5" />
       
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           
           {/* Photo Section */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1 animate-fade-up">
@@ -35,7 +35,7 @@ const Hero = () => {
                 {/* Inner subtle ring for depth */}
                 <div className="p-0.5 bg-gradient-to-tr from-white/20 to-transparent rounded-full">
                   {/* Photo container - circular - LARGER with zoom */}
-                  <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                  <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem] xl:w-[30rem] xl:h-[30rem] rounded-full overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
                     <img 
                       src={raudineiFoto} 
                       alt="Raudinei Afonso - Especialista em Fertilidade do Solo" 
@@ -54,9 +54,9 @@ const Hero = () => {
           </div>
 
           {/* Content Section - closer to photo */}
-          <div className="text-center lg:text-left order-2 lg:order-2 space-y-6 lg:pl-8">
+          <div className="text-center lg:text-left order-2 lg:order-2 space-y-6 lg:space-y-8 lg:pl-4 xl:pl-8">
             {/* Main Title */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight animate-fade-up delay-100">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight animate-fade-up delay-100">
               <span className="gradient-text-blue">Fertilidade do Solo</span>
               <br />
               <span className="text-foreground">&</span>{" "}
@@ -64,7 +64,7 @@ const Hero = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed animate-fade-up delay-200">
+            <p className="text-lg lg:text-xl xl:text-2xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-up delay-200">
               Decisões técnicas baseadas em ciência
               <br />
               <span className="text-foreground font-semibold">que geram resultado econômico</span>
