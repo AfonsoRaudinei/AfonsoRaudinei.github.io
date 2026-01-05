@@ -1,4 +1,4 @@
-import { Image, Camera } from "lucide-react";
+import { FlaskConical, Beaker, Droplets, Atom, LucideIcon } from "lucide-react";
 
 interface ImagePlaceholderProps {
   title: string;
@@ -7,6 +7,7 @@ interface ImagePlaceholderProps {
   className?: string;
   imageSrc?: string;
   imageAlt?: string;
+  icon?: LucideIcon;
 }
 
 const aspectRatioClasses = {
@@ -23,6 +24,7 @@ export const ImagePlaceholder = ({
   className = "",
   imageSrc,
   imageAlt,
+  icon: Icon = FlaskConical,
 }: ImagePlaceholderProps) => {
   if (imageSrc) {
     return (
@@ -44,30 +46,53 @@ export const ImagePlaceholder = ({
     );
   }
 
+  // Show compact icon card instead of placeholder
   return (
-    <figure className={`rounded-2xl overflow-hidden shadow-lg ${className}`}>
-      <div
-        className={`relative ${aspectRatioClasses[aspectRatio]} bg-gradient-to-br from-muted/80 to-muted flex flex-col items-center justify-center gap-3 border-2 border-dashed border-muted-foreground/20`}
-      >
-        <div className="w-16 h-16 rounded-full bg-muted-foreground/10 flex items-center justify-center">
-          <Camera className="w-8 h-8 text-muted-foreground/50" />
+    <div className={`rounded-xl bg-gradient-to-br from-muted/60 to-muted/30 p-4 flex items-center gap-4 border border-border/50 ${className}`}>
+      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+        <Icon className="w-6 h-6 text-primary" />
+      </div>
+      <div className="min-w-0">
+        <p className="font-medium text-foreground text-sm truncate">{title}</p>
+        {description && (
+          <p className="text-muted-foreground text-xs mt-0.5 line-clamp-2">{description}</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+interface FertilizanteCardProps {
+  nome: string;
+  formula: string;
+  percentual: string;
+  descricao?: string;
+  icon?: LucideIcon;
+}
+
+export const FertilizanteCard = ({
+  nome,
+  formula,
+  percentual,
+  descricao,
+  icon: Icon = Beaker,
+}: FertilizanteCardProps) => {
+  return (
+    <div className="bg-card rounded-xl p-4 border border-border shadow-sm hover:shadow-md transition-shadow">
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+          <Icon className="w-5 h-5 text-primary" />
         </div>
-        <div className="text-center px-4">
-          <p className="text-muted-foreground/70 text-sm font-medium">{title}</p>
-          {description && (
-            <p className="text-muted-foreground/50 text-xs mt-1 max-w-[200px]">
-              {description}
-            </p>
+        <div className="min-w-0 flex-1">
+          <h4 className="font-bold text-foreground text-sm">{nome}</h4>
+          <p className="text-muted-foreground text-xs">{formula}</p>
+          <p className="text-primary font-bold text-lg mt-1">{percentual}</p>
+          {descricao && (
+            <p className="text-muted-foreground text-[10px] uppercase mt-0.5">{descricao}</p>
           )}
         </div>
       </div>
-      <div className="bg-muted/50 backdrop-blur-sm p-3 text-center border-t border-muted-foreground/10">
-        <p className="text-muted-foreground text-xs flex items-center justify-center gap-1.5">
-          <Image className="w-3.5 h-3.5" />
-          Espaço para imagem ilustrativa
-        </p>
-      </div>
-    </figure>
+    </div>
   );
 };
 
@@ -77,6 +102,7 @@ interface ImageGridProps {
     description?: string;
     imageSrc?: string;
     imageAlt?: string;
+    icon?: LucideIcon;
   }>;
   columns?: 2 | 3 | 4;
   aspectRatio?: "square" | "video" | "wide" | "portrait";
@@ -94,7 +120,7 @@ export const ImageGrid = ({
   };
 
   return (
-    <div className={`grid ${columnClasses[columns]} gap-4`}>
+    <div className={`grid ${columnClasses[columns]} gap-3`}>
       {images.map((image, index) => (
         <ImagePlaceholder
           key={index}
@@ -103,6 +129,7 @@ export const ImageGrid = ({
           imageSrc={image.imageSrc}
           imageAlt={image.imageAlt}
           aspectRatio={aspectRatio}
+          icon={image.icon}
         />
       ))}
     </div>

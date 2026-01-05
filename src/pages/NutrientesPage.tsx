@@ -24,7 +24,7 @@ function DesktopSidebarToggle() {
 
 const NutrientesPage = () => {
   return (
-    <SidebarProvider defaultOpen={true}>
+    <SidebarProvider defaultOpen={false}>
       <div className="min-h-screen flex w-full bg-gradient-to-b from-muted/50 to-muted">
         <NutrienteSidebar />
         <SidebarInset>
