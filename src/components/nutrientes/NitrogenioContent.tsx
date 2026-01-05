@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Beaker, Leaf, RefreshCw, Dna, Zap, AlertTriangle, BarChart3, Lightbulb, FlaskConical, Sprout } from "lucide-react";
+import { Beaker, Leaf, RefreshCw, Dna, Zap, AlertTriangle, BarChart3, Lightbulb, FlaskConical, Sprout, Droplets, Atom, CircleDot, Layers } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ImagePlaceholder, ImageGrid } from "./ImagePlaceholder";
+import { FertilizanteCard, ImageGrid, ImagePlaceholder } from "./ImagePlaceholder";
 import AbsorcaoSojaAccordion from "./AbsorcaoSojaAccordion";
 const fontesNitrogenio = [{
   nome: "Ureia",
@@ -136,25 +136,19 @@ export default function NitrogenioContent() {
           </CardContent>
         </Card>
 
-        {/* Imagens de Fontes */}
+        {/* Fertilizantes Nitrogenados */}
         <section>
           <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
             <FlaskConical className="w-5 h-5 text-blue-600" />
             Fertilizantes Nitrogenados
           </h3>
-          <ImageGrid columns={4} aspectRatio="square" images={[{
-          title: "Ureia Granulada",
-          description: "47% N - Mais utilizada"
-        }, {
-          title: "Nitrato de Amônio",
-          description: "33% N - Pronta disponibilidade"
-        }, {
-          title: "Sulfato de Amônio",
-          description: "21% N + 24% S"
-        }, {
-          title: "MAP/DAP",
-          description: "Fontes NP combinadas"
-        }]} />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <FertilizanteCard nome="Ureia" formula="CH₄N₂O" percentual="47% N" descricao="Mais utilizada" icon={Beaker} />
+            <FertilizanteCard nome="Nitrato de Amônio" formula="NH₄NO₃" percentual="33% N" descricao="Pronta disponibilidade" icon={Atom} />
+            <FertilizanteCard nome="Sulfato de Amônio" formula="(NH₄)₂SO₄" percentual="21% N" descricao="+ 24% S" icon={Droplets} />
+            <FertilizanteCard nome="MAP" formula="NH₄H₂PO₄" percentual="10% N" descricao="+ 48% P₂O₅" icon={CircleDot} />
+            <FertilizanteCard nome="DAP" formula="(NH₄)₂HPO₄" percentual="17% N" descricao="+ 45% P₂O₅" icon={Layers} />
+          </div>
         </section>
 
         {/* Ciclo do Nitrogênio */}
@@ -174,9 +168,12 @@ export default function NitrogenioContent() {
                   <p className="text-muted-foreground text-sm leading-relaxed">{processo.descricao}</p>
                 </div>)}
             </div>
-            <div className="space-y-4">
-              <ImagePlaceholder title="Diagrama do Ciclo do Nitrogênio" description="Transformações do N no sistema solo-planta-atmosfera" aspectRatio="square" />
-              <ImagePlaceholder title="Nódulos de Bradyrhizobium" description="Fixação biológica em raízes de soja" aspectRatio="video" />
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 rounded-2xl p-6 flex items-center justify-center">
+              <div className="text-center">
+                <RefreshCw className="w-16 h-16 text-blue-500 mx-auto mb-4" />
+                <p className="text-blue-700 dark:text-blue-300 font-medium">Ciclo do Nitrogênio</p>
+                <p className="text-blue-600/70 dark:text-blue-400/70 text-sm mt-1">N₂ ⇄ NH₃ ⇄ NO₃⁻</p>
+              </div>
             </div>
           </div>
         </section>
@@ -209,7 +206,13 @@ export default function NitrogenioContent() {
                 </li>
               </ul>
             </div>
-            <ImagePlaceholder title="Simbiose Bradyrhizobium-Leguminosa" description="Formação de nódulos radiculares" aspectRatio="video" />
+            <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 dark:from-emerald-900/40 dark:to-emerald-800/30 rounded-xl p-6 flex items-center justify-center">
+              <div className="text-center">
+                <Sprout className="w-16 h-16 text-emerald-600 mx-auto mb-4" />
+                <p className="text-emerald-700 dark:text-emerald-300 font-medium">Simbiose Leguminosa</p>
+                <p className="text-emerald-600/70 dark:text-emerald-400/70 text-sm mt-1">Bradyrhizobium + Raízes</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -260,8 +263,7 @@ export default function NitrogenioContent() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm mb-4">{funcao.descricao}</p>
-                  <ImagePlaceholder title={`${funcao.titulo} - Ilustração`} description={`Função do N: ${funcao.titulo}`} aspectRatio="video" />
+                  <p className="text-muted-foreground text-sm">{funcao.descricao}</p>
                 </CardContent>
               </Card>)}
           </div>
@@ -290,9 +292,12 @@ export default function NitrogenioContent() {
                     </li>)}
                 </ul>
               </div>
-              <div className="space-y-4">
-                <ImagePlaceholder title="Clorose em Folhas Velhas" description="Amarelecimento generalizado típico" aspectRatio="video" />
-                <ImagePlaceholder title="Comparação: Deficiente vs Adequado" description="Diferença visual no desenvolvimento" aspectRatio="video" />
+              <div className="bg-gradient-to-br from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-xl p-6 flex items-center justify-center">
+                <div className="text-center">
+                  <AlertTriangle className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+                  <p className="text-orange-700 dark:text-orange-300 font-medium">Sintomas Visuais</p>
+                  <p className="text-orange-600/70 dark:text-orange-400/70 text-sm mt-1">Clorose foliar progressiva</p>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -341,13 +346,16 @@ export default function NitrogenioContent() {
           </h3>
           <ImageGrid columns={3} aspectRatio="video" images={[{
           title: "Aplicação de Ureia em Cobertura",
-          description: "Adubação nitrogenada em milho"
+          description: "Adubação nitrogenada em milho",
+          icon: Beaker
         }, {
           title: "Deficiência de N em Soja",
-          description: "Clorose em folhas basais"
+          description: "Clorose em folhas basais",
+          icon: AlertTriangle
         }, {
           title: "Inoculação de Sementes",
-          description: "Bradyrhizobium para FBN"
+          description: "Bradyrhizobium para FBN",
+          icon: Sprout
         }]} />
         </section>
 
