@@ -165,11 +165,11 @@ const JornadaProfissionalPage = () => {
               </span>
               <span className="text-[15px] text-ios-green font-medium">+55 (63) 98437-6572</span>
             </a>
-            <a href="mailto:raudineiasp@gmail.com" className="flex items-center justify-between px-5 py-3 hover:bg-ios-gray-6/50 transition-colors">
+            <a href="mailto:raudyney@hotmail.com" className="flex items-center justify-between px-5 py-3 hover:bg-ios-gray-6/50 transition-colors">
               <span className="flex items-center gap-3 text-[15px] text-ios-gray-1">
                 <Mail className="w-5 h-5 text-ios-gray-4" /> E-mail
               </span>
-              <span className="text-[15px] text-ios-green font-medium">raudineiasp@gmail.com</span>
+              <span className="text-[15px] text-ios-green font-medium">raudyney@hotmail.com</span>
             </a>
             <a href="https://www.linkedin.com/in/raudinei" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-5 py-3 hover:bg-ios-gray-6/50 transition-colors">
               <span className="flex items-center gap-3 text-[15px] text-ios-gray-1">

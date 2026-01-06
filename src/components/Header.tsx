@@ -7,14 +7,14 @@ const Header = () => {
   const socialLinks = [
     {
       id: "linkedin",
-      href: "https://linkedin.com/in/raudinei-afonso",
+      href: "https://www.linkedin.com/in/raudinei",
       icon: Linkedin,
       label: "LinkedIn",
       hoverColor: "hover:bg-blue-500 hover:text-white hover:border-blue-500",
     },
     {
       id: "email",
-      href: "mailto:contato@raudineiafonso.com.br",
+      href: "mailto:raudyney@hotmail.com",
       icon: Mail,
       label: "E-mail",
       hoverColor: "hover:bg-red-500 hover:text-white hover:border-red-500",

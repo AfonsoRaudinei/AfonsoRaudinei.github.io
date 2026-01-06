@@ -1,26 +1,26 @@
 import { MapPin, Mail, Phone, Linkedin, Instagram, MessageCircle, GraduationCap, Briefcase, Target } from "lucide-react";
 const Footer = () => {
-  const whatsappLink = "https://wa.me/5562999999999?text=Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.";
+  const whatsappLink = "https://wa.me/5563984376572?text=Olá! Gostaria de tirar uma dúvida sobre manejo de solo ou nutrição de plantas.";
   const contactCards = [{
     icon: Mail,
     label: "E-mail",
-    value: "contato@raudineiafonso.com.br",
-    href: "mailto:contato@raudineiafonso.com.br"
+    value: "raudyney@hotmail.com",
+    href: "mailto:raudyney@hotmail.com"
   }, {
     icon: Phone,
     label: "Telefone",
-    value: "+55 62 99999-9999",
-    href: "tel:+5562999999999"
+    value: "+55 63 98437-6572",
+    href: "tel:+5563984376572"
   }, {
     icon: MapPin,
     label: "Localização",
-    value: "Goiás, Brasil",
+    value: "Tocantins, Brasil",
     href: "#"
   }];
   const socialLinks = [{
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/raudinei-afonso"
+    href: "https://www.linkedin.com/in/raudinei"
   }, {
     icon: Instagram,
     label: "Instagram",
@@ -51,7 +51,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Raudinei Afonso · Engenheiro Agrônomo
           </p>
           <p className="text-xs text-blue-400 mt-1">
-            Fertilidade do Solo & Nutrição de Plantas · Goiás, Brasil
+            Fertilidade do Solo & Nutrição de Plantas · Tocantins, Brasil
           </p>
         </div>
       </div>
