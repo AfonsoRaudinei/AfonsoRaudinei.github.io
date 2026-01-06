@@ -22,7 +22,7 @@ export function NutrienteSidebar() {
   const isCollapsed = state === "collapsed";
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-border/50 w-[200px]">
+    <Sidebar collapsible="offcanvas" className="border-r border-border/50 w-[200px]">
       <SidebarHeader className="border-b border-border/50">
         <div className="flex items-center gap-3 px-2 py-2">
           <Link
