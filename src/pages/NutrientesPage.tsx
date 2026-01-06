@@ -1,9 +1,10 @@
 import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
 import { NutrienteSidebar } from "@/components/nutrientes/NutrienteSidebar";
 import { NutrienteContent } from "@/components/nutrientes/NutrienteContent";
-import { PanelLeftClose, PanelLeft } from "lucide-react";
+import { PanelLeftClose, PanelLeft, ArrowLeft } from "lucide-react";
 import { useSidebar } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 function DesktopSidebarToggle() {
   const { state, toggleSidebar } = useSidebar();
@@ -31,6 +32,12 @@ const NutrientesPage = () => {
           <header className="sticky top-0 z-40 flex h-14 items-center gap-4 border-b border-border/50 bg-background/80 backdrop-blur-xl px-4">
             <SidebarTrigger className="md:hidden" />
             <DesktopSidebarToggle />
+            <Link to="/">
+              <Button variant="ghost" size="sm" className="h-8 text-muted-foreground hover:text-foreground">
+                <ArrowLeft className="w-4 h-4 mr-1" />
+                Início
+              </Button>
+            </Link>
             <span className="font-semibold text-sm">Nutrientes do Solo</span>
           </header>
           <NutrienteContent />

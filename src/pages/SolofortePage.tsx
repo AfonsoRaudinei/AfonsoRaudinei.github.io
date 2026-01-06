@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import { FileText, BarChart3, Target, Microscope, Leaf, TrendingUp } from "lucide-react";
+import { FileText, BarChart3, Target, Microscope, Leaf, TrendingUp, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -71,33 +73,41 @@ const SolofortePage = () => {
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-6 lg:px-12 bg-gradient-to-b from-[#1E3A2F] to-[#2D4A3F]">
-        <div className="container mx-auto max-w-6xl text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6">
-            <Leaf className="w-4 h-4 text-[#4ADE80]" />
-            <span className="text-sm text-white/80">Consultoria Técnica Especializada</span>
-          </div>
-          
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            SOLO<span className="text-[#4ADE80]">FORTE</span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-8">
-            Ferramentas de análise e consultoria técnica para maximizar a fertilidade do solo 
-            e a nutrição das suas culturas.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <span className="text-2xl font-bold text-[#4ADE80]">500+</span>
-              <p className="text-sm text-white/70">Laudos emitidos</p>
+        <div className="container mx-auto max-w-6xl">
+          <Link to="/">
+            <Button variant="ghost" size="sm" className="mb-6 text-white/80 hover:text-white hover:bg-white/10">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Voltar ao início
+            </Button>
+          </Link>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm mb-6">
+              <Leaf className="w-4 h-4 text-[#4ADE80]" />
+              <span className="text-sm text-white/80">Consultoria Técnica Especializada</span>
             </div>
-            <div className="px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <span className="text-2xl font-bold text-[#4ADE80]">98%</span>
-              <p className="text-sm text-white/70">Satisfação</p>
-            </div>
-            <div className="px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <span className="text-2xl font-bold text-[#4ADE80]">15+</span>
-              <p className="text-sm text-white/70">Anos de experiência</p>
+            
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+              SOLO<span className="text-[#4ADE80]">FORTE</span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+              Ferramentas de análise e consultoria técnica para maximizar a fertilidade do solo 
+              e a nutrição das suas culturas.
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <span className="text-2xl font-bold text-[#4ADE80]">500+</span>
+                <p className="text-sm text-white/70">Laudos emitidos</p>
+              </div>
+              <div className="px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <span className="text-2xl font-bold text-[#4ADE80]">98%</span>
+                <p className="text-sm text-white/70">Satisfação</p>
+              </div>
+              <div className="px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <span className="text-2xl font-bold text-[#4ADE80]">15+</span>
+                <p className="text-sm text-white/70">Anos de experiência</p>
+              </div>
             </div>
           </div>
         </div>
