@@ -24,7 +24,7 @@ const Footer = () => {
   }, {
     icon: Instagram,
     label: "Instagram",
-    href: "https://www.instagram.com/p/DR8PlA_DRHe/"
+    href: "https://www.instagram.com/raudineiafonsosilva"
   }, {
     icon: MessageCircle,
     label: "WhatsApp",
