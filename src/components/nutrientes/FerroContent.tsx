@@ -10,7 +10,7 @@ const FerroContent = () => (
       <div className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
       <div className="absolute bottom-10 left-10 w-24 h-24 bg-white/5 rounded-full blur-xl" />
       
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-center justify-center gap-6 mb-8">
           <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl ring-4 ring-red-300/30">
             <span className="text-5xl font-bold text-red-600">Fe</span>
@@ -40,7 +40,7 @@ const FerroContent = () => (
       </div>
     </div>
 
-    <div className="max-w-5xl mx-auto px-6 py-12 space-y-12">
+    <div className="max-w-6xl mx-auto px-6 py-12 space-y-12">
       
       {/* Principais Fontes */}
       <Card className="bg-gradient-to-br from-red-500 to-red-700 text-white border-0 shadow-xl overflow-hidden">
