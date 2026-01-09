@@ -21,7 +21,7 @@ const Header = () => {
     },
     {
       id: "instagram",
-      href: "https://www.instagram.com/raudineiafonsosilva",
+      href: "https://www.instagram.com/raudineiafonsosilva?igsh=MTA5ZXBnODBwamxvMw%3D%3D&utm_source=qr",
       icon: Instagram,
       label: "Instagram",
       hoverColor: "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white hover:border-pink-500",
