@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router-dom";
-import { Leaf, Sparkles, ArrowLeft, Atom } from "lucide-react";
+import { Link, useParams, useLocation } from "react-router-dom";
+import { Leaf, Sparkles, ArrowLeft, Atom, BarChart3 } from "lucide-react";
 import { macronutrientes, micronutrientes } from "@/data/nutrientes";
 import {
   Sidebar,
@@ -18,8 +18,10 @@ import { cn } from "@/lib/utils";
 
 export function NutrienteSidebar() {
   const { slug } = useParams();
+  const location = useLocation();
   const { state } = useSidebar();
   const isCollapsed = state === "collapsed";
+  const isAnaliseActive = location.pathname === "/nutrientes/analise-absorcao";
 
   return (
     <Sidebar collapsible="offcanvas" className="border-r border-border/50 w-[200px]">
@@ -47,6 +49,32 @@ export function NutrienteSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
+        {/* Ferramenta de Análise */}
+        <SidebarGroup>
+          <SidebarGroupLabel className="flex items-center gap-2">
+            <BarChart3 className="w-3 h-3 text-amber-500" />
+            {!isCollapsed && "Ferramentas"}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isAnaliseActive}
+                  tooltip="Análise de Absorção"
+                >
+                  <Link to="/nutrientes/analise-absorcao">
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-sm">
+                      <BarChart3 className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="truncate">Análise Absorção</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
         {/* Macronutrientes */}
         <SidebarGroup>
           <SidebarGroupLabel className="flex items-center gap-2">

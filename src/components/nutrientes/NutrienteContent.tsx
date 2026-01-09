@@ -1,6 +1,7 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useLocation } from "react-router-dom";
 import { getNutrienteBySlug } from "@/data/nutrientes";
 import { Droplets } from "lucide-react";
+import AbsorcaoAnalyzer from "./AbsorcaoAnalyzer";
 import NitrogenioContent from "./NitrogenioContent";
 import FosforoContent from "./FosforoContent";
 import ManganeContent from "./ManganeContent";
@@ -39,6 +40,16 @@ const nutrientComponents: Record<string, React.ComponentType> = {
 
 export function NutrienteContent() {
   const { slug } = useParams();
+  const location = useLocation();
+
+  // Render absorption analyzer tool
+  if (location.pathname === "/nutrientes/analise-absorcao") {
+    return (
+      <div className="p-6 lg:p-8 max-w-6xl mx-auto animate-fade-in">
+        <AbsorcaoAnalyzer />
+      </div>
+    );
+  }
   
   // Default to nitrogen if no slug
   if (!slug) {

@@ -22,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/jornada-profissional" element={<JornadaProfissionalPage />} />
           <Route path="/nutrientes" element={<NutrientesPage />} />
+          <Route path="/nutrientes/analise-absorcao" element={<NutrientesPage />} />
           <Route path="/nutrientes/:slug" element={<NutrientesPage />} />
           <Route path="/soja" element={<SojaPage />} />
           <Route path="/soloforte" element={<SolofortePage />} />
