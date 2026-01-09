@@ -79,6 +79,40 @@ const nutrientData: Record<string, Record<string, { Extração: Record<string, n
       Extração: { N: 747.2, P: 151.7, K: 574.7, Ca: 187.0, Mg: 77.0, S: 11.4, Cu: 171.3, Fe: 2919.4, Zn: 756.8, Mn: 996.5, B: 776.3, Mo: 61.8, Co: 2.7, Ni: 11.4 }
     }
   },
+  Cultivar: {
+    "73i75RSF": {
+      Exportação: { N: 57.2, P: 5.5, K: 19.0, Ca: 2.2, Mg: 2.9, S: 2.9, Cu: 9.7, Fe: 31.1, Zn: 31.6, Mn: 2.5, B: 3.9, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 82.9, P: 8.46, K: 35.85, Ca: 8.8, Mg: 9.06, S: 6.74, Cu: 19.4, Fe: 155.5, Zn: 63.2, Mn: 12.5, B: 10.26, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "M6210 Ipro": {
+      Exportação: { N: 58.6, P: 5.2, K: 19.9, Ca: 2.2, Mg: 2.6, S: 3.0, Cu: 8.4, Fe: 28.8, Zn: 28.7, Mn: 2.6, B: 31.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 84.93, P: 8.0, K: 37.55, Ca: 8.8, Mg: 8.13, S: 6.98, Cu: 16.8, Fe: 144.0, Zn: 57.4, Mn: 13.0, B: 82.37, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "AS3640i2x": {
+      Exportação: { N: 62.1, P: 5.6, K: 19.3, Ca: 1.7, Mg: 2.4, S: 3.2, Cu: 8.8, Fe: 76.0, Zn: 32.6, Mn: 18.8, B: 33.7, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 90.0, P: 8.62, K: 36.42, Ca: 6.8, Mg: 7.5, S: 7.44, Cu: 17.6, Fe: 380.0, Zn: 65.2, Mn: 94.0, B: 88.68, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "DM 74K75": {
+      Exportação: { N: 63.2, P: 4.7, K: 19.2, Ca: 2.2, Mg: 2.4, S: 3.0, Cu: 7.6, Fe: 36.7, Zn: 26.7, Mn: 19.8, B: 35.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 91.59, P: 7.23, K: 36.23, Ca: 8.8, Mg: 7.5, S: 6.98, Cu: 15.2, Fe: 183.5, Zn: 53.4, Mn: 99.0, B: 92.89, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "NEOGEN 770": {
+      Exportação: { N: 59.3, P: 5.2, K: 16.3, Ca: 2.7, Mg: 2.7, S: 3.0, Cu: 9.4, Fe: 51.0, Zn: 32.2, Mn: 21.2, B: 38.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 85.94, P: 8.0, K: 30.75, Ca: 10.8, Mg: 8.44, S: 6.98, Cu: 18.8, Fe: 255.0, Zn: 64.4, Mn: 106.0, B: 100.0, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Desafio RR": {
+      Exportação: { N: 57.8, P: 5.2, K: 19.6, Ca: 2.7, Mg: 2.6, S: 3.1, Cu: 9.1, Fe: 22.7, Zn: 34.3, Mn: 22.5, B: 31.6, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 83.77, P: 8.0, K: 36.98, Ca: 10.8, Mg: 8.13, S: 7.21, Cu: 18.2, Fe: 113.5, Zn: 68.6, Mn: 112.5, B: 83.16, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "CZ37B43 I2X": {
+      Exportação: { N: 63.6, P: 5.1, K: 18.1, Ca: 2.6, Mg: 2.9, S: 3.3, Cu: 9.0, Fe: 41.6, Zn: 29.4, Mn: 22.9, B: 35.5, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 92.17, P: 7.85, K: 34.15, Ca: 10.4, Mg: 9.06, S: 7.67, Cu: 18.0, Fe: 208.0, Zn: 58.8, Mn: 114.5, B: 93.42, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Juruena Ipro": {
+      Exportação: { N: 58.0, P: 5.8, K: 21.8, Ca: 2.5, Mg: 2.6, S: 2.9, Cu: 7.4, Fe: 15.1, Zn: 44.9, Mn: 29.9, B: 39.6, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 84.06, P: 8.92, K: 41.13, Ca: 10.0, Mg: 8.13, S: 6.74, Cu: 14.8, Fe: 75.5, Zn: 89.8, Mn: 149.5, B: 104.21, Mo: 0, Co: 0, Ni: 0 }
+    },
+  },
 };
 
 // Índices de exportação
@@ -185,12 +219,13 @@ export default function AbsorcaoAnalyzer() {
                 <SelectContent>
                   <SelectItem value="Autores">Autores</SelectItem>
                   <SelectItem value="Tecnologia">Tecnologia</SelectItem>
+                  <SelectItem value="Cultivar">Cultivar</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label className="text-xs font-semibold text-primary">2. {sourceType === 'Autores' ? 'Autor' : 'Tecnologia'}</Label>
+              <Label className="text-xs font-semibold text-primary">2. {sourceType === 'Autores' ? 'Autor' : sourceType === 'Tecnologia' ? 'Tecnologia' : 'Cultivar'}</Label>
               <Select value={selectedSource} onValueChange={setSelectedSource}>
                 <SelectTrigger className="h-10">
                   <SelectValue />
@@ -385,13 +420,33 @@ export default function AbsorcaoAnalyzer() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {chartData.data.map((item, i) => (
-                  <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                    <TableCell className="font-medium">{item.stage}</TableCell>
-                    <TableCell className="text-right font-mono">{item.percentage.toFixed(1)}%</TableCell>
-                    <TableCell className="text-right font-mono font-semibold">{item.value.toFixed(2)}</TableCell>
-                  </TableRow>
-                ))}
+                {chartData.data.map((item, i) => {
+                  // Define color intensity based on percentage
+                  const getPercentageStyle = (percentage: number) => {
+                    if (percentage >= 20) return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700";
+                    if (percentage >= 15) return "bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border-blue-200 dark:border-blue-700";
+                    if (percentage >= 10) return "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 border-amber-200 dark:border-amber-700";
+                    if (percentage >= 5) return "bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300 border-orange-200 dark:border-orange-700";
+                    return "bg-slate-100 text-slate-600 dark:bg-slate-800/50 dark:text-slate-400 border-slate-200 dark:border-slate-700";
+                  };
+                  
+                  return (
+                    <TableRow key={i} className="hover:bg-muted/30 transition-colors">
+                      <TableCell className="font-medium">
+                        <span className="inline-flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600"></span>
+                          {item.stage}
+                        </span>
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <span className={`inline-flex items-center justify-center px-3 py-1.5 rounded-full text-xs font-bold border ${getPercentageStyle(item.percentage)}`}>
+                          {item.percentage.toFixed(1)}%
+                        </span>
+                      </TableCell>
+                      <TableCell className="text-right font-mono font-semibold text-foreground">{item.value.toFixed(2)}</TableCell>
+                    </TableRow>
+                  );
+                })}
               </TableBody>
             </Table>
           </div>
