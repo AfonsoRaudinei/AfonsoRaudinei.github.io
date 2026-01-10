@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronRight, ChevronDown, Circle } from "lucide-react";
+import { ChevronRight, ChevronDown, Circle, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface MindMapNode {
@@ -16,7 +16,7 @@ const mindMapData: MindMapNode = {
     {
       id: "ctc",
       label: "Capacidade de Troca Catiônica (CTC)",
-      color: "bg-blue-500",
+      color: "bg-emerald-500",
       children: [
         {
           id: "ctc-1",
@@ -93,7 +93,7 @@ const mindMapData: MindMapNode = {
     {
       id: "quimica",
       label: "Química do Solo",
-      color: "bg-amber-500",
+      color: "bg-teal-500",
       children: [
         {
           id: "quim-1",
@@ -128,7 +128,7 @@ const mindMapData: MindMapNode = {
     {
       id: "casos",
       label: "Estudos de Caso",
-      color: "bg-purple-500",
+      color: "bg-lime-600",
       children: [
         {
           id: "caso-1",
@@ -175,19 +175,19 @@ const MindMapNodeComponent = ({ node, level, isLast = false }: NodeProps) => {
   const getLevelStyles = () => {
     switch (level) {
       case 0:
-        return "bg-primary text-primary-foreground font-bold text-lg px-6 py-4 rounded-2xl shadow-lg";
+        return "bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 text-white font-bold text-lg px-6 py-4 rounded-2xl shadow-lg shadow-green-500/20";
       case 1:
-        return `${node.color || "bg-secondary"} text-white font-semibold px-4 py-2.5 rounded-xl shadow-md`;
+        return `${node.color || "bg-emerald-500"} text-white font-semibold px-4 py-2.5 rounded-xl shadow-md`;
       case 2:
-        return "bg-muted hover:bg-muted/80 text-foreground font-medium px-3 py-2 rounded-lg border border-border";
+        return "bg-emerald-50 hover:bg-emerald-100 text-emerald-900 font-medium px-3 py-2 rounded-lg border border-emerald-200";
       default:
-        return "bg-card hover:bg-accent text-muted-foreground px-3 py-1.5 rounded-md text-sm border border-border/50";
+        return "bg-white hover:bg-emerald-50 text-gray-700 px-3 py-1.5 rounded-md text-sm border border-gray-200 shadow-sm";
     }
   };
 
   const getConnectorColor = () => {
-    if (level === 1) return node.color?.replace("bg-", "border-") || "border-secondary";
-    return "border-border";
+    if (level === 1) return node.color?.replace("bg-", "border-") || "border-emerald-500";
+    return "border-emerald-300";
   };
 
   return (
@@ -251,37 +251,47 @@ const MindMapNodeComponent = ({ node, level, isLast = false }: NodeProps) => {
 
 const MindMap = () => {
   return (
-    <div className="w-full min-h-screen bg-background p-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
-            Mapa Mental
-          </h1>
-          <p className="text-muted-foreground">
-            Clique nos nós para expandir ou retrair os subtópicos
+    <div className="w-full min-h-screen bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 py-12 px-4 md:px-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="mb-10 text-center">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg shadow-green-500/30">
+              <Brain className="w-6 h-6 text-white" />
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Mapa Mental
+            </h1>
+          </div>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Clique nos nós para expandir ou retrair os subtópicos sobre{" "}
+            <span className="text-emerald-600 font-medium">Nutrição Vegetal</span> e{" "}
+            <span className="text-teal-600 font-medium">Dinâmica da MOS</span>
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl border border-border p-8 shadow-sm">
+        {/* Mind Map Container */}
+        <div className="bg-white rounded-2xl border border-emerald-100 p-6 md:p-10 shadow-xl shadow-green-500/5">
           <MindMapNodeComponent node={mindMapData} level={0} />
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-4 justify-center">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-3 h-3 rounded bg-blue-500" />
+        {/* Legend */}
+        <div className="mt-8 flex flex-wrap gap-4 justify-center">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="w-3 h-3 rounded bg-emerald-500" />
             <span>CTC</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
             <div className="w-3 h-3 rounded bg-green-500" />
             <span>Nutrição</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-3 h-3 rounded bg-amber-500" />
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="w-3 h-3 rounded bg-teal-500" />
             <span>Química</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-3 h-3 rounded bg-purple-500" />
-            <span>Casos</span>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="w-3 h-3 rounded bg-lime-600" />
+            <span>Estudos de Caso</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Wheat, Layers, Atom } from "lucide-react";
+import { ArrowRight, Leaf, Wheat, Layers, Atom, Brain } from "lucide-react";
 
 const specialties = [
   {
@@ -58,6 +58,19 @@ const specialties = [
       "Zinco (Zn)",
     ],
     link: "/nutrientes",
+  },
+  {
+    FallbackIcon: Brain,
+    imageUrl: "https://afonsoraudinei.github.io/assets/icons/mindmap-icon.png",
+    title: "MAPA MENTAL",
+    subtitle: "Nutrição vegetal e dinâmica da MOS",
+    topics: [
+      "CTC e Fertilidade",
+      "Nutrição Mineral",
+      "Química do Solo",
+      "Estudos de Caso",
+    ],
+    link: "/mapa-mental",
   },
 ];
 
