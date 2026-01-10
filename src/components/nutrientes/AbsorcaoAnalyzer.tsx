@@ -80,37 +80,186 @@ const nutrientData: Record<string, Record<string, { Extração: Record<string, n
     }
   },
   Cultivar: {
-    "73i75RSF": {
+    // Pioneer
+    "73i75RSF (Pioneer)": {
       Exportação: { N: 57.2, P: 5.5, K: 19.0, Ca: 2.2, Mg: 2.9, S: 2.9, Cu: 9.7, Fe: 31.1, Zn: 31.6, Mn: 2.5, B: 3.9, Mo: 0, Co: 0, Ni: 0 },
       Extração: { N: 82.9, P: 8.46, K: 35.85, Ca: 8.8, Mg: 9.06, S: 6.74, Cu: 19.4, Fe: 155.5, Zn: 63.2, Mn: 12.5, B: 10.26, Mo: 0, Co: 0, Ni: 0 }
     },
-    "M6210 Ipro": {
-      Exportação: { N: 58.6, P: 5.2, K: 19.9, Ca: 2.2, Mg: 2.6, S: 3.0, Cu: 8.4, Fe: 28.8, Zn: 28.7, Mn: 2.6, B: 31.3, Mo: 0, Co: 0, Ni: 0 },
-      Extração: { N: 84.93, P: 8.0, K: 37.55, Ca: 8.8, Mg: 8.13, S: 6.98, Cu: 16.8, Fe: 144.0, Zn: 57.4, Mn: 13.0, B: 82.37, Mo: 0, Co: 0, Ni: 0 }
+    "75i74RSF (Pioneer)": {
+      Exportação: { N: 56.4, P: 5.1, K: 17.1, Ca: 2.3, Mg: 2.8, S: 3.0, Cu: 1.1, Fe: 285.3, Zn: 3.7, Mn: 2.8, B: 36.6, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 81.74, P: 7.85, K: 32.26, Ca: 9.2, Mg: 8.75, S: 6.98, Cu: 2.2, Fe: 1426.5, Zn: 7.4, Mn: 14.0, B: 96.32, Mo: 0, Co: 0, Ni: 0 }
     },
-    "AS3640i2x": {
+    "77EA40 (Pioneer)": {
+      Exportação: { N: 57.6, P: 5.1, K: 17.1, Ca: 2.3, Mg: 2.7, S: 2.7, Cu: 8.5, Fe: 51.3, Zn: 27.9, Mn: 18.6, B: 31.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 83.48, P: 7.85, K: 32.26, Ca: 9.2, Mg: 8.44, S: 6.28, Cu: 17.0, Fe: 256.5, Zn: 55.8, Mn: 93.0, B: 82.37, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Brasmax
+    "Olimpo 80182 RFS (Brasmax)": {
+      Exportação: { N: 63.2, P: 4.6, K: 18.4, Ca: 2.6, Mg: 2.9, S: 2.6, Cu: 8.8, Fe: 37.9, Zn: 26.3, Mn: 19.9, B: 35.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 91.59, P: 7.08, K: 34.72, Ca: 10.4, Mg: 9.06, S: 6.05, Cu: 17.6, Fe: 189.5, Zn: 52.6, Mn: 99.5, B: 92.89, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Desafio 8473 RFS (Brasmax)": {
+      Exportação: { N: 61.7, P: 4.5, K: 18.1, Ca: 2.5, Mg: 2.6, S: 2.9, Cu: 7.8, Fe: 29.8, Zn: 25.9, Mn: 23.1, B: 31.8, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 89.42, P: 6.92, K: 34.15, Ca: 10.0, Mg: 8.13, S: 6.74, Cu: 15.6, Fe: 149.0, Zn: 51.8, Mn: 115.5, B: 83.68, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Foco 74177 RFS (Brasmax)": {
+      Exportação: { N: 56.2, P: 5.5, K: 18.8, Ca: 2.6, Mg: 2.7, S: 3.1, Cu: 8.4, Fe: 26.0, Zn: 31.5, Mn: 21.9, B: 36.5, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 81.45, P: 8.46, K: 35.47, Ca: 10.4, Mg: 8.44, S: 7.21, Cu: 16.8, Fe: 130.0, Zn: 63.0, Mn: 109.5, B: 96.05, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Supera 73IX74 (Brasmax)": {
+      Exportação: { N: 62.9, P: 5.4, K: 17.7, Ca: 2.2, Mg: 2.7, S: 2.8, Cu: 9.8, Fe: 37.9, Zn: 29.8, Mn: 2.4, B: 29.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 91.16, P: 8.31, K: 33.4, Ca: 8.8, Mg: 8.44, S: 6.51, Cu: 19.6, Fe: 189.5, Zn: 59.6, Mn: 12.0, B: 77.11, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Lendária 80K80 RFS (Brasmax)": {
+      Exportação: { N: 6.7, P: 4.9, K: 19.1, Ca: 2.4, Mg: 2.5, S: 2.7, Cu: 8.2, Fe: 78.6, Zn: 27.6, Mn: 19.1, B: 25.1, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 9.71, P: 7.54, K: 36.04, Ca: 9.6, Mg: 7.81, S: 6.28, Cu: 16.4, Fe: 393.0, Zn: 55.2, Mn: 95.5, B: 66.05, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Guepardo 67168 RFS (Brasmax)": {
+      Exportação: { N: 63.2, P: 5.5, K: 17.6, Ca: 3.1, Mg: 2.6, S: 3.0, Cu: 8.5, Fe: 32.6, Zn: 3.5, Mn: 21.4, B: 29.1, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 91.59, P: 8.46, K: 33.21, Ca: 12.4, Mg: 8.13, S: 6.98, Cu: 17.0, Fe: 163.0, Zn: 7.0, Mn: 107.0, B: 76.58, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Asgrow / Syngenta
+    "AS3595i2x (Asgrow)": {
+      Exportação: { N: 66.9, P: 5.7, K: 19.2, Ca: 3.0, Mg: 3.3, S: 3.1, Cu: 1.0, Fe: 34.5, Zn: 35.1, Mn: 22.7, B: 35.4, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 96.96, P: 8.77, K: 36.23, Ca: 12.0, Mg: 10.31, S: 7.21, Cu: 2.0, Fe: 172.5, Zn: 70.2, Mn: 113.5, B: 93.16, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "AS3640i2x (Asgrow)": {
       Exportação: { N: 62.1, P: 5.6, K: 19.3, Ca: 1.7, Mg: 2.4, S: 3.2, Cu: 8.8, Fe: 76.0, Zn: 32.6, Mn: 18.8, B: 33.7, Mo: 0, Co: 0, Ni: 0 },
       Extração: { N: 90.0, P: 8.62, K: 36.42, Ca: 6.8, Mg: 7.5, S: 7.44, Cu: 17.6, Fe: 380.0, Zn: 65.2, Mn: 94.0, B: 88.68, Mo: 0, Co: 0, Ni: 0 }
     },
-    "DM 74K75": {
+    "AS3700XTD (Asgrow)": {
+      Exportação: { N: 59.4, P: 5.2, K: 18.6, Ca: 2.3, Mg: 2.3, S: 3.1, Cu: 8.1, Fe: 48.5, Zn: 27.8, Mn: 19.0, B: 29.8, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 86.09, P: 8.0, K: 35.09, Ca: 9.2, Mg: 7.19, S: 7.21, Cu: 16.2, Fe: 242.5, Zn: 55.6, Mn: 95.0, B: 78.42, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "AS3707I2X (Asgrow)": {
+      Exportação: { N: 59.9, P: 5.5, K: 19.3, Ca: 2.1, Mg: 2.5, S: 3.1, Cu: 8.2, Fe: 29.8, Zn: 28.6, Mn: 2.5, B: 3.4, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 86.81, P: 8.46, K: 36.42, Ca: 8.4, Mg: 7.81, S: 7.21, Cu: 16.4, Fe: 149.0, Zn: 57.2, Mn: 12.5, B: 8.95, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "AS3790i2x (Asgrow)": {
+      Exportação: { N: 61.5, P: 4.8, K: 18.0, Ca: 2.0, Mg: 2.5, S: 2.9, Cu: 8.4, Fe: 58.7, Zn: 25.3, Mn: 21.0, B: 28.7, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 89.13, P: 7.38, K: 33.96, Ca: 8.0, Mg: 7.81, S: 6.74, Cu: 16.8, Fe: 293.5, Zn: 50.6, Mn: 105.0, B: 75.53, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // NK / Syngenta
+    "K7922I2X (NK)": {
+      Exportação: { N: 61.4, P: 5.0, K: 19.4, Ca: 2.2, Mg: 2.8, S: 3.1, Cu: 1.0, Fe: 42.9, Zn: 31.9, Mn: 21.2, B: 32.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 88.99, P: 7.69, K: 36.6, Ca: 8.8, Mg: 8.75, S: 7.21, Cu: 2.0, Fe: 214.5, Zn: 63.8, Mn: 106.0, B: 85.0, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Credenz / BASF
+    "CZ37B39 (Credenz)": {
+      Exportação: { N: 6.7, P: 5.4, K: 18.3, Ca: 2.5, Mg: 2.9, S: 3.0, Cu: 1.8, Fe: 35.9, Zn: 3.3, Mn: 2.0, B: 34.7, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 9.71, P: 8.31, K: 34.53, Ca: 10.0, Mg: 9.06, S: 6.98, Cu: 3.6, Fe: 179.5, Zn: 6.6, Mn: 10.0, B: 91.32, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "CZ16B17 Ipro (Credenz)": {
+      Exportação: { N: 62.4, P: 5.5, K: 18.4, Ca: 2.5, Mg: 2.6, S: 2.9, Cu: 8.9, Fe: 52.0, Zn: 31.3, Mn: 19.8, B: 3.8, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 90.43, P: 8.46, K: 34.72, Ca: 10.0, Mg: 8.13, S: 6.74, Cu: 17.8, Fe: 260.0, Zn: 62.6, Mn: 99.0, B: 10.0, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "CZ37B43 I2X (Credenz)": {
+      Exportação: { N: 63.6, P: 5.1, K: 18.1, Ca: 2.6, Mg: 2.9, S: 3.3, Cu: 9.0, Fe: 41.6, Zn: 29.4, Mn: 22.9, B: 35.5, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 92.17, P: 7.85, K: 34.15, Ca: 10.4, Mg: 9.06, S: 7.67, Cu: 18.0, Fe: 208.0, Zn: 58.8, Mn: 114.5, B: 93.42, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Don Mario
+    "DM 69IX69 (Don Mario)": {
+      Exportação: { N: 59.9, P: 5.6, K: 18.2, Ca: 3.3, Mg: 2.8, S: 3.4, Cu: 7.2, Fe: 3.1, Zn: 25.8, Mn: 22.3, B: 32.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 86.81, P: 8.62, K: 34.34, Ca: 13.2, Mg: 8.75, S: 7.91, Cu: 14.4, Fe: 15.5, Zn: 51.6, Mn: 111.5, B: 84.21, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "DM 72IX74 (Don Mario)": {
+      Exportação: { N: 61.3, P: 5.1, K: 18.1, Ca: 2.2, Mg: 2.7, S: 2.9, Cu: 9.6, Fe: 31.6, Zn: 29.2, Mn: 18.6, B: 28.4, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 88.84, P: 7.85, K: 34.15, Ca: 8.8, Mg: 8.44, S: 6.74, Cu: 19.2, Fe: 158.0, Zn: 58.4, Mn: 93.0, B: 74.74, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "DM 74K75 (Don Mario)": {
       Exportação: { N: 63.2, P: 4.7, K: 19.2, Ca: 2.2, Mg: 2.4, S: 3.0, Cu: 7.6, Fe: 36.7, Zn: 26.7, Mn: 19.8, B: 35.3, Mo: 0, Co: 0, Ni: 0 },
       Extração: { N: 91.59, P: 7.23, K: 36.23, Ca: 8.8, Mg: 7.5, S: 6.98, Cu: 15.2, Fe: 183.5, Zn: 53.4, Mn: 99.0, B: 92.89, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "DM 76IX77 (Don Mario)": {
+      Exportação: { N: 59.3, P: 4.7, K: 16.1, Ca: 2.2, Mg: 2.2, S: 2.9, Cu: 8.0, Fe: 48.1, Zn: 26.9, Mn: 21.5, B: 34.8, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 85.94, P: 7.23, K: 30.38, Ca: 8.8, Mg: 6.88, S: 6.74, Cu: 16.0, Fe: 240.5, Zn: 53.8, Mn: 107.5, B: 91.58, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Monsoy
+    "M6110 i2x (Monsoy)": {
+      Exportação: { N: 57.3, P: 5.6, K: 18.5, Ca: 2.2, Mg: 2.5, S: 2.9, Cu: 9.6, Fe: 56.6, Zn: 33.1, Mn: 22.0, B: 31.4, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 83.04, P: 8.62, K: 34.91, Ca: 8.8, Mg: 7.81, S: 6.74, Cu: 19.2, Fe: 283.0, Zn: 66.2, Mn: 110.0, B: 82.63, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "M6210 Ipro (Monsoy)": {
+      Exportação: { N: 58.6, P: 5.2, K: 19.9, Ca: 2.2, Mg: 2.6, S: 3.0, Cu: 8.4, Fe: 28.8, Zn: 28.7, Mn: 2.6, B: 31.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 84.93, P: 8.0, K: 37.55, Ca: 8.8, Mg: 8.13, S: 6.98, Cu: 16.8, Fe: 144.0, Zn: 57.4, Mn: 13.0, B: 82.37, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "M6430 XTD (Monsoy)": {
+      Exportação: { N: 62.4, P: 4.8, K: 17.3, Ca: 3.0, Mg: 3.0, S: 3.1, Cu: 7.7, Fe: 73.4, Zn: 23.6, Mn: 22.4, B: 26.6, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 90.43, P: 7.38, K: 32.64, Ca: 12.0, Mg: 9.38, S: 7.21, Cu: 15.4, Fe: 367.0, Zn: 47.2, Mn: 112.0, B: 70.0, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "M6100 XTD (Monsoy)": {
+      Exportação: { N: 6.7, P: 5.3, K: 19.0, Ca: 2.0, Mg: 2.5, S: 2.9, Cu: 8.9, Fe: 25.3, Zn: 26.7, Mn: 18.8, B: 32.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 9.71, P: 8.15, K: 35.85, Ca: 8.0, Mg: 7.81, S: 6.74, Cu: 17.8, Fe: 126.5, Zn: 53.4, Mn: 94.0, B: 84.21, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Neogen
+    "NEOGEN 680": {
+      Exportação: { N: 61.3, P: 5.9, K: 18.8, Ca: 2.4, Mg: 2.4, S: 3.2, Cu: 1.0, Fe: 4.6, Zn: 29.3, Mn: 18.7, B: 34.9, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 88.84, P: 9.08, K: 35.47, Ca: 9.6, Mg: 7.5, S: 7.44, Cu: 2.0, Fe: 23.0, Zn: 58.6, Mn: 93.5, B: 91.84, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "NEOGEN 71E": {
+      Exportação: { N: 59.2, P: 5.4, K: 17.8, Ca: 2.2, Mg: 2.8, S: 3.0, Cu: 9.0, Fe: 143.1, Zn: 29.0, Mn: 19.0, B: 28.6, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 85.8, P: 8.31, K: 33.58, Ca: 8.8, Mg: 8.75, S: 6.98, Cu: 18.0, Fe: 715.5, Zn: 58.0, Mn: 95.0, B: 75.26, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "NEOGEN 720": {
+      Exportação: { N: 57.3, P: 5.3, K: 18.8, Ca: 2.7, Mg: 2.9, S: 3.0, Cu: 9.6, Fe: 3.8, Zn: 29.4, Mn: 22.9, B: 34.4, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 83.04, P: 8.15, K: 35.47, Ca: 10.8, Mg: 9.06, S: 6.98, Cu: 19.2, Fe: 19.0, Zn: 58.8, Mn: 114.5, B: 90.53, Mo: 0, Co: 0, Ni: 0 }
     },
     "NEOGEN 770": {
       Exportação: { N: 59.3, P: 5.2, K: 16.3, Ca: 2.7, Mg: 2.7, S: 3.0, Cu: 9.4, Fe: 51.0, Zn: 32.2, Mn: 21.2, B: 38.0, Mo: 0, Co: 0, Ni: 0 },
       Extração: { N: 85.94, P: 8.0, K: 30.75, Ca: 10.8, Mg: 8.44, S: 6.98, Cu: 18.8, Fe: 255.0, Zn: 64.4, Mn: 106.0, B: 100.0, Mo: 0, Co: 0, Ni: 0 }
     },
-    "Desafio RR": {
-      Exportação: { N: 57.8, P: 5.2, K: 19.6, Ca: 2.7, Mg: 2.6, S: 3.1, Cu: 9.1, Fe: 22.7, Zn: 34.3, Mn: 22.5, B: 31.6, Mo: 0, Co: 0, Ni: 0 },
-      Extração: { N: 83.77, P: 8.0, K: 36.98, Ca: 10.8, Mg: 8.13, S: 7.21, Cu: 18.2, Fe: 113.5, Zn: 68.6, Mn: 112.5, B: 83.16, Mo: 0, Co: 0, Ni: 0 }
+    "NEO750": {
+      Exportação: { N: 6.4, P: 4.9, K: 16.7, Ca: 2.5, Mg: 2.6, S: 2.9, Cu: 9.0, Fe: 86.5, Zn: 3.5, Mn: 2.7, B: 38.7, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 9.28, P: 7.54, K: 31.51, Ca: 10.0, Mg: 8.13, S: 6.74, Cu: 18.0, Fe: 432.5, Zn: 7.0, Mn: 13.5, B: 101.84, Mo: 0, Co: 0, Ni: 0 }
     },
-    "CZ37B43 I2X": {
-      Exportação: { N: 63.6, P: 5.1, K: 18.1, Ca: 2.6, Mg: 2.9, S: 3.3, Cu: 9.0, Fe: 41.6, Zn: 29.4, Mn: 22.9, B: 35.5, Mo: 0, Co: 0, Ni: 0 },
-      Extração: { N: 92.17, P: 7.85, K: 34.15, Ca: 10.4, Mg: 9.06, S: 7.67, Cu: 18.0, Fe: 208.0, Zn: 58.8, Mn: 114.5, B: 93.42, Mo: 0, Co: 0, Ni: 0 }
+    // HO Sementes
+    "HO Paraguaçu 64HO130 I2X": {
+      Exportação: { N: 57.5, P: 5.1, K: 17.8, Ca: 1.8, Mg: 2.4, S: 3.0, Cu: 7.2, Fe: 38.1, Zn: 25.5, Mn: 18.9, B: 35.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 83.33, P: 7.85, K: 33.58, Ca: 7.2, Mg: 7.5, S: 6.98, Cu: 14.4, Fe: 190.5, Zn: 51.0, Mn: 94.5, B: 92.11, Mo: 0, Co: 0, Ni: 0 }
     },
-    "Juruena Ipro": {
+    "HO Taquari 80HO110": {
+      Exportação: { N: 6.3, P: 4.9, K: 18.0, Ca: 2.3, Mg: 2.6, S: 2.9, Cu: 1.3, Fe: 69.7, Zn: 25.3, Mn: 2.8, B: 32.9, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 9.13, P: 7.54, K: 33.96, Ca: 9.2, Mg: 8.13, S: 6.74, Cu: 2.6, Fe: 348.5, Zn: 50.6, Mn: 14.0, B: 86.58, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Dagma
+    "Dagma 7621": {
+      Exportação: { N: 57.8, P: 5.0, K: 17.8, Ca: 2.2, Mg: 2.6, S: 3.0, Cu: 9.1, Fe: 44.2, Zn: 3.4, Mn: 21.5, B: 33.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 83.77, P: 7.69, K: 33.58, Ca: 8.8, Mg: 8.13, S: 6.98, Cu: 18.2, Fe: 221.0, Zn: 6.8, Mn: 107.5, B: 86.84, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Dagma 7921": {
+      Exportação: { N: 6.0, P: 4.5, K: 18.2, Ca: 2.5, Mg: 2.9, S: 2.7, Cu: 7.8, Fe: 47.0, Zn: 27.8, Mn: 21.9, B: 28.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 8.7, P: 6.92, K: 34.34, Ca: 10.0, Mg: 9.06, S: 6.28, Cu: 15.6, Fe: 235.0, Zn: 55.6, Mn: 109.5, B: 73.68, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // ADV / Advanta
+    "ADV4681 Ipro SR1 (Advanta)": {
+      Exportação: { N: 62.9, P: 5.5, K: 19.3, Ca: 2.5, Mg: 3.0, S: 3.0, Cu: 8.1, Fe: 29.2, Zn: 49.0, Mn: 24.4, B: 35.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 91.16, P: 8.46, K: 36.42, Ca: 10.0, Mg: 9.38, S: 6.98, Cu: 16.2, Fe: 146.0, Zn: 98.0, Mn: 122.0, B: 92.11, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "ADV4681 Ipro SR2 (Advanta)": {
+      Exportação: { N: 6.0, P: 5.5, K: 21.0, Ca: 2.3, Mg: 2.9, S: 3.2, Cu: 8.4, Fe: 26.0, Zn: 42.2, Mn: 23.1, B: 31.9, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 8.7, P: 8.46, K: 39.62, Ca: 9.2, Mg: 9.06, S: 7.44, Cu: 16.8, Fe: 130.0, Zn: 84.4, Mn: 115.5, B: 83.95, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "ADV4681 Ipro SR3 (Advanta)": {
+      Exportação: { N: 63.8, P: 5.4, K: 2.7, Ca: 2.4, Mg: 2.7, S: 3.1, Cu: 8.4, Fe: 17.2, Zn: 37.4, Mn: 43.9, B: 31.8, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 92.46, P: 8.31, K: 5.09, Ca: 9.6, Mg: 8.44, S: 7.21, Cu: 16.8, Fe: 86.0, Zn: 74.8, Mn: 219.5, B: 83.68, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Juruena
+    "Juruena Ipro SR1": {
+      Exportação: { N: 54.3, P: 5.1, K: 21.8, Ca: 2.6, Mg: 2.5, S: 2.9, Cu: 6.1, Fe: 1.3, Zn: 34.3, Mn: 24.0, B: 32.9, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 78.7, P: 7.85, K: 41.13, Ca: 10.4, Mg: 7.81, S: 6.74, Cu: 12.2, Fe: 6.5, Zn: 68.6, Mn: 120.0, B: 86.58, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Juruena Ipro SR2": {
+      Exportação: { N: 55.4, P: 5.3, K: 2.9, Ca: 2.8, Mg: 2.7, S: 2.8, Cu: 7.5, Fe: 17.1, Zn: 4.7, Mn: 22.4, B: 35.3, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 80.29, P: 8.15, K: 5.47, Ca: 11.2, Mg: 8.44, S: 6.51, Cu: 15.0, Fe: 85.5, Zn: 9.4, Mn: 112.0, B: 92.89, Mo: 0, Co: 0, Ni: 0 }
+    },
+    "Juruena Ipro SR3": {
       Exportação: { N: 58.0, P: 5.8, K: 21.8, Ca: 2.5, Mg: 2.6, S: 2.9, Cu: 7.4, Fe: 15.1, Zn: 44.9, Mn: 29.9, B: 39.6, Mo: 0, Co: 0, Ni: 0 },
       Extração: { N: 84.06, P: 8.92, K: 41.13, Ca: 10.0, Mg: 8.13, S: 6.74, Cu: 14.8, Fe: 75.5, Zn: 89.8, Mn: 149.5, B: 104.21, Mo: 0, Co: 0, Ni: 0 }
+    },
+    // Exata / Ouro Verde
+    "Exata i2x 64IX60 (Ouro Verde)": {
+      Exportação: { N: 6.0, P: 5.4, K: 17.9, Ca: 2.1, Mg: 2.8, S: 2.9, Cu: 7.7, Fe: 38.2, Zn: 26.5, Mn: 19.1, B: 34.0, Mo: 0, Co: 0, Ni: 0 },
+      Extração: { N: 8.7, P: 8.31, K: 33.77, Ca: 8.4, Mg: 8.75, S: 6.74, Cu: 15.4, Fe: 191.0, Zn: 53.0, Mn: 95.5, B: 89.47, Mo: 0, Co: 0, Ni: 0 }
     },
   },
 };
